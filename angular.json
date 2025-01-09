@@ -37,9 +37,17 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "public/assets/css/styles.min.css",
+              "node_modules/simplebar/dist/simplebar.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "public/assets/js/app.min.js",
+              "public/assets/js/sidebarmenu.js",
+              "public/assets/js/dashboard.js",
+              "public/assets/libs/apexcharts/dist/apexcharts.min.js"
+            ]
           },
           "configurations": {
             "production": {
