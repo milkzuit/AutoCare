@@ -10,6 +10,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RowsComponent } from './shared/rows/rows.component';
+import { SimplePageComponent } from './shared/simple-page/simple-page.component';
+import { MyProfileComponent } from './template/my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { RowsComponent } from './shared/rows/rows.component';
     HeaderComponent,
     DashboardComponent,
     FooterComponent,
-    RowsComponent
+    RowsComponent,
+    SimplePageComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
