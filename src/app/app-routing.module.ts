@@ -1,3 +1,4 @@
+import { RowsComponent } from './shared/rows/rows.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: "header", component: HeaderComponent },
   { path: "footer", component: FooterComponent },
   { path: "navbar", component: NavbarComponent },
+  { path: "rows", component: RowsComponent },
 
   { path: "dash", component: DashboardComponent },
 ];
