@@ -9,6 +9,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: "dash", component: DashboardComponent },
   { path: "prof", component: MyProfileComponent },
   { path: "", component: SimplePageComponent },
+  { path: "feedback", component: FeedbackComponent },
 ];
 
 @NgModule({

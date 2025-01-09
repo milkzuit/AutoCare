@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+// import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -12,6 +12,12 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RowsComponent } from './shared/rows/rows.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
 import { MyProfileComponent } from './template/my-profile/my-profile.component';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { CommonModule } from '@angular/common';
+
+
 
 @NgModule({
   declarations: [
@@ -24,11 +30,12 @@ import { MyProfileComponent } from './template/my-profile/my-profile.component';
     FooterComponent,
     RowsComponent,
     SimplePageComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, FormsModule,CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

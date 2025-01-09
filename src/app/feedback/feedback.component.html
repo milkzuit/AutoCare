@@ -1,0 +1,69 @@
+<div class="feedback-container">
+  <!-- NavBar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <span>Feedback</span>
+    </div>
+  </nav>
+
+  <!-- Full-Screen Image with scroll effect -->
+  <div 
+    class="image-container"
+    [ngStyle]="{
+      'background-image': 'url(/assets/images/backgrounds/new.jpg)',
+      'opacity': imageOpacity,
+      'transform': 'translateY(' + imageTranslateY + 'px)'
+    }"
+    [class.scrolled]="scrolled">
+  </div>
+
+  <!-- Feedback Content Section -->
+  <div class="feedback-content">
+    <h2>Your Feedback</h2>
+    
+    <!-- Previous Rating and Feedback Info -->
+    <div class="previous-rating" *ngIf="previousRating !== null">
+      <h3>Previous Feedback</h3>
+      <p><strong>Name:</strong> {{ previousFeedback.name }}</p>
+      <p><strong>Rating:</strong> 
+        <span class="stars">
+          <span *ngFor="let star of stars; let i = index" 
+                [class.filled]="previousRating > i">
+            &#9733;
+          </span>
+        </span>
+      </p>
+      <p><strong>Description:</strong> {{ previousFeedback.description }}</p>
+    </div>
+
+    <!-- Your Rating (Current Feedback) -->
+    <div class="rating">
+      <h3>Your Rating</h3>
+      <div class="stars">
+        <span *ngFor="let star of stars; let i = index" 
+              (click)="rate(i + 1)"
+              [class.filled]="userRating > i">
+          &#9733;
+        </span>
+      </div>
+    </div>
+
+    <!-- Feedback Text -->
+    <div class="feedback-text">
+      <textarea placeholder="Leave your feedback here..." [(ngModel)]="feedbackText"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="submit-section">
+      <button (click)="submitFeedback()">Submit Feedback</button>
+    </div>
+
+    <!-- Informative Content Section -->
+    <div class="informative-content">
+      <h3>Additional Information</h3>
+      <p>We value your feedback! It helps us improve. Please feel free to share your suggestions, concerns, or any other thoughts on your experience with our product or service.</p>
+      <p>Our customer support team is available 24/7 to assist you with any queries.</p>
+      <p>Visit our <a href="#">FAQ page</a> for more information.</p>
+    </div>
+  </div>
+</div>
