@@ -12,6 +12,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RowsComponent } from './shared/rows/rows.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
 import { MyProfileComponent } from './template/my-profile/my-profile.component';
+import { CardsComponent } from './shared/cards/cards.component';
+import { StoreComponent } from './template/store/store.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MyProfileComponent } from './template/my-profile/my-profile.component';
     FooterComponent,
     RowsComponent,
     SimplePageComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    CardsComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,
