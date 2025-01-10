@@ -33,7 +33,7 @@ import { StoreComponent } from './template/store/store.component';
     RowsComponent,
     SimplePageComponent,
     MyProfileComponent,
-    FeedbackComponent
+    FeedbackComponent,
     CardsComponent,
     StoreComponent
   ],
