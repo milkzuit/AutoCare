@@ -18,6 +18,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
 
 
+import { CardsComponent } from './shared/cards/cards.component';
+import { StoreComponent } from './template/store/store.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CommonModule } from '@angular/common';
     SimplePageComponent,
     MyProfileComponent,
     FeedbackComponent
+    CardsComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,12 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
+<<<<<<< HEAD
 import { FeedbackComponent } from './feedback/feedback.component';
+=======
+import { CardsComponent } from './shared/cards/cards.component';
+import { StoreComponent } from './template/store/store.component';
+>>>>>>> mahimabranch1
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -23,7 +28,12 @@ const routes: Routes = [
   { path: "dash", component: DashboardComponent },
   { path: "prof", component: MyProfileComponent },
   { path: "", component: SimplePageComponent },
+<<<<<<< HEAD
   { path: "feedback", component: FeedbackComponent },
+=======
+  {path:"cards", component: CardsComponent},
+  {path:"store", component: StoreComponent},
+>>>>>>> mahimabranch1
 ];
 
 @NgModule({
