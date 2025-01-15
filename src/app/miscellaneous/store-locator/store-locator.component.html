@@ -1,0 +1,55 @@
+<!-- Outside Container Heading -->
+<h1 class="text-center my-4 text-primary">Store Locator</h1>
+
+<!-- Main Content -->
+<div class="container">
+  <!-- Blue Background Section -->
+  <div class="blue-section text-center text-primary p-4 mb-4">
+    <h2 class="mb-3">FIND THE AutoCare Service Centre CLOSEST TO YOU</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <label for="state" class="form-label">Select State</label>
+        <select id="state" class="form-select" [(ngModel)]="selectedState" (change)="onStateChange()">
+          <option value="" disabled selected>Choose a state</option>
+          <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="city" class="form-label">Select City</label>
+        <select id="city" class="form-select" [(ngModel)]="selectedCity" (change)="onCityChange()">
+          <option value="" disabled selected>Choose a city</option>
+          <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cards Section -->
+<div class="container">
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let store of displayedStores">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ store.name }}</h5>
+          <p class="card-text">{{ store.address }}</p>
+          <p class="card-text text-muted">{{ store.city }}, {{ store.state }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="d-flex justify-content-center my-4">
+  <nav>
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="prevPage()">Previous</button>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link" (click)="nextPage()">Next</button>
+      </li>
+    </ul>
+  </nav>
+</div>

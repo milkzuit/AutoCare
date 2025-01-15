@@ -17,11 +17,14 @@ import { NearMeComponent } from './template/near-me/near-me.component';
 import { HeroComponent } from './template/hero/hero.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
+import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 
 const routes: Routes = [
+  // final
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  
+  { path: "store-locator", component: StoreLocatorComponent },
+
   // shared
   { path: "header", component: HeaderComponent },
   { path: "footer", component: FooterComponent },
@@ -33,7 +36,6 @@ const routes: Routes = [
   { path: "prof", component: MyProfileComponent },
   {path:"near", component: NearMeComponent},
 
-
   // testing
   { path: "feedback", component: FeedbackComponent },
   {path:"cards", component: CardsComponent},
@@ -41,7 +43,6 @@ const routes: Routes = [
   { path: "", component: HeroComponent },
   { path: "d", component: DummyComponent },
   { path: "dd", component: Dummy2Component },
-
 
 ];
 
