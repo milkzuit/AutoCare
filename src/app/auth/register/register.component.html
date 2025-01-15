@@ -27,7 +27,7 @@
             <div class="card mb-0">
               <div class="card-body">
                 <a
-                  href="./index.html"
+                  
                   class="text-nowrap logo-img text-center d-block py-3 w-100"
                 >
                   <img
@@ -43,6 +43,7 @@
                       >Name</label
                     >
                     <input
+                    [(ngModel)]="name"
                       type="text"
                       class="form-control"
                       id="exampleInputtext1"
@@ -54,33 +55,59 @@
                       >Email Address</label
                     >
                     <input
+                    [(ngModel)]="email"
                       type="email"
                       class="form-control"
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
+                      name="email"
+                      class="form-control"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                      #emailInput="ngModel"
+                      required
+                      email
+                      [ngModelOptions]="{ standalone: true }"
                     />
+                    <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="text-danger">
+                      <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
+                      <small *ngIf="emailInput.errors?.['email']">Please enter a valid email address.</small>
+                    </div>
                   </div>
                   <div class="mb-4">
                     <label for="exampleInputPassword1" class="form-label"
                       >Password</label
                     >
                     <input
+                    [(ngModel)]="password"
                       type="password"
                       class="form-control"
+                      name="password"
                       id="exampleInputPassword1"
+                      placeholder="Password"
+                      #passwordInput="ngModel"
+                      required
+                      minlength="6"
+                      [ngModelOptions]="{ standalone: true }"
                     />
+                    <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="text-danger">
+                      <small *ngIf="passwordInput.errors?.['required']">Password is required.</small>
+                      <small *ngIf="passwordInput.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                    </div>
                   </div>
                   <a
                     href="./index.html"
                     class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2"
+                    (click)="register()"
                     >Sign Up</a
                   >
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
-                    <a
+                    <button
                       class="text-primary fw-bold ms-2"
                       href="./authentication-login.html"
-                      >Sign In</a
+                      [disabled]="!emailInput.valid || !passwordInput.valid"
+                      >Sign In</button
                     >
                   </div>
                 </form>
