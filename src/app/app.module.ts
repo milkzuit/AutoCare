@@ -30,6 +30,8 @@ import { FAQComponent } from './miscellaneous/faq/faq.component';
 import { TestimonialsComponent } from './miscellaneous/testimonials/testimonials.component';
 import { LandingPageComponent } from './template/landing-page/landing-page.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
+import { AdvantagesComponent } from './miscellaneous/advantages/advantages.component';
+import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { Dummy2Component } from './shared/dummy2/dummy2.component';
     FAQComponent,
     TestimonialsComponent,
     LandingPageComponent,
-    Dummy2Component
+    Dummy2Component,
+    AdvantagesComponent,
+    StoreLocatorComponent
   ],
   imports: [
     BrowserModule,
