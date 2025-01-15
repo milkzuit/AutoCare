@@ -18,6 +18,8 @@ import { HeroComponent } from './template/hero/hero.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
+import { BookacallComponent } from './shared/bookacall/bookacall.component';
+import { ReviewComponent } from './shared/review/review.component';
 
 const routes: Routes = [
   // final
@@ -30,17 +32,19 @@ const routes: Routes = [
   { path: "footer", component: FooterComponent },
   { path: "navbar", component: NavbarComponent },
   { path: "rows", component: RowsComponent },
-  
+
   // templates
   { path: "dash", component: DashboardComponent },
   { path: "prof", component: MyProfileComponent },
-  {path:"near", component: NearMeComponent},
+  { path: "near", component: NearMeComponent },
 
   // testing
   { path: "feedback", component: FeedbackComponent },
-  {path:"cards", component: CardsComponent},
-  {path:"store", component: StoreComponent},
-  { path: "", component: HeroComponent },
+  { path: "cards", component: CardsComponent },
+  { path: "store", component: StoreComponent },
+  { path: "bookacall", component: BookacallComponent },
+  { path: "review", component: ReviewComponent },
+  { path: "d", component: DummyComponent },
 
 ];
 

@@ -31,6 +31,8 @@ import { LandingPageComponent } from './template/landing-page/landing-page.compo
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { AdvantagesComponent } from './miscellaneous/advantages/advantages.component';
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
+import { ReviewComponent } from './shared/review/review.component';
+import { BookacallComponent } from './shared/bookacall/bookacall.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locat
     LandingPageComponent,
     Dummy2Component,
     AdvantagesComponent,
-    StoreLocatorComponent
+    StoreLocatorComponent,
+    ReviewComponent,
+    BookacallComponent
   ],
   imports: [
     BrowserModule,

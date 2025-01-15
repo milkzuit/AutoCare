@@ -1,0 +1,21 @@
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bi {
+    font-size: 30px;
+    color: #d3d3d3;
+    /* Default color for empty stars */
+}
+
+.bi-star-half,
+.bi-star-fill {
+    color: #ffbf00;
+    /* Gold color for half and full stars */
+}
+
+.bi:hover {
+    cursor: pointer;
+}
