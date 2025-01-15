@@ -1,0 +1,56 @@
+/* Customer Testimonials Section */
+.customer-testimonials {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #5d87ff;
+}
+
+.sub-heading {
+  font-size: 1.25rem;
+  color: #777;
+}
+
+.testimonial-card {
+  flex: 0 0 300px; /* Fixed card width */
+  max-width: 300px; /* Limit card width */
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-text {
+  font-style: italic;
+  color: #777;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.text-muted {
+  color: #777;
+}
+
+/* Scrollbar Customization */
+::ng-deep .simplebar-scrollbar::before {
+  background-color: #5d87ff !important;
+}

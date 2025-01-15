@@ -1,0 +1,83 @@
+<!-- faq-accordion.component.html -->
+<section class="faq-accordion">
+    <div class="container">
+        <div class="row">
+            <!-- FAQ Accordion (left side) -->
+            <div class="col-md-6">
+                <h2 class="section-title">AutoMechanica FAQs</h2>
+
+                <!-- Bootstrap Accordion for FAQs -->
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What types of services do you offer?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We offer a wide range of services including oil changes, tire repairs, engine
+                                diagnostics, brake service, and much more.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How do I schedule a service appointment?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You can schedule your service appointment through our website or mobile app by choosing
+                                a convenient time.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Do you offer any warranties for services?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we provide warranties for most of our services, including parts and labor. Please
+                                inquire about specific details at the time of service.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Can I get a quote before scheduling my service?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we offer free estimates for most services. You can request a quote via our website
+                                or by calling our customer service.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image of Service Poster (right side) -->
+            <div class="col-md-6">
+                <img src="../assets/images/stock/service-poster.png" alt="Service Poster" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>

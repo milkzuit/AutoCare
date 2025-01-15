@@ -12,22 +12,37 @@ import { SimplePageComponent } from './shared/simple-page/simple-page.component'
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CardsComponent } from './shared/cards/cards.component';
 import { StoreComponent } from './template/store/store.component';
+import { DisplayComponent } from './display/display.component';
+import { NearMeComponent } from './template/near-me/near-me.component';
+import { HeroComponent } from './template/hero/hero.component';
+import { DummyComponent } from './shared/dummy/dummy.component';
+import { Dummy2Component } from './shared/dummy2/dummy2.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-
+  
+  // shared
   { path: "header", component: HeaderComponent },
   { path: "footer", component: FooterComponent },
   { path: "navbar", component: NavbarComponent },
   { path: "rows", component: RowsComponent },
-
+  
+  // templates
   { path: "dash", component: DashboardComponent },
   { path: "prof", component: MyProfileComponent },
-  { path: "", component: SimplePageComponent },
+  {path:"near", component: NearMeComponent},
+
+
+  // testing
   { path: "feedback", component: FeedbackComponent },
   {path:"cards", component: CardsComponent},
   {path:"store", component: StoreComponent},
+  { path: "", component: HeroComponent },
+  { path: "d", component: DummyComponent },
+  { path: "dd", component: Dummy2Component },
+
+
 ];
 
 @NgModule({

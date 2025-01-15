@@ -1,0 +1,4 @@
+/* Scrollbar Customization */
+::ng-deep .simplebar-scrollbar::before {
+  background-color: #5d87ff !important;
+}

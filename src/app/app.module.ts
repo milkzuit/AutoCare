@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 // import { AppComponent } from './app.component';
@@ -20,6 +21,15 @@ import { CommonModule } from '@angular/common';
 
 import { CardsComponent } from './shared/cards/cards.component';
 import { StoreComponent } from './template/store/store.component';
+import { DisplayComponent } from './display/display.component';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { NearMeComponent } from './template/near-me/near-me.component';
+import { HeroComponent } from './template/hero/hero.component';
+import { DummyComponent } from './shared/dummy/dummy.component';
+import { FAQComponent } from './miscellaneous/faq/faq.component';
+import { TestimonialsComponent } from './miscellaneous/testimonials/testimonials.component';
+import { LandingPageComponent } from './template/landing-page/landing-page.component';
+import { Dummy2Component } from './shared/dummy2/dummy2.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +45,22 @@ import { StoreComponent } from './template/store/store.component';
     MyProfileComponent,
     FeedbackComponent,
     CardsComponent,
-    StoreComponent
+    StoreComponent,
+    DisplayComponent,
+    NearMeComponent,
+    HeroComponent,
+    DummyComponent,
+    FAQComponent,
+    TestimonialsComponent,
+    LandingPageComponent,
+    Dummy2Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule,CommonModule
+    BrowserAnimationsModule,
+    AppRoutingModule, FormsModule, CommonModule,
   ],
-  providers: [],
+  providers: [provideHttpClient(withFetch())], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent]
 })
 export class AppModule { }

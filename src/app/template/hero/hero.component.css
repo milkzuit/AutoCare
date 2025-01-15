@@ -1,0 +1,91 @@
+/* hero.component.css */
+.hero-container {
+  background-color: #ffffff;
+  color: #333;
+  padding: 60px 20px;
+}
+
+.hero-content {
+  margin-bottom: 40px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #5d87ff;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #5d87ff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4b6fb3;
+}
+
+.btn-secondary {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+/* Brands */
+.brands-section {
+  margin-top: 60px;
+}
+
+.brands-title {
+  font-size: 2.5rem;
+  color: #5d87ff;
+  margin-bottom: 30px;
+}
+
+.brands-logos {
+  display: flex;
+  gap: 40px;
+  /* flex-wrap: wrap; */
+}
+
+.brand-logo {
+  /* max-width: 150px; */
+  height: auto;
+  margin: 10px;
+}
+
+
+/* section divider */
+/* Add black line between sections */
+.section-divider {
+  border: none;  /* Remove default border */
+  height: 2px;  /* Set height to create a thick line */
+  background-color: black;  /* Set line color to black */
+  margin: 40px 0;  /* Add margin to space it out from other content */
+}
