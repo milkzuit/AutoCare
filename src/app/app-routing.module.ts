@@ -41,8 +41,6 @@ const routes: Routes = [
   {path:"cards", component: CardsComponent},
   {path:"store", component: StoreComponent},
   { path: "", component: HeroComponent },
-  { path: "d", component: DummyComponent },
-  { path: "dd", component: Dummy2Component },
 
 ];
 

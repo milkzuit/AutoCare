@@ -25,7 +25,6 @@ import { DisplayComponent } from './display/display.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { NearMeComponent } from './template/near-me/near-me.component';
 import { HeroComponent } from './template/hero/hero.component';
-import { DummyComponent } from './shared/dummy/dummy.component';
 import { FAQComponent } from './miscellaneous/faq/faq.component';
 import { TestimonialsComponent } from './miscellaneous/testimonials/testimonials.component';
 import { LandingPageComponent } from './template/landing-page/landing-page.component';
@@ -51,7 +50,6 @@ import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locat
     DisplayComponent,
     NearMeComponent,
     HeroComponent,
-    DummyComponent,
     FAQComponent,
     TestimonialsComponent,
     LandingPageComponent,
