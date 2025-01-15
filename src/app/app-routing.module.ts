@@ -18,21 +18,17 @@ import { HeroComponent } from './template/hero/hero.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
+import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
+import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
 
 const routes: Routes = [
   // final
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "store-locator", component: StoreLocatorComponent },
-
-  // shared
-  { path: "header", component: HeaderComponent },
-  { path: "footer", component: FooterComponent },
-  { path: "navbar", component: NavbarComponent },
-  { path: "rows", component: RowsComponent },
-  
-  // templates
   { path: "dash", component: DashboardComponent },
+
+  // templates
   { path: "prof", component: MyProfileComponent },
   {path:"near", component: NearMeComponent},
 
@@ -41,6 +37,10 @@ const routes: Routes = [
   {path:"cards", component: CardsComponent},
   {path:"store", component: StoreComponent},
   { path: "", component: HeroComponent },
+  { path: "d", component: DummyComponent },
+  { path: "dd", component: Dummy2Component },
+  { path: "ps", component: ProfileShowComponent },
+  { path: "pe", component: ProfileEditComponent },
 
 ];
 

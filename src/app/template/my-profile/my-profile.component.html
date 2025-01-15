@@ -10,22 +10,23 @@
   <!-- Sidebar start -->
   <app-navbar></app-navbar>
   <!-- Sidebar end -->
-  <!--  Main wrapper  start-->
+  <!-- Main wrapper start -->
   <div class="body-wrapper">
-    <!--  Header Start -->
+    <!-- Header Start -->
     <app-header></app-header>
-    <!--  Header end -->
+    <!-- Header end -->
     <!-- container start -->
     <div class="container-fluid">
-        <!-- my profile start -->
-        <!-- <app-my-profile></app-my-profile> -->
-        <!-- my profile end -->
-      <!-- Footer Start -->
-      
-      <!-- Footer End -->
+      <!-- My profile start -->
+      <div *ngIf="!isEditMode">
+        <app-profile-show (editClicked)="toggleEditMode()"></app-profile-show>
+      </div>
+      <div *ngIf="isEditMode">
+        <app-profile-edit (cancelEdit)="toggleEditMode()"></app-profile-edit>
+      </div>
+      <!-- My profile end -->
     </div>
     <!-- container end -->
   </div>
-  <!--  Main wrapper end-->
+  <!-- Main wrapper end -->
 </div>
-<!--  Body Wrapper end -->
