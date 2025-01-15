@@ -1,12 +1,8 @@
 import { MyProfileComponent } from './template/my-profile/my-profile.component';
-import { RowsComponent } from './shared/rows/rows.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -20,6 +16,8 @@ import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
 import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
+import { BookacallComponent } from './shared/bookacall/bookacall.component';
+import { ReviewComponent } from './shared/review/review.component';
 
 const routes: Routes = [
   // final
@@ -27,11 +25,13 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "store-locator", component: StoreLocatorComponent },
+
+  // templates
   { path: "dash", component: DashboardComponent },
 
   // templates
   { path: "prof", component: MyProfileComponent },
-  {path:"near", component: NearMeComponent},
+  { path: "near", component: NearMeComponent },
 
   // testing
   { path: "feedback", component: FeedbackComponent },
@@ -41,6 +41,8 @@ const routes: Routes = [
   { path: "dd", component: Dummy2Component },
   { path: "ps", component: ProfileShowComponent },
   { path: "pe", component: ProfileEditComponent },
+  { path: "bookacall", component: BookacallComponent },
+  { path: "review", component: ReviewComponent },
 
 ];
 
