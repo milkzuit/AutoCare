@@ -1,0 +1,93 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">AutoCare</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/services">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" routerLink="/book-a-call">Book a Call</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Form -->
+<div class="hero">
+    <div class="form-container">
+        <h2 class="form-title text-primary">Book a Call</h2>
+        <form>
+            <div class="mb-3">
+                <label for="city" class="form-label"><i class="fas fa-city"></i> Select City</label>
+                <select id="city" class="form-select">
+                    <option value="mumbai">Mumbai</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="chennai">Chennai</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="carModel" class="form-label"><i class="fas fa-car"></i> Select Car Model</label>
+                <select id="carModel" class="form-select">
+                    <option value="swift">Maruti Swift</option>
+                    <option value="nexon">Tata Nexon</option>
+                    <option value="creta">Hyundai Creta</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label"><i class="fas fa-user"></i> Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name" />
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label"><i class="fas fa-phone-alt"></i> Phone Number</label>
+                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Services Section (Separate Boxes Below Image) -->
+<section class="services-section">
+    <h2 class="text-center text-primary">Our Services</h2>
+    <div class="services-grid">
+        <div class="service-box">
+            <i class="fas fa-oil-can"></i>
+            <h3>Oil Change</h3>
+            <p>Keep your engine running smoothly with regular oil changes.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-car-battery"></i>
+            <h3>Battery Replacement</h3>
+            <p>Professional battery check and replacement services.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-wrench"></i>
+            <h3>Engine Diagnostics</h3>
+            <p>Identify issues early with advanced diagnostics tools.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-car-crash"></i>
+            <h3>Accident Repairs</h3>
+            <p>Expert accident repairs to restore your vehicle's condition.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-tire-pressure-warning"></i>
+            <h3>Tire Services</h3>
+            <p>Comprehensive tire checks, replacements, and alignment.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-spray-can"></i>
+            <h3>Car Detailing</h3>
+            <p>Professional car cleaning and detailing services.</p>
+        </div>
+    </div>
+</section>

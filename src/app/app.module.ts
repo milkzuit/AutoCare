@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
+import { CallBookingComponent } from './call-booking/call-booking.component';
 
 
 
@@ -31,7 +32,8 @@ import { CommonModule } from '@angular/common';
     RowsComponent,
     SimplePageComponent,
     MyProfileComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    CallBookingComponent
   ],
   imports: [
     BrowserModule,
