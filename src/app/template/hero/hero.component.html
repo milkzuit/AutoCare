@@ -1,6 +1,6 @@
 <!-- hero.component.html -->
 <section class="hero-container">
-    <!-- Hero Section Header -->
+    <!-- # Hero Section Header -->
     <div class="hero-content">
         <h1 class="hero-title">Welcome to AutoCare</h1>
         <p class="hero-description">Your 💯 trusted 👯partner for 🚗 car 🛠 service & 🤝 maintenance</p>
@@ -12,8 +12,30 @@
         </div>
     </div>
 
+    <!-- # Autocare Advantages -->
+    <app-advantages></app-advantages>
 
-    <!-- Brands We Service Section -->
+    <!-- # Customer Testimonial -->
+    <app-testimonials></app-testimonials>
+
+    <!-- # Get a callback page Navigate -->
+    <section class="fair-quote-container">
+        <div class="fair-quote-content text-center">
+            <h2 class="fair-quote-title">
+                Get A Fair Quote Along With Free Doorstep Pick-up & Drop Facility
+            </h2>
+            <p class="fair-quote-description">
+                Whether you’re the driver of your own car or a rental, you’re covered 24/7, 365 days a year
+            </p>
+            <button class="btn spl" routerLink="/contact">REQUEST A CALLBACK</button>
+        </div>
+    </section>
+
+
+    <!-- # FAQ -->
+    <app-faq></app-faq>
+
+    <!-- # Brands We Service Section -->
     <div class="brands-section">
         <h2 class="brands-title text-center p-7">Brands We Service</h2>
         <div class="pt-6" data-simplebar style="padding-right: 15px;">
@@ -31,20 +53,7 @@
         </div>
     </div>
 
-
-    <app-advantages></app-advantages>
-
-    <!-- # Customer Testimonial -->
-    <app-testimonials></app-testimonials>
-
-    <!-- # Add a black line (divider) -->
-    <hr class="section-divider">
-
-    <!-- # FAQ -->
-    <app-faq></app-faq>
-
-    <!-- # Add a black line (divider) -->
-    <hr class="section-divider">
-
+    <!-- # Footer -->
     <app-footer></app-footer>
+
 </section>
