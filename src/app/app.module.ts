@@ -31,6 +31,8 @@ import { LandingPageComponent } from './template/landing-page/landing-page.compo
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { AdvantagesComponent } from './miscellaneous/advantages/advantages.component';
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
+import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
+import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locat
     LandingPageComponent,
     Dummy2Component,
     AdvantagesComponent,
-    StoreLocatorComponent
+    StoreLocatorComponent,
+    ProfileShowComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
