@@ -23,6 +23,7 @@ import { ProfileEditComponent } from './shared/profile-edit/profile-edit.compone
 
 const routes: Routes = [
   // final
+  { path: "", component: HeroComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "store-locator", component: StoreLocatorComponent },
@@ -36,7 +37,6 @@ const routes: Routes = [
   { path: "feedback", component: FeedbackComponent },
   {path:"cards", component: CardsComponent},
   {path:"store", component: StoreComponent},
-  { path: "", component: HeroComponent },
   { path: "d", component: DummyComponent },
   { path: "dd", component: Dummy2Component },
   { path: "ps", component: ProfileShowComponent },
