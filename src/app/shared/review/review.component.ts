@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-review',
@@ -6,10 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent {
-  rating: number = 0;  // Initialize the rating to 0
 
-  // Method to set the rating when a star is clicked
-  setRating(starValue: number): void {
-    this.rating = starValue;  // Update the rating value
+
+  rating: number = 0;
+
+
+
+
+
+  // Method to set the rating
+  setRating(value: number) {
+    this.rating = value;
   }
 }

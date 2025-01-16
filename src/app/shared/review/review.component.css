@@ -41,3 +41,25 @@ body {
     color: #ffc107;  /* Color for filled stars */
     fill: #ffc107;
   }
+
+  .card {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
