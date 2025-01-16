@@ -28,12 +28,13 @@ export class LoginComponent {
         next:(res:any) => {
       console.log(res);
       localStorage.setItem("status","1");
-      this.router.navigateByUrl('/prof')
       localStorage.setItem("user_id",res['id']);
+      this.router.navigateByUrl('/prof');
       
 
     },
     error:(e) => {
+      alert("no user Found");
       console.log(e);
       this.serverMsg = e['error']['msg']
     }
