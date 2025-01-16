@@ -1,6 +1,6 @@
 /* Set background image for the whole body */
 body {
-    background-image: url('C:\\Users\\z046745\\TEAM\\AutoCare\\public\\assets\\images\\backgrounds\\lambo.svg'); /* Corrected path */
+    background-image: url('/assets/images/backgrounds/'); /* Corrected path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
