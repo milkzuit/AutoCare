@@ -11,6 +11,7 @@
 /* Style for the card */
 .card {
     border-radius: 30px;
+    margin-top: 30px;
 }
 
 .card-body {
@@ -68,10 +69,21 @@
     padding: 0.75rem 1.5rem;  /* Smaller button padding */
 }
 
+
+.col-md-10, .col-lg-8, .col-xxl-6 {
+    width: 100%; /* Ensures inner columns take full width */
+}
+
+/* Optional: Adjust the padding and margins for better alignment */
+.card-body {
+    padding: 40px;  /* Increase padding to make use of extra space */
+}
+
 .card {
     transform: translateY(20px);
     opacity: 0;
     animation: slideIn 1s ease-out forwards;
+    max-width: 100%; /* Prevents card from being too narrow */
 }
 
 @keyframes slideIn {
@@ -80,6 +92,7 @@
         opacity: 1;
     }
 }
+
 .btn-primary {
     transition: all 0.3s ease;
 }
@@ -88,4 +101,18 @@
     background-color: #0056b3; /* Darker shade of blue */
     transform: scale(1.05); /* Slightly enlarge the button */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Style the button container to display buttons side by side */
+.button-container {
+    display: flex;
+    justify-content: space-between;  /* Distribute space between buttons */
+    gap: 10px;  /* Space between the buttons */
+}
+
+/* Optional: Style buttons to have equal width */
+.btn-primary {
+    flex: 1;  /* Make buttons take equal space */
+    padding: 0.75rem 1.5rem;  /* Adjust padding */
+    font-size: 1.125rem;  /* Font size */
 }

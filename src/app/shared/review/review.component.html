@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="review.component.css">
 </head>
 <body>
-    <!-- <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
         <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
             <div class="d-flex align-items-center justify-content-center w-100">
@@ -32,7 +32,7 @@
                                         <textarea class="form-control" id="message" rows="4" required></textarea>
                                     </div>
 
-                                
+<!--                                 
         <div class="mb-3">
             <label for="rating" class="form-label">Rating</label>
             <div id="star-rating" class="d-flex">
@@ -43,18 +43,34 @@
                 <i class="bi bi-star" [ngClass]="{'bi-star-filled': rating >= 5}" (click)="setRating(5)" data-value="5"></i>
             </div>
             <input type="hidden" id="rating" name="rating" [value]="rating">
-        </div>
+        </div> 
 
                               
                                     <button type="submit"  class="btn btn-primary w-100 py-1 fs-4 mb-2 rounded-2">Submit Feedback</button>
+    --> <div class="mb-3">
+    <label for="rating" class="form-label">Rating</label>
+    <div id="star-rating" class="d-flex">
+        <form [formGroup]="formGroup">
+            <p-rating formControlName="value" [(ngModel)]="rating" [style]="{'width': '100%'}"></p-rating>
+        </form>
+    </div>
+    <!-- Make sure there's no "null" value display -->
+    <p>Selected Rating: {{ formGroup.get('value')?.value || 'Not rated yet' }}</p>
+</div>
 
+<button type="submit" class="btn btn-primary w-100 py-1 fs-3 mb-2 rounded-2">Submit Feedback</button>
+
+
+    <!-- <button type="submit" class="btn btn-primary w-100 py-2 fs-2 mb-2 rounded-2">Submit
+        Feedback</button> -->
+</form>
                                
-                                </form>
+                            
                                   
   
-                            </div> -->
+                            </div>
 
-<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+<!-- <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
     <div
         class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
@@ -69,37 +85,32 @@
                             <p class="text-center">Care For Car</p>
                             <h4 class="text-center">Submit Your Feedback</h4>
                             <form>
-                                <!-- Name -->
+                                
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Full Name</label>
                                     <input type="text" class="form-control" id="name" required />
                                 </div>
 
 
-                                <!-- Description (Feedback) -->
                                 <div class="mb-4">
                                     <label for="message" class="form-label">Your Feedback</label>
                                     <textarea class="form-control" id="message" rows="4" required></textarea>
                                 </div>
 
-                                <!-- Rating Section -->
                                 <div class="mb-3">
                                     <label for="rating" class="form-label">Rating</label>
                                     <div id="star-rating" class="d-flex">
                                         <form [formGroup]="formGroup">
-                                            <!-- PrimeNG Rating Component -->
                                             <p-rating formControlName="value"></p-rating>
                                         </form>
                                     </div>
-                                    <!-- Display the dynamically updated rating -->
                                     <p>Selected Rating: {{ formGroup.get('value')?.value }}</p>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary w-100 py-2 fs-2 mb-2 rounded-2">Submit
                                     Feedback</button>
                             </form>
->>>>>>> main
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -111,9 +122,7 @@
 
 <!-- # Reactive Forms -->
 
-<form [formGroup]="formGroup">
-    <p-rating formControlName="value" />
-</form>
+
 <!--
 and ts code in this file
  -->
