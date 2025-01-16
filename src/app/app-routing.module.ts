@@ -26,12 +26,13 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "store-locator", component: StoreLocatorComponent },
   { path: "profile", component: MyProfileComponent },
+  { path: "near", component: NearMeComponent },
+
 
   // templates
   { path: "dash", component: DashboardComponent },
 
   // templates
-  { path: "near", component: NearMeComponent },
 
   // testing
   { path: "feedback", component: FeedbackComponent },
