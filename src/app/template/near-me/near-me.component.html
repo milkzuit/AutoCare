@@ -1,17 +1,27 @@
-<!--  Body Wrapper -->
-<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-  data-sidebar-position="fixed" data-header-position="fixed">
+<div
+  class="page-wrapper"
+  id="main-wrapper"
+  data-layout="vertical"
+  data-navbarbg="skin6"
+  data-sidebartype="full"
+  data-sidebar-position="fixed"
+  data-header-position="fixed"
+>
+  <!-- Sidebar start -->
   <app-navbar></app-navbar>
-  <!--  Main wrapper -->
+  <!-- Sidebar end -->
+  <!-- Main wrapper start -->
   <div class="body-wrapper">
+    <!-- Header Start -->
     <app-header></app-header>
+    <!-- Header end -->
+    <!-- container start -->
     <div class="container-fluid">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title fw-semibold mb-4">Sample Page</h5>
-          <p class="mb-0">This is a sample page</p>
-        </div>
-      </div>
+      <!-- My profile start -->
+      <app-store-locator></app-store-locator>
+      <!-- My profile end -->
     </div>
+    <!-- container end -->
   </div>
+  <!-- Main wrapper end -->
 </div>

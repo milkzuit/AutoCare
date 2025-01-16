@@ -38,7 +38,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "public/assets/css/styles.min.css"
+              "public/assets/css/styles.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css", 
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
               "public/assets/libs/jquery/dist/jquery.min.js",
