@@ -31,14 +31,11 @@ const routes: Routes = [
 
   // templates
   { path: "dash", component: DashboardComponent },
-<<<<<<< HEAD
   { path: "prof", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },
   { path: "hero", component: HeroComponent },
-=======
 
   // templates
->>>>>>> main
 
   // testing
   { path: "feedback", component: FeedbackComponent },
@@ -50,12 +47,9 @@ const routes: Routes = [
   { path: "pe", component: ProfileEditComponent },
   { path: "bookacall", component: BookacallComponent },
   { path: "review", component: ReviewComponent },
-<<<<<<< HEAD
   { path: "d", component: DummyComponent },
   { path: "", component: Dummy2Component }
-=======
 
->>>>>>> main
 ];
 
 @NgModule({
