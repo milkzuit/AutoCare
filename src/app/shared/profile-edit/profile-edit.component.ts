@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -6,6 +7,41 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./profile-edit.component.css'],
 })
 export class ProfileEditComponent {
+
+
+  constructor(private http: HttpClient) {}
+
+  name = '';
+  address = '';
+  email = '';
+  mobile = '';
+  serverMsg = 'error';
+
+  register() {
+        let data = {
+          name: this.name,
+          address: this.address,
+          email: this.email,
+          mobile: this.mobile
+        };
+    
+        this.http.post("http://localhost:8080/userRegister", data).subscribe({
+          next: (res: any) => {
+            console.log(res);
+            localStorage.setItem("status", "1")
+          },
+          error: (e :any) => {
+            console.log(e);
+            this.serverMsg = e['error']['msg'] || 'Registration failed. Please try again later.';
+          }
+        });
+      }
+
+
+
+
+
+
   @Output() cancelEdit = new EventEmitter<void>();
 
   showProfile() {
