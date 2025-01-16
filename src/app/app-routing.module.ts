@@ -25,12 +25,12 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "store-locator", component: StoreLocatorComponent },
+  { path: "profile", component: MyProfileComponent },
 
   // templates
   { path: "dash", component: DashboardComponent },
 
   // templates
-  { path: "prof", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },
 
   // testing
