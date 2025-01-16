@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +10,12 @@
 <body>
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
-        <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center" style="border-radius: 20px;">
-            <div class="d-flex align-items-center justify-content-center w-100" >
-                <div class="row justify-content-center w-100">
+        <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <div class="row justify-content-center w-100" >
                     <div class="col-md-8 col-lg-6 col-xxl-3">
-                        <div class="card mb-0">
-                            <div class="card-body" style="border-radius: 20px;">
+                        <div class="card mb-0" style="border-radius: 30px;">
+                            <div class="card-body" style="border-radius: 30px; padding: 30px; background-color: rgba(255, 255, 255, 0.8); box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);">
                                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                                     <img src="assets/images/logos/AUTO .svg" width="180" alt="" />
                                 </a>
@@ -35,19 +34,21 @@
                                     </div>
 
                                     <!-- Star Rating -->
-                                    <div class="mb-3">
-                                        <label for="rating" class="form-label">Rating</label>
-                                        <div id="star-rating" class="d-flex">
-                                            <i class="bi bi-star" data-value="1"></i>
-                                            <i class="bi bi-star" data-value="2"></i>
-                                            <i class="bi bi-star" data-value="3"></i>
-                                            <i class="bi bi-star" data-value="4"></i>
-                                            <i class="bi bi-star" data-value="5"></i>
-                                        </div>
-                                        <input type="hidden" id="rating" name="rating" value="0">
-                                    </div>
+                                    <!-- Star Rating -->
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <div id="star-rating" class="d-flex">
+                <i class="bi bi-star" [ngClass]="{'bi-star-filled': rating >= 1}" (click)="setRating(1)" data-value="1"></i>
+                <i class="bi bi-star" [ngClass]="{'bi-star-filled': rating >= 2}" (click)="setRating(2)" data-value="2"></i>
+                <i class="bi bi-star" [ngClass]="{'bi-star-filled': rating >= 3}" (click)="setRating(3)" data-value="3"></i>
+                <i class="bi bi-star" [ngClass]="{'bi-star-filled': rating >= 4}" (click)="setRating(4)" data-value="4"></i>
+                <i class="bi bi-star" [ngClass]="{'bi-star-filled': rating >= 5}" (click)="setRating(5)" data-value="5"></i>
+            </div>
+            <input type="hidden" id="rating" name="rating" [value]="rating">
+        </div>
 
-                                    <button type="submit" class="btn btn-primary w-100 py-2 fs-2 mb-2 rounded-2">Submit Feedback</button>
+                                    <!-- Leaner Submit Button -->
+                                    <button type="submit" class="btn btn-primary w-100 py-1 fs-4 mb-2 rounded-2">Submit Feedback</button>
                                 </form>
                             </div>
                         </div>
@@ -57,4 +58,3 @@
         </div>
     </div>
 </body>
-</html>

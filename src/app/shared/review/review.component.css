@@ -31,3 +31,13 @@ body {
     background-color: #007bff;
     border-color: #007bff;
 }
+.bi-star {
+    font-size: 30px;
+    color: #ccc;  /* Default color for unfilled stars */
+    cursor: pointer;
+  }
+  
+  .bi-star-filled {
+    color: #ffc107;  /* Color for filled stars */
+    fill: #ffc107;
+  }
