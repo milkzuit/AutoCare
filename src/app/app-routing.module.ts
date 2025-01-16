@@ -37,6 +37,7 @@ const routes: Routes = [
   { path: "dash", component: DashboardComponent },
   { path: "prof", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },
+  { path: "hero", component: HeroComponent },
 
   // testing
   { path: "feedback", component: FeedbackComponent },
@@ -45,7 +46,7 @@ const routes: Routes = [
   { path: "bookacall", component: BookacallComponent },
   { path: "review", component: ReviewComponent },
   { path: "d", component: DummyComponent },
-
+  { path: "", component: Dummy2Component }
 ];
 
 @NgModule({
