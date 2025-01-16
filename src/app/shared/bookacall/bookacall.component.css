@@ -2,7 +2,7 @@
 
 /* Apply background image, size, and position similar to the feedback page */
 .page-wrapper {
-    background-image: url('C:\\Users\\z046745\\TEAM\\AutoCare\\public\\assets\\images\\backgrounds\\lambo.svg');
+    background-image: url('/assets/images/backgrounds/lambo.svg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
