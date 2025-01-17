@@ -1,6 +1,6 @@
 /* Set background image for the whole body */
 body {
-    background-image: url('/assets/images/backgrounds/'); /* Corrected path */
+    background-image: url('/assets/images/backgrounds/lambo.svg'); /* Corrected path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
