@@ -18,6 +18,7 @@ import { ProfileShowComponent } from './shared/profile-show/profile-show.compone
 import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { ReviewComponent } from './shared/review/review.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 const routes: Routes = [
   // final
@@ -34,6 +35,8 @@ const routes: Routes = [
   { path: "prof", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },
   { path: "hero", component: HeroComponent },
+  { path: "nav", component: NavbarComponent },
+
 
   // templates
 

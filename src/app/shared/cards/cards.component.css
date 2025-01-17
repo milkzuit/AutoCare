@@ -17,6 +17,7 @@ body {
   .container-fluid {
     padding-left: 15px;
     padding-right: 15px;
+    
   }
   
   /* Card layout */
@@ -24,6 +25,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;  /* Space between cards */
+    margin-top: 20px;
   }
   
   /* Ensure cards don't overflow */
