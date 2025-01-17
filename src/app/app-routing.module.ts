@@ -19,6 +19,7 @@ import { ProfileEditComponent } from './shared/profile-edit/profile-edit.compone
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { ReviewComponent } from './shared/review/review.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 
 const routes: Routes = [
   // final
@@ -51,7 +52,8 @@ const routes: Routes = [
   { path: "bookacall", component: BookacallComponent },
   { path: "review", component: ReviewComponent },
   { path: "d", component: DummyComponent },
-  { path: "", component: Dummy2Component }
+  { path: "", component: Dummy2Component },
+  { path: "nb", component: NewbookingComponent },
 
 ];
 
