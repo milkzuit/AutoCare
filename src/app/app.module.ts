@@ -36,6 +36,7 @@ import { ReviewComponent } from './shared/review/review.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
+import { ModalComponent } from './shared/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { NewbookingComponent } from './shared/newbooking/newbooking.component';
     BookacallComponent,
     DummyComponent,
     NewbookingComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
