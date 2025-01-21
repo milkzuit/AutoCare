@@ -1,10 +1,9 @@
-import { Rating, RatingModule } from 'primeng/rating';
+import { RatingModule } from 'primeng/rating';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
-// import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -36,6 +35,7 @@ import { ProfileEditComponent } from './shared/profile-edit/profile-edit.compone
 import { ReviewComponent } from './shared/review/review.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
+import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,8 @@ import { DummyComponent } from './shared/dummy/dummy.component';
     ProfileEditComponent,
     ReviewComponent,
     BookacallComponent,
-    DummyComponent
+    DummyComponent,
+    NewbookingComponent,
   ],
   imports: [
     BrowserModule,

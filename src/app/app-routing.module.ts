@@ -18,6 +18,8 @@ import { ProfileShowComponent } from './shared/profile-show/profile-show.compone
 import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { ReviewComponent } from './shared/review/review.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 
 const routes: Routes = [
   // final
@@ -31,6 +33,11 @@ const routes: Routes = [
 
   // templates
   { path: "dash", component: DashboardComponent },
+  { path: "prof", component: MyProfileComponent },
+  { path: "near", component: NearMeComponent },
+  { path: "hero", component: HeroComponent },
+  { path: "nav", component: NavbarComponent },
+
 
   // templates
 
@@ -44,6 +51,9 @@ const routes: Routes = [
   { path: "pe", component: ProfileEditComponent },
   { path: "bookacall", component: BookacallComponent },
   { path: "review", component: ReviewComponent },
+  { path: "d", component: DummyComponent },
+  { path: "", component: Dummy2Component },
+  { path: "nb", component: NewbookingComponent },
 
 ];
 

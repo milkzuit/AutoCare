@@ -1,7 +1,4 @@
-<app-navbar></app-navbar>
-<app-my-profile></app-my-profile>
-
-<!-- <div
+<div
   class="page-wrapper"
   id="main-wrapper"
   data-layout="vertical"
@@ -9,12 +6,27 @@
   data-sidebartype="full"
   data-sidebar-position="fixed"
   data-header-position="fixed"
-> -->
-  <!-- Main content wrapper with added padding to avoid overlap with fixed navbar/sidebar -->
-  <div class="container-fluid pt-5" style="margin-left: 300px;overflow-x: hidden;">
-    <div class="row"  style="display: flex; position: relative">
+>
+  <!-- Sidebar start -->
+  <app-navbar></app-navbar>
+  <!-- Sidebar end -->
+  <!--  Main wrapper  start-->
+  <div class="body-wrapper">
+  
+    <app-header></app-header>
+  
+  </div>
+  <!--  Main wrapper end-->
+</div>
+<!--  Body Wrapper end -->
+
+
+<!-- Main content section -->
+<div class="main-content">
+  <div class="container-fluid pt-5">
+    <div class="row card-row">
       <!-- Left, center, and right card columns -->
-      <div class="col-md-2" >
+      <div class="col-md-3 card-container">
         <h5 class="card-title fw-semibold mb-4">CUSTOM PRODUCTS</h5>
         <div class="card">
           <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
@@ -26,7 +38,8 @@
         </div>
       </div>
 
-      <div class="col-md-2" >
+      <!-- Repeat other cards here -->
+      <div class="col-md-3 card-container">
         <h5 class="card-title fw-semibold mb-4">CUSTOM PRODUCTS</h5>
         <div class="card">
           <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
@@ -38,8 +51,7 @@
         </div>
       </div>
 
-
-      <div class="col-md-2" >
+      <div class="col-md-3 card-container">
         <h5 class="card-title fw-semibold mb-4">CUSTOM PRODUCTS</h5>
         <div class="card">
           <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
@@ -51,8 +63,7 @@
         </div>
       </div>
 
-
-      <div class="col-md-2" >
+      <div class="col-md-3 card-container">
         <h5 class="card-title fw-semibold mb-4">CUSTOM PRODUCTS</h5>
         <div class="card">
           <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
@@ -63,15 +74,45 @@
           </div>
         </div>
       </div>
-      
-     
 
+      <div class="col-md-3 card-container">
+        <h5 class="card-title fw-semibold mb-4">CUSTOM PRODUCTS</h5>
+        <div class="card">
+          <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>            
+          </div>
+        </div>
+      </div>
 
+      <div class="col-md-3 card-container">
+        <h5 class="card-title fw-semibold mb-4">CUSTOM PRODUCTS</h5>
+        <div class="card">
+          <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>            
+          </div>
+        </div>
+      </div>
 
- 
+      <div class="col-md-3 card-container">
+        <h5 class="card-title fw-semibold mb-4">CUSTOM PRODUCTS</h5>
+        <div class="card">
+          <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>            
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-<!-- </div> -->
+</div>
 
 <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
 <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

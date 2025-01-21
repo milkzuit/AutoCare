@@ -1,0 +1,118 @@
+/* book-a-call.component.css */
+
+/* Apply background image, size, and position similar to the feedback page */
+.page-wrapper {
+    background-image: url('/assets/images/backgrounds/lambo.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Style for the card */
+.card {
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
+.card-body {
+    border-radius: 30px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the logo image */
+.logo-img img {
+    width: 180px;
+}
+
+/* Form label styles */
+.form-label {
+    font-weight: bold;
+}
+
+/* Button style adjustments for a leaner button */
+.btn-primary {
+    padding: 0.75rem 1.5rem;  /* Leaner padding for the button */
+    font-size: 1.125rem;  /* Slightly smaller font size */
+    border-radius: 8px;  /* Rounded button edges */
+}
+
+/* Styling for the form container */
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col-md-8, .col-lg-6, .col-xxl-4 {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Additional responsiveness adjustments */
+@media (max-width: 576px) {
+    .col-md-8, .col-lg-6, .col-xxl-4 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+/* Optional: Adjust padding inside the card */
+.card-body {
+    padding: 20px;  /* Reduce padding */
+}
+
+/* Optional: Make the button slightly smaller */
+.btn-primary {
+    font-size: 1rem;  /* Smaller font size for button */
+    padding: 0.75rem 1.5rem;  /* Smaller button padding */
+}
+
+
+.col-md-10, .col-lg-8, .col-xxl-6 {
+    width: 100%; /* Ensures inner columns take full width */
+}
+
+/* Optional: Adjust the padding and margins for better alignment */
+.card-body {
+    padding: 40px;  /* Increase padding to make use of extra space */
+}
+
+.card {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 1s ease-out forwards;
+    max-width: 100%; /* Prevents card from being too narrow */
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Style the button container to display buttons side by side */
+.button-container {
+    display: flex;
+    justify-content: space-between;  /* Distribute space between buttons */
+    gap: 10px;  /* Space between the buttons */
+}
+
+/* Optional: Style buttons to have equal width */
+.btn-primary {
+    flex: 1;  /* Make buttons take equal space */
+    padding: 0.75rem 1.5rem;  /* Adjust padding */
+    font-size: 1.125rem;  /* Font size */
+}
