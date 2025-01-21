@@ -36,6 +36,7 @@ import { ReviewComponent } from './shared/review/review.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { NewbookingComponent } from './shared/newbooking/newbooking.component';
     BookacallComponent,
     DummyComponent,
     NewbookingComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,7 @@ import { NewbookingComponent } from './shared/newbooking/newbooking.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RatingModule
+    RatingModule,
   ],
   providers: [provideHttpClient(withFetch())], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],
