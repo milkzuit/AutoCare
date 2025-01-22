@@ -2,6 +2,9 @@ import { RatingModule } from 'primeng/rating';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Carousel } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
+import { ButtonModule } from 'primeng/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './auth/login/login.component';
@@ -18,6 +21,8 @@ import { AppComponent } from './app.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
 
+import { GalleriaModule } from 'primeng/galleria';
+
 import { CardsComponent } from './shared/cards/cards.component';
 import { StoreComponent } from './template/store/store.component';
 import { DisplayComponent } from './display/display.component';
@@ -26,7 +31,6 @@ import { NearMeComponent } from './template/near-me/near-me.component';
 import { HeroComponent } from './template/hero/hero.component';
 import { FAQComponent } from './miscellaneous/faq/faq.component';
 import { TestimonialsComponent } from './miscellaneous/testimonials/testimonials.component';
-import { LandingPageComponent } from './template/landing-page/landing-page.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { AdvantagesComponent } from './miscellaneous/advantages/advantages.component';
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
@@ -36,7 +40,7 @@ import { ReviewComponent } from './shared/review/review.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
-import { ModalComponent } from './shared/modal/modal.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,6 @@ import { ModalComponent } from './shared/modal/modal.component';
     HeroComponent,
     FAQComponent,
     TestimonialsComponent,
-    LandingPageComponent,
     Dummy2Component,
     AdvantagesComponent,
     StoreLocatorComponent,
@@ -68,7 +71,8 @@ import { ModalComponent } from './shared/modal/modal.component';
     BookacallComponent,
     DummyComponent,
     NewbookingComponent,
-    ModalComponent,
+    LandingComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,11 @@ import { ModalComponent } from './shared/modal/modal.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RatingModule
+    RatingModule,
+    Carousel,
+    TagModule,
+    ButtonModule,
+    GalleriaModule
   ],
   providers: [provideHttpClient(withFetch())], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],

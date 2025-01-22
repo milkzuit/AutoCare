@@ -40,8 +40,9 @@
               "src/styles.css",
               "public/assets/css/styles.min.css",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css", 
-              "node_modules/primeng/resources/primeng.min.css"
+              "public/assets/libs/flaticon/font/flaticon.css",
+              "public/assets/libs/animate/animate.min.css",
+              "public/assets/libs/owlcarousel/assets/owl.carousel.min.css"
             ],
             "scripts": [
               "public/assets/libs/jquery/dist/jquery.min.js",
@@ -50,7 +51,12 @@
               "public/assets/js/app.min.js",
               "public/assets/libs/apexcharts/dist/apexcharts.min.js",
               "public/assets/libs/simplebar/dist/simplebar.js",
-              "public/assets/js/dashboard.js"
+              "public/assets/js/dashboard.js",
+              "public/assets/js/main.js",
+              "public/assets/libs/easing/easing.min.js",
+              "public/assets/libs/owlcarousel/owl.carousel.min.js",
+              "public/assets/libs/waypoints/waypoints.min.js",
+              "public/assets/libs/counterup/counterup.min.js"
             ]
           },
           "configurations": {

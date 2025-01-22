@@ -20,12 +20,14 @@ import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { ReviewComponent } from './shared/review/review.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
   // final
   { path: "", component: HeroComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
+  { path: "landing", component: LandingComponent },
   { path: "store-locator", component: StoreLocatorComponent },
   { path: "profile", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },
