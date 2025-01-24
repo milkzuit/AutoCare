@@ -21,15 +21,18 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 const routes: Routes = [
   // final
   { path: "", component: LandingComponent },
+
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "contact", component: ContactComponent },
 
-  // 
+  { path: "contact", component: ContactComponent },
+  { path: "blog", component: BlogComponent },
+
   { path: "store-locator", component: StoreLocatorComponent },
   { path: "profile", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },
