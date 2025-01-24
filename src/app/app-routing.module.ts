@@ -24,10 +24,11 @@ import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
   // final
-  { path: "", component: HeroComponent },
+  { path: "", component: LandingComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "landing", component: LandingComponent },
+
+  // 
   { path: "store-locator", component: StoreLocatorComponent },
   { path: "profile", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },

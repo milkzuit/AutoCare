@@ -1,6 +1,3 @@
-# Customer Reviews
+#
 
-- image url
-- comment
-- name
-- review frm where
+- #202c45
