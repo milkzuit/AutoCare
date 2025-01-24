@@ -6,7 +6,6 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import { CardsComponent } from './shared/cards/cards.component';
 import { StoreComponent } from './template/store/store.component';
 import { DisplayComponent } from './display/display.component';
 import { NearMeComponent } from './template/near-me/near-me.component';
@@ -21,12 +20,14 @@ import { ReviewComponent } from './shared/review/review.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   // final
   { path: "", component: LandingComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
+  { path: "contact", component: ContactComponent },
 
   // 
   { path: "store-locator", component: StoreLocatorComponent },
@@ -46,7 +47,6 @@ const routes: Routes = [
 
   // testing
   { path: "feedback", component: FeedbackComponent },
-  {path:"cards", component: CardsComponent},
   {path:"store", component: StoreComponent},
   { path: "d", component: DummyComponent },
   { path: "dd", component: Dummy2Component },

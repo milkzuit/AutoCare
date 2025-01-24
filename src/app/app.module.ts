@@ -18,7 +18,6 @@ import { AppComponent } from './app.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
 
-import { CardsComponent } from './shared/cards/cards.component';
 import { StoreComponent } from './template/store/store.component';
 import { DisplayComponent } from './display/display.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
@@ -37,6 +36,7 @@ import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,6 @@ import { LandingComponent } from './pages/landing/landing.component';
     SimplePageComponent,
     MyProfileComponent,
     FeedbackComponent,
-    CardsComponent,
     StoreComponent,
     DisplayComponent,
     NearMeComponent,
@@ -69,6 +68,7 @@ import { LandingComponent } from './pages/landing/landing.component';
     DummyComponent,
     NewbookingComponent,
     LandingComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
