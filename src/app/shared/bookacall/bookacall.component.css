@@ -47,6 +47,7 @@
 .col-md-8, .col-lg-6, .col-xxl-4 {
     max-width: 100%;
     width: 100%;
+    align-items: center;
 }
 
 /* Additional responsiveness adjustments */
@@ -60,6 +61,7 @@
 
 /* Optional: Adjust padding inside the card */
 .card-body {
+    align-items: center;
     padding: 20px;  /* Reduce padding */
 }
 
