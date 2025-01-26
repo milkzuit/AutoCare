@@ -54,8 +54,6 @@ const routes: Routes = [
   { path: "pe", component: ProfileEditComponent },
   { path: "bookacall", component: BookacallComponent },
   { path: "review", component: ReviewComponent },
-  { path: "d", component: DummyComponent },
-  { path: "", component: Dummy2Component },
   { path: "nb", component: NewbookingComponent },
 
 ];
