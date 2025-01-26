@@ -46,15 +46,16 @@
               "public/assets/libs/owlcarousel/assets/owl.carousel.min.css"
             ],
             "scripts": [
+              "public/assets/js/dashboard.js",
+              "public/assets/libs/apexcharts/dist/apexcharts.min.js",
+              "public/assets/js/sidebarmenu.js",
               "public/assets/libs/jquery/dist/jquery.min.js",
               "public/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
               "public/assets/libs/easing/easing.min.js",
               "public/assets/libs/owlcarousel/owl.carousel.min.js",
               "public/assets/libs/waypoints/waypoints.min.js",
               "public/assets/libs/counterup/counterup.min.js",
-              "public/assets/js/sidebarmenu.js",
               "public/assets/js/app.min.js",
-              "public/assets/js/dashboard.js",
               "public/assets/js/main.js"
             ]
           },
