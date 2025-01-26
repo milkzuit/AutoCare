@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NewsService } from '../../news.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,24 +8,27 @@ import { Component } from '@angular/core';
   styleUrl: './blog.component.css',
 })
 export class BlogComponent {
-  news: any[] = [];
-  apiUrl: string =
-    'https://newsapi.org/v2/everything?q=car&apiKey=3472d5e6cd7f4cc090794e0e2764c757';
+  newsArticles: any[] = [];
+  page = 1;
+  pageSize = 5; // Number of articles to load at a time
+  loading = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    this.fetchNews();
+    this.loadNews();
   }
 
-  fetchNews(): void {
-    this.http.get(this.apiUrl).subscribe((response: any) => {
-      this.news = response.articles.filter(
-        (article: any) =>
-          article.title &&
-          (article.title.toLowerCase().includes('service') ||
-            article.title.toLowerCase().includes('model'))
-      );
+  loadNews(): void {
+    this.loading = true;
+    this.newsService.getNews(this.page, this.pageSize).subscribe((data) => {
+      this.newsArticles = this.newsArticles.concat(data.articles);
+      this.loading = false;
     });
+  }
+
+  onScroll(): void {
+    this.page++;
+    this.loadNews();
   }
 }

@@ -39,11 +39,8 @@ import { DummyComponent } from './shared/dummy/dummy.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
-<<<<<<< HEAD
 import { BlogComponent } from './pages/blog/blog.component';
-=======
 import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scroll";
->>>>>>> fathimalanding
 
 @NgModule({
   declarations: [
