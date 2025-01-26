@@ -1,3 +1,5 @@
+import { NewsService } from './news.service';
+import { IInfiniteScrollAction } from './../../node_modules/ngx-infinite-scroll/models.d';
 import { RatingModule } from 'primeng/rating';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,7 +39,11 @@ import { DummyComponent } from './shared/dummy/dummy.component';
 import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
+<<<<<<< HEAD
 import { BlogComponent } from './pages/blog/blog.component';
+=======
+import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scroll";
+>>>>>>> fathimalanding
 
 @NgModule({
   declarations: [
@@ -80,8 +86,9 @@ import { BlogComponent } from './pages/blog/blog.component';
     FormsModule,
     ReactiveFormsModule,
     RatingModule,
+    InfiniteScrollDirective
   ],
-  providers: [provideHttpClient(withFetch())], // Enable the fetch API for HttpClient
+  providers: [provideHttpClient(withFetch()), NewsService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],
 })
 export class AppModule {}
