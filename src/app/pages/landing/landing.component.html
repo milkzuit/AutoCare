@@ -73,17 +73,6 @@
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About</a>
           <a href="service.html" class="nav-item nav-link">Service</a>
-          <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
-              >Pages</a
-            >
-            <div class="dropdown-menu">
-              <a href="blog.html" class="dropdown-item">Blog Grid</a>
-              <a href="single.html" class="dropdown-item">Detail Page</a>
-              <a href="team.html" class="dropdown-item">Team Member</a>
-              <a href="booking.html" class="dropdown-item">Schedule Booking</a>
-            </div>
-          </div>
           <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
         <div class="ml-auto">
@@ -95,28 +84,6 @@
   </div>
 </div>
 <!-- Nav Bar End -->
-
-<!-- Carousel Start -->
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe
-          class="embed-responsive-item"
-          src="https://cloud.onlinegames.io/games/2021/2/monster-truck-mountain-climb/index-og.html"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- carousel.component.html -->
-<!-- carousel.component.html -->
-<!-- app.component.html -->
-
-
-
-<!-- Carousel End -->
 <div class="carousel-container">
   <div class="carousel-item" *ngFor="let image of images; let i = index" [ngClass]="{'active': i === currentImageIndex}">
     <img [src]="image.src" alt="Image {{i + 1}}">
@@ -612,81 +579,21 @@
     </div>
   </div>
 </div>
-<!-- Testimonial End -->
-
-<!-- Blog Start -->
-<!-- <div class="blog">
-  <div class="container">
-    <div class="section-header text-center">
-      <p>Our Blog</p>
-      <h2>Latest news & articles</h2>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="blog-item">
-          <div class="blog-img">
-            <img src="../assets/images/landing/blog-1.jpg" alt="Image" />
-            <div class="meta-date">
-              <span>01</span>
-              <strong>Jan</strong>
-              <span>2045</span>
-            </div>
-          </div>
-          <div class="blog-text">
-            <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
-            <p>
-              Lorem ipsum dolor sit amet elit. Pellent iaculis blandit lorem,
-              quis convall diam eleife. Nam in arcu sit amet massa ferment quis
-              enim. Nunc augue velit metus congue eget semper
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="blog-item">
-          <div class="blog-img">
-            <img src="../assets/images/landing/blog-2.jpg" alt="Image" />
-            <div class="meta-date">
-              <span>01</span>
-              <strong>Jan</strong>
-              <span>2045</span>
-            </div>
-          </div>
-          <div class="blog-text">
-            <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
-            <p>
-              Lorem ipsum dolor sit amet elit. Pellent iaculis blandit lorem,
-              quis convall diam eleife. Nam in arcu sit amet massa ferment quis
-              enim. Nunc augue velit metus congue eget semper
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="blog-item">
-          <div class="blog-img">
-            <img src="../assets/images/landing/blog-3.jpg" alt="Image" />
-            <div class="meta-date">
-              <span>01</span>
-              <strong>Jan</strong>
-              <span>2045</span>
-            </div>
-          </div>
-          <div class="blog-text">
-            <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
-            <p>
-              Lorem ipsum dolor sit amet elit. Pellent iaculis blandit lorem,
-              quis convall diam eleife. Nam in arcu sit amet massa ferment quis
-              enim. Nunc augue velit metus congue eget semper
-            </p>
-          </div>
-        </div>
+<!-- game container start -->
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          src="https://cloud.onlinegames.io/games/2021/2/monster-truck-mountain-climb/index-og.html"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </div>
-</div> -->
-<!-- Blog End -->
-
+</div>
+<!-- game container end -->
 <!-- Footer Start -->
 <div class="footer">
   <div class="container">
