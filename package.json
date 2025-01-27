@@ -22,12 +22,9 @@
     "@angular/router": "^18.2.0",
     "apexcharts": "^3.54.1",
     "bootstrap": "^5.2.3",
-<<<<<<< HEAD
     "ngx-infinite-scroll": "^18.0.0",
-=======
     "jQuery": "^1.7.4",
     "ng-apexcharts": "^1.15.0",
->>>>>>> mahi
     "primeicons": "^7.0.0",
     "primeng": "^18.0.2",
     "rxjs": "~7.8.0",
