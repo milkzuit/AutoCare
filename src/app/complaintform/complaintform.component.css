@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  /* Form container styling */
+  .form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Logo and title styling */
+  .text-center img {
+    max-width: 200px;
+    margin-bottom: 15px;
+  }
+
+  h5 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+  }
+
+  /* Label styling */
+  .form-label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+  }
+
+  /* Input styling */
+  .form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  /* Textarea styling */
+  textarea.form-control {
+    resize: vertical;
+    height: 120px;
+  }
+
+  /* Button styling */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  /* Margin bottom for form inputs */
+  .mb-4 {
+    margin-bottom: 20px;
+  }
+
+  /* Specific input file styling */
+  input[type="file"] {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 20px;
+      width: 90%;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+
+    .btn-primary {
+      font-size: 14px;
+    }
+  }

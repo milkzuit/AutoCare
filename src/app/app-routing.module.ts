@@ -20,6 +20,7 @@ import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
 import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
+import { ComplaintformComponent } from './complaintform/complaintform.component';
 
 const routes: Routes = [
   // final
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: "dd", component: Dummy2Component },
   { path: "ps", component: ProfileShowComponent },
   { path: "pe", component: ProfileEditComponent },
+  { path: "complaint", component: ComplaintformComponent },
 
 ];
 

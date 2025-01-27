@@ -1,0 +1,48 @@
+  
+  <body>
+    <div class="container">
+      <div class="row mx-0 justify-content-center">
+        <div class="col-md-7 col-lg-5 col-xl-4 px-3" style="width: 50%; margin-top: 20px; margin-right: 20px;">
+          <form method="POST" class="form-container" action="https://api.web3forms.com/submit" onsubmit="return sender()" enctype="multipart/form-data">
+            <input type="hidden" name="access_key" value="1cef4203-9440-4a3e-b614-b339158304eb">
+    
+            <div class="text-center">
+                <img src="assets/images/logos/AUTO .svg" width="250" alt=""/>
+                <h5 class="d-block mb-4">Place your Complaints here!</h5>
+            </div>
+
+    
+            <label class="d-block mb-4">
+              <span class="form-label d-block">Date of filling the form:</span>
+              <input name="name" type="date" class="form-control" />
+            </label>
+    
+            <label class="d-block mb-4">
+              <span class="form-label d-block">Complainant's Name:</span>
+              <input name="name" type="text" class="form-control" placeholder="" id="inputFirstName" required />
+            </label>
+    
+            <label class="d-block mb-4">
+              <span class="form-label d-block">Email address</span>
+              <input name="email" type="email" class="form-control" placeholder="" id="inputEmail" required />
+            </label>
+    
+            <label class="d-block mb-4">
+              <span class="form-label d-block">Receipt/Proof of Bill</span>
+              <input name="receipt" type="file" class="form-control" accept=".jpg, .jpeg, .png, .pdf" id="inputProof" />
+            </label>
+    
+            <label class="d-block mb-4">
+              <span class="form-label d-block">The complaint is regarding:</span>
+              <textarea name="message" class="form-control" rows="3" placeholder="Please describe your problem" id="inputMessage" required></textarea>
+            </label>
+    
+            <div class="mb-3 text-center">
+              <button type="submit" class="btn btn-primary px-3 rounded-3">Submit <i class="ti ti-pencil"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  

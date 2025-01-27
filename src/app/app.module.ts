@@ -33,6 +33,7 @@ import { AdvantagesComponent } from './miscellaneous/advantages/advantages.compo
 import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
 import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
+import { ComplaintformComponent } from './complaintform/complaintform.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ProfileEditComponent } from './shared/profile-edit/profile-edit.compone
     AdvantagesComponent,
     StoreLocatorComponent,
     ProfileShowComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    ComplaintformComponent
   ],
   imports: [
     BrowserModule,
