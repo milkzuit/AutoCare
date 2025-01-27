@@ -1,0 +1,221 @@
+ /* General container styling */
+ .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.navbar {
+  position: relative;
+}
+
+.navbar-brand {
+  position: absolute;
+  left: 0;
+}
+
+/* Styling for the service boxes */
+.service-box {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-box button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.service-box button.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Fixed Cart Icon */
+.cart-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #5d87ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.cart-icon:hover {
+  background-color: #4a74e8;
+}
+
+/* Backdrop Style with Blur */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+/* Shopping Cart Popup */
+.cart-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  z-index: 1100;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-popup.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Cart Header */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  color: #dc3545;
+}
+
+/* Cart Content */
+.cart-content {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-content .list-group-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+/* Buttons Styling */
+.cart-actions {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.cart-actions .btn {
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.cart-actions .btn-warning {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.cart-actions .btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.cart-actions .btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.cart-actions .btn-success:hover {
+  background-color: #218838;
+}
+.price-tag{
+  font-weight: bolder;
+}
+
+/* Responsive Styling */
+@media (max-width: 576px) {
+  .cart-popup {
+    padding: 15px;
+  }
+
+  .cart-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .cart-content .list-group-item {
+    padding: 10px;
+  }
+}
+
+
+
+
+/* Responsive behavior for medium screens */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+
+/* Responsive behavior for small screens */
+@media (max-width: 576px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive behavior for service boxes */
+@media (max-width: 768px) {
+  .service-box {
+    padding: 15px;
+  }
+
+  .service-box h4 {
+    font-size: 1rem;
+  }
+
+  .service-box p {
+    font-size: 0.9rem;
+  }
+}

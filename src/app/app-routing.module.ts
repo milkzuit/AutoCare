@@ -11,6 +11,8 @@ import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CallBookingComponent } from './call-booking/call-booking.component';
+import { CarServicesComponent } from './car-services/car-services.component';
+
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -26,7 +28,9 @@ const routes: Routes = [
   { path: "", component: SimplePageComponent },
 
   { path: "feedback", component: FeedbackComponent },
-  {path: "call_booking", component: CallBookingComponent }
+  {path: "call_booking", component: CallBookingComponent },
+  {path:"car_services", component:CarServicesComponent }
+  
   
 ];
 

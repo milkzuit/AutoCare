@@ -1,0 +1,119 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5d87ff;">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/logo.png" alt="AutoCare Logo" style="height: 40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section with Video Cover -->
+<div class="hero-container position-relative">
+  <video autoplay loop muted class="w-100" style="object-fit: cover; height: 100vh;">
+    <source src="assets/videos/bluecar.mp4" type="video/mp4">
+    <source src="assets/videos/bluecar.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white">
+    <h1>Experience Premium Car Services</h1>
+    <p>Get your car serviced by the experts. We provide top-notch maintenance and repair services.</p>
+    <a (click)="scrollToServices()" class="btn btn-primary">Explore Our Services</a>
+  </div>
+</div>
+
+<!-- Service Cards -->
+<div id="services-Section" class="container my-5">
+  <h2 class="text-center mb-4" style="color: #5d87ff;">Our CAR Services</h2>
+  <div class="row">
+    <div *ngFor="let service of services" class="col-md-4 col-sm-6 mb-4">
+      <div #serviceElement class="service-box shadow-lg p-4 text-center rounded">
+        <div class="service-icon mb-3">
+          <i [class]="service.icon + ' fa-3x'" style="color: #5d87ff;"></i>
+        </div>
+        <h4>{{ service.name }}</h4>
+        <p>{{ service.description }}</p>
+        <p class="price-tag">₹{{ service.price }}</p>
+        <button 
+          class="btn btn-primary"
+          [ngClass]="{'btn-success': isInCart(service)}"
+          (click)="toggleCart(service)">
+          {{ isInCart(service) ? 'In Cart' : 'Add to Cart' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Icon -->
+<div class="cart-icon-wrapper position-fixed bottom-0 end-0 m-4">
+  <button class="cart-icon btn btn-light position-relative shadow" (click)="toggleCartPopup()">
+    <i class="fas fa-shopping-bag fa-2x"></i>
+    <span *ngIf="cart.length > 0" class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-circle">
+      {{ cart.length }}
+    </span>
+  </button>
+</div>
+
+<!-- Backdrop -->
+<div class="backdrop" *ngIf="showCartPopup" (click)="toggleCartPopup()"></div>
+
+<!-- Shopping Cart Popup -->
+<div class="cart-popup" [ngClass]="{'show': showCartPopup}">
+  <div class="cart-header">
+    <h3 class="text-center">AutoCare Cart</h3>
+    <button class="close-btn" (click)="toggleCartPopup()">×</button>
+  </div>
+
+  <!-- If the cart has items -->
+  <div *ngIf="cart.length > 0" class="cart-content">
+    <ul class="list-group overflow-auto" style="max-height: 300px;">
+      <li *ngFor="let item of cart" class="list-group-item d-flex justify-content-between align-items-center">
+        <span>{{ item.name }} - ₹{{ item.price }}</span>
+        <button class="btn btn-danger btn-sm" (click)="removeFromCart(item)">Remove</button>
+      </li>
+    </ul>
+
+    <!-- Cart Summary -->
+    <div class="bill-receipt-container mt-4">
+      <div class="bill-receipt" id="cart-bill">
+        <div class="bill-row">
+          <p><strong>Subtotal:</strong> ₹{{ calculateSubtotal() }}</p>
+        </div>
+        <div class="bill-row">
+          <p><strong>GST (18%):</strong> ₹{{ calculateGST() }}</p>
+        </div>
+        <div class="bill-row total-row">
+          <h5><strong>Grand Total:</strong> ₹{{ calculateGrandTotal() }}</h5>
+        </div>
+        <p class="thank-you">Thank you for choosing AutoCare!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div *ngIf="cart.length > 0" class="cart-actions d-flex justify-content-between mt-3">
+    <button class="btn btn-warning w-45" (click)="clearCart()">Clear Cart</button>
+    <button class="btn btn-success w-45" (click)="checkout()">Checkout</button>
+  </div>
+
+  <!-- If the cart is empty -->
+  <div *ngIf="cart.length === 0" class="empty-cart text-center mt-4">
+    <p>Your cart is empty. Add some services to the cart!</p>
+    <button class="btn btn-primary" (click)="scrollToServices()" (click)="toggleCartPopup()">Browse Services</button>
+  </div>
+</div>
+
+
+<!-- External Libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>

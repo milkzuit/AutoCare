@@ -17,6 +17,8 @@ import { AppComponent } from './app.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
 import { CallBookingComponent } from './call-booking/call-booking.component';
+import { CarServicesComponent } from './car-services/car-services.component';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -33,7 +35,9 @@ import { CallBookingComponent } from './call-booking/call-booking.component';
     SimplePageComponent,
     MyProfileComponent,
     FeedbackComponent,
-    CallBookingComponent
+    CallBookingComponent,
+    CarServicesComponent,
+    
   ],
   imports: [
     BrowserModule,
