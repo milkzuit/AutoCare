@@ -521,6 +521,94 @@ a:focus {
 }
 
 /*******************************/
+/******* how it woeks*******/
+.how-it-works {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.how-it-works .section-header p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color:#38b6ff ;
+}
+
+.how-it-works .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.service-card {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.number {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #38b6ff;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.service-content {
+  transition: none; /* Remove opacity transition */
+}
+
+.service-details {
+  display: none; /* Initially hidden */
+}
+
+.service-card:hover .service-details {
+  display: block; /* Show details when hovering */
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.service-text {
+  color: #6c757d;
+}
+
+.service-img {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-details p {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .service-card {
+    margin-bottom: 20px;
+  }
+}
+
+/*******************************/
 /******* Page Header CSS *******/
 /*******************************/
 .page-header {
