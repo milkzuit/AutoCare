@@ -322,201 +322,135 @@ a:focus {
 /*******************************/
 /********** Hero CSS ***********/
 /*******************************/
-.carousel {
+/**************carousel*************/
+.carousel-container {
   position: relative;
   width: 100%;
-  min-height: 400px;
-  background: #ffffff;
-  margin-bottom: 45px;
-}
-
-.carousel .container-fluid {
-  padding: 0;
-}
-
-.carousel .carousel-item {
-  position: relative;
-  width: 100%;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.carousel .carousel-img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 400px;
-  text-align: right;
+  height: 400px; /* Adjust as per your design */
   overflow: hidden;
 }
 
-.carousel .carousel-img::after {
+.carousel-item {
   position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+  opacity: 0;
 }
 
-.carousel .carousel-img img {
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.carousel .carousel-text {
+.carousel-text {
   position: absolute;
-  max-width: 992px;
-  padding: 0 15px;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-text h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.carousel-text p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/*****************carousel ends**************/
+/******* how it woeks*******/
+.how-it-works {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.how-it-works .section-header p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color:#38b6ff ;
+}
+
+.how-it-works .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.service-card {
+  position: relative;
+  padding: 20px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 2;
-}
-
-.carousel .carousel-text h3 {
-  color: #38b6ff;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 0px;
-}
-
-.carousel .carousel-text h1 {
-  color: #ffffff;
-  font-size: 90px;
-  font-weight: 700;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  text-transform: capitalize;
 }
 
-.carousel .carousel-text p {
-  max-width: 500px;
-  color: #ffffff;
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-
-.carousel .btn.btn-custom {
-  padding: 20px 45px 22px 45px;
-  color: #ffffff;
-}
-
-.carousel .btn.btn-custom:hover {
-  color: #38b6ff;
-}
-
-.carousel .owl-nav {
+.number {
   position: absolute;
-  width: 100%;
-  height: 50px;
-  top: calc(50% - 25px);
-  left: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #38b6ff;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   display: flex;
-  justify-content: space-between;
-  z-index: 9;
-}
-
-.carousel .owl-nav .owl-prev,
-.carousel .owl-nav .owl-next {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: #ffffff;
-  border-radius: 50px;
-  background: rgba(256, 256, 256, 0.2);
-  font-size: 22px;
-  transition: 0.5s;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.carousel .owl-nav .owl-prev {
-  margin-left: 30px;
+.service-content {
+  transition: none; /* Remove opacity transition */
 }
 
-.carousel .owl-nav .owl-next {
-  margin-right: 30px;
+.service-details {
+  display: none; /* Initially hidden */
 }
 
-.carousel .owl-nav .owl-prev:hover,
-.carousel .owl-nav .owl-next:hover {
-  color: #ffffff;
-  background: #38b6ff;
+.service-card:hover .service-details {
+  display: block; /* Show details when hovering */
 }
 
-.carousel .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+.service-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
-@media (max-width: 991.98px) {
-  .carousel .carousel-text h3 {
-    margin-bottom: 5px;
-  }
-
-  .carousel .carousel-text h1 {
-    font-size: 60px;
-  }
-
-  .carousel .carousel-text p {
-    font-size: 16px;
-  }
-
-  .carousel .carousel-text .btn {
-    padding: 12px 30px;
-    font-size: 15px;
-    letter-spacing: 0;
-  }
+.service-text {
+  color: #6c757d;
 }
 
-@media (max-width: 767.98px) {
-  .carousel .carousel-text h3 {
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-  }
-
-  .carousel .carousel-text h1 {
-    font-size: 45px;
-  }
-
-  .carousel .carousel-text .btn {
-    padding: 10px 25px;
-    font-size: 15px;
-    letter-spacing: 0;
-  }
+.service-img {
+  width: 60%;
+  max-width: 300px;
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (max-width: 575.98px) {
-  .carousel .carousel-text h3 {
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
+.service-details p {
+  margin-bottom: 10px;
+}
 
-  .carousel .carousel-text h1 {
-    font-size: 30px;
-    margin-bottom: 15px;
-  }
-
-  .carousel .carousel-text p {
-    margin-bottom: 25px;
-  }
-
-  .carousel .carousel-text .btn {
-    padding: 8px 20px;
-    font-size: 14px;
-    letter-spacing: 0;
+@media (max-width: 767px) {
+  .service-card {
+    margin-bottom: 20px;
   }
 }
 
@@ -711,8 +645,71 @@ a:focus {
 }
 
 /*******************************/
+/* app.component.css */
+
+
+
 /********* Service CSS *********/
+/* Styling for the service icon (image) */
+.service-icon {
+  width: 100%;   /* Full width of the parent column */
+  height: 200px; /* Adjust height to fit your design */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 8px; /* Rounded corners for the images */
+}
+
+/* Add hover effect on the service item */
+.service-item {
+  position: relative; /* Position the image and overlay */
+  text-align: center;
+  overflow: hidden; /* Prevent the overlay from spilling out of the service item */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+/* Gradient overlay effect on hover */
+.service-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.6), rgba(100, 149, 237, 0.6)); /* Pinkish-blue gradient */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* Put the overlay above the image */
+}
+
+/* Apply the hover effect */
+.service-item:hover .service-icon {
+  filter: brightness(0.7); /* Slightly darken the image to enhance the effect */
+}
+
+.service-item:hover::after {
+  opacity: 1; /* Show the overlay when hovering */
+}
+
+/* Ensure text is visible on top of the overlay */
+.service-item h3,
+.service-item p {
+  position: relative;
+  z-index: 2; /* Ensure text appears above the overlay */
+  color: #101419; /* White text for better contrast */
+}
+
+/* Optional: Add some hover animations for text */
+.service-item:hover h3,
+.service-item:hover p {
+  transform: translateY(-10px); /* Slightly move text upwards on hover */
+  transition: transform 0.3s ease;
+}
+
 /*******************************/
+
 .service {
   position: relative;
   width: 100%;
@@ -754,6 +751,37 @@ a:focus {
 .service .service-item p {
   margin: 0;
 }
+/* Styling for the service icon (image) */
+.service-icon {
+  width: 100px;   /* Set the width to match the typical size of an icon */
+  height: 100px;  /* Maintain square aspect ratio for the icon */
+  object-fit: contain; /* Ensures the image is contained without stretching */
+  margin-bottom: 20px;  /* Space between the image and the title */
+  display: block;  /* Ensures the image doesn't have inline space */
+  margin-left: auto;  /* Center align the image horizontally */
+  margin-right: auto;  /* Center align the image horizontally */
+}
+
+.service-item {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.service-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.service-item p {
+  color: #6c757d;
+  font-size: 14px;
+}
+
 
 /*******************************/
 /********** Facts CSS **********/
@@ -927,7 +955,9 @@ a:focus {
 /*******************************/
 /******** Location CSS *********/
 /*******************************/
-.location {
+/* For the .row to be scrollable (Washing points) */
+
+ .location {
   position: relative;
   width: 100%;
   padding: 45px 0;
@@ -1009,6 +1039,40 @@ a:focus {
   background: #ffffff;
   box-shadow: inset 0 0 0 0 #000;
 }
+/* Wrapper for the scrolling section */
+.location-wrapper {
+  height: 400px;  /* Set a fixed height, adjust as needed */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding-right: 15px; /* Adds space for scrollbar */
+}
+
+/* Optional: Styling for each location item */
+.location-item {
+  padding: 15px;
+  border: 1px solid #ddd;  /* Adds border around each location item */
+  margin-bottom: 15px;  /* Space between items */
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Optional: Styling for the location text */
+.location-text {
+  padding-left: 10px;
+}
+
+/* Optional: Styling for icons */
+.location-item i {
+  font-size: 30px;
+  color: #007bff;
+  margin-right: 15px;
+}
+
+/* Making the location items responsive */
+@media (max-width: 768px) {
+  .location-item {
+    padding: 10px;
+  }
+}
 
 .location .location-form .btn.btn-custom:hover {
   color: #ffffff;
@@ -1020,7 +1084,7 @@ a:focus {
   .location .location-form .btn.btn-custom:hover {
     box-shadow: inset 650px 0 0 0 #000;
   }
-}
+} 
 
 /*******************************/
 /*********** Team CSS **********/

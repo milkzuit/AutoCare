@@ -97,6 +97,7 @@
 <!-- Nav Bar End -->
 
 <!-- Carousel Start -->
+<<<<<<< HEAD
 <div class="container mt-4">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10">
@@ -110,91 +111,105 @@
     </div>
   </div>
 </div>
+=======
+<!-- carousel.component.html -->
+<!-- carousel.component.html -->
+<!-- app.component.html -->
+
+
+
+>>>>>>> mahi
 <!-- Carousel End -->
+<div class="carousel-container">
+  <div class="carousel-item" *ngFor="let image of images; let i = index" [ngClass]="{'active': i === currentImageIndex}">
+    <img [src]="image.src" alt="Image {{i + 1}}">
+    <div class="carousel-text">
+      <h3>{{ image.title }}</h3>
+      <p>{{ image.subtitle }}</p>
+    </div>
+  </div>
+</div>
 
 <!--  -->
-<div class="service py-5">
+<div class="how-it-works">
   <div class="container">
     <div class="section-header text-center">
-      <p>What We Do?</p>
-      <h2>Premium Washing Services</h2>
+      <p>How It Works</p>
     </div>
-    <div class="row g-4">
-      <!-- Card 1 -->
+    <div class="row">
       <div class="col-lg-3 col-md-6">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <img
-              src="assets/images/logos/number-one.png"
-              alt="Number 1"
-              class="img-fluid mb-3"
-              style="width: 60px"
-            />
-            <h5 class="card-title fw-bold">Exterior Washing</h5>
-            <p class="card-text text-muted">
-              Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare
-              velit non metus tortor.
-            </p>
+        <div class="service-card">
+          <div class="number">
+            <span>1</span>
+          </div>
+          <div class="service-content">
+            <h5 class="service-title">Select The Perfect Car Service</h5>
+            <div class="service-details">
+              <p class="service-text">
+                From AutoCare's board portfolio Of services
+              </p>
+              <img src="assets/images/landing/2.png" alt="Exterior Washing" class="service-img" />
+            </div>
           </div>
         </div>
       </div>
-      <!-- Card 2 -->
+
       <div class="col-lg-3 col-md-6">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <img
-              src="assets/images/logos/number-2.png"
-              alt="Number 2"
-              class="img-fluid mb-3"
-              style="width: 60px"
-            />
-            <h5 class="card-title fw-bold">Interior Washing</h5>
-            <p class="card-text text-muted">
-              Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare
-              velit non metus tortor.
-            </p>
+        <div class="service-card">
+          <div class="number">
+            <span>2</span>
+          </div>
+          <div class="service-content">
+            <h5 class="service-title">Schedule Free Door- Step Pickup</h5>
+            <div class="service-details">
+              <p class="service-text">
+                We offer free pick up and drop for all services booked
+              </p>
+              <img src="assets/images/landing/4.png" alt="Interior Washing" class="service-img" />
+            </div>
           </div>
         </div>
       </div>
-      <!-- Card 3 -->
+
       <div class="col-lg-3 col-md-6">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <img
-              src="assets/images/logos/number-3.png"
-              alt="Number 3"
-              class="img-fluid mb-3"
-              style="width: 60px"
-            />
-            <h5 class="card-title fw-bold">Vacuum Cleaning</h5>
-            <p class="card-text text-muted">
-              Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare
-              velit non metus tortor.
-            </p>
+        <div class="service-card">
+          <div class="number">
+            <span>3</span>
+          </div>
+          <div class="service-content">
+            <h5 class="service-title">Track Your Car Service Real-Time</h5>
+            <div class="service-details">
+              <p class="service-text">
+                We will take care of everything from here..Be Worry Free
+              </p>
+              <img src="assets/images/landing/3.png" alt="Vacuum Cleaning" class="service-img" />
+            </div>
           </div>
         </div>
       </div>
-      <!-- Card 4 -->
+
       <div class="col-lg-3 col-md-6">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <img
-              src="assets/images/logos/number-four.png"
-              alt="Number 4"
-              class="img-fluid mb-3"
-              style="width: 60px"
-            />
-            <h5 class="card-title fw-bold">Engine Detailing</h5>
-            <p class="card-text text-muted">
-              Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare
-              velit non metus tortor.
-            </p>
+        <div class="service-card">
+          <div class="number">
+            <span>4</span>
+          </div>
+          <div class="service-content">
+            <h5 class="service-title">Earn While We Service Your Car</h5>
+            <div class="service-details">
+              <p class="service-text">
+               Spread the word! You get 40% off. Your friends get Rs.700
+              </p>
+              <img src="assets/images/landing/5.png" alt="Engine Detailing" class="service-img" />
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 <!--  -->
 
 <!-- About Start -->
@@ -205,13 +220,13 @@
   <div class="container">
     <div class="section-header text-center">
       <p>What We Do?</p>
-      <h2>Premium Washing Services</h2>
+      <h2>Premium AutoCare Services</h2>
     </div>
     <div class="row">
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-car-wash-1"></i>
-          <h3>Exterior Washing</h3>
+          <img src="assets/images/landing/1.png" alt="Car Inspection" class="service-icon" />
+          <h3>Periodic Services</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
@@ -220,8 +235,8 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-car-wash"></i>
-          <h3>Interior Washing</h3>
+          <img src="assets/images/landing/18.png" alt="Car Inspection" class="service-icon" />
+          <h3>AC Service and Repair</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
@@ -230,8 +245,8 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-vacuum-cleaner"></i>
-          <h3>Vacuum Cleaning</h3>
+          <img src="assets/images/landing/19.png" alt="Car Inspection" class="service-icon" />
+          <h3>Batteries</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
@@ -240,8 +255,8 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-seat"></i>
-          <h3>Seats Washing</h3>
+          <img src="assets/images/landing/15.png" alt="Car Inspection" class="service-icon" />
+          <h3>Tyres and Wheel Care</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
@@ -250,8 +265,8 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-car-service"></i>
-          <h3>Window Wiping</h3>
+          <img src="assets/images/landing/16.png" alt="Car Inspection" class="service-icon" />
+          <h3>Denting and Painting</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
@@ -260,8 +275,8 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-car-service-2"></i>
-          <h3>Wet Cleaning</h3>
+          <img src="assets/images/landing/17.png" alt="Car Inspection" class="service-icon" />
+          <h3>Detailing Services</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
@@ -270,8 +285,8 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-car-wash"></i>
-          <h3>Oil Changing</h3>
+          <img src="assets/images/landing/10.png" alt="Car Inspection" class="service-icon" />
+          <h3>Car Spa and Cleaning</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
@@ -280,17 +295,58 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <i class="flaticon-brush-1"></i>
-          <h3>Brake Reparing</h3>
+          <img src="assets/images/landing/13.png" alt="Car Inspection" class="service-icon" />
+          <h3>Car Inspection</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
           </p>
         </div>
       </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item">
+          <img src="assets/images/landing/14.png" alt="Car Inspection" class="service-icon" />
+          <h3>Wind Sheilds and Lights</h3>
+          <p>
+            Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
+            non metus tortor
+          </p>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item">
+          <img src="assets/images/landing/9.png" alt="Car Inspection" class="service-icon" />
+          <h3>Suspension and Fitments</h3>
+          <p>
+            Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
+            non metus tortor
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item">
+          <img src="assets/images/landing/11.png" alt="Car Inspection" class="service-icon" />
+          <h3>Clutch and Body Parts</h3>
+          <p>
+            Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
+            non metus tortor
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item">
+          <img src="assets/images/landing/12.png" alt="Car Inspection" class="service-icon" />
+          <h3> Insurance Claims</h3>
+          <p>
+            Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
+            non metus tortor
+          </p>
+        </div>
+      </div>
+      </div>      </div>
     </div>
-  </div>
-</div>
+
 <!-- Service End -->
 
 <!-- Facts Start -->
@@ -348,52 +404,106 @@
     <div class="row">
       <div class="col-lg-7">
         <div class="section-header text-left">
-          <p>Washing Points</p>
-          <h2>Car Washing & Care Points</h2>
+          <p>Service Points</p>
+          <h2>Auto Care Service Centers</h2>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="location-item">
-              <i class="fa fa-map-marker-alt"></i>
-              <div class="location-text">
-                <h3>Car Washing Point</h3>
-                <p>123 Street, New York, USA</p>
-                <p><strong>Call:</strong>+012 345 6789</p>
+        <div class="location-wrapper">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>123, Amman koil street, New York, USA</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="location-item">
-              <i class="fa fa-map-marker-alt"></i>
-              <div class="location-text">
-                <h3>Car Washing Point</h3>
-                <p>123 Street, New York, USA</p>
-                <p><strong>Call:</strong>+012 345 6789</p>
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>4/90, Vivekanandra Theru , Dubai</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="location-item">
-              <i class="fa fa-map-marker-alt"></i>
-              <div class="location-text">
-                <h3>Car Washing Point</h3>
-                <p>123 Street, New York, USA</p>
-                <p><strong>Call:</strong>+012 345 6789</p>
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p> Pisasupatti street, North Korea, NK</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="location-item">
-              <i class="fa fa-map-marker-alt"></i>
-              <div class="location-text">
-                <h3>Car Washing Point</h3>
-                <p>123 Street, New York, USA</p>
-                <p><strong>Call:</strong>+012 345 6789</p>
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>Valuuvar street, Valluvarkottam, England</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>123 Street, New York, USA</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>123 Street, New York, USA</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>123 Street, New York, USA</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat this block for each additional point -->
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>123 Street, New York, USA</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="location-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="location-text">
+                  <h3>Car Washing Point</h3>
+                  <p>123 Street, New York, USA</p>
+                  <p><strong>Call:</strong>+012 345 6789</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
       <div class="col-lg-5">
         <div class="location-form">
           <h3>Get instant quotes for your car service</h3>
@@ -508,7 +618,7 @@
 <!-- Testimonial End -->
 
 <!-- Blog Start -->
-<div class="blog">
+<!-- <div class="blog">
   <div class="container">
     <div class="section-header text-center">
       <p>Our Blog</p>
@@ -577,7 +687,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Blog End -->
 
 <!-- Footer Start -->
@@ -605,6 +715,15 @@
           <a href="#">About Us</a>
           <a href="#">Contact Us</a>
           <a href="#">Our Service</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-link">
+          <h2>Uselful Links</h2>
+          <a href="#">FAQs</a>
+          <a href="#">Cookies</a>
+          <a href="#">Terms Of Use</a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
