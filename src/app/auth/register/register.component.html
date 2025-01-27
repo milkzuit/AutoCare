@@ -1,12 +1,3 @@
-<head>
-  <link
-    rel="shortcut icon"
-    type="image/png"
-    href="assets\images\logos\android-chrome-192x192.png"
-  />
-  <!-- <link rel="stylesheet" href="../assets/css/styles.min.css" /> -->
-</head>
-
 <body>
   <!--  Body Wrapper -->
   <div
@@ -30,14 +21,10 @@
                   href="./index.html"
                   class="text-nowrap logo-img text-center d-block py-3 w-100"
                 >
-                  <img
-                    src="assets/images/logos/AUTO .svg"
-                    width="180"
-                    alt=""
-                  />
+                  <img src="assets/images/logos/AUTO.svg" width="180" alt="" />
                 </a>
                 <p class="text-center">Care For Car</p>
-                <form>
+                <form (ngSubmit)="onSubmit()">
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label"
                       >Name</label
@@ -47,6 +34,9 @@
                       class="form-control"
                       id="exampleInputtext1"
                       aria-describedby="textHelp"
+                      [(ngModel)]="registerData.username"
+                      name="username"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -58,6 +48,9 @@
                       class="form-control"
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
+                      [(ngModel)]="registerData.email"
+                      name="email"
+                      required
                     />
                   </div>
                   <div class="mb-4">
@@ -68,18 +61,20 @@
                       type="password"
                       class="form-control"
                       id="exampleInputPassword1"
+                      [(ngModel)]="registerData.password"
+                      name="password"
+                      required
                     />
                   </div>
-                  <a
-                    href="./index.html"
+                  <button
+                    type="submit"
                     class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2"
-                    >Sign Up</a
                   >
+                    Sign Up
+                  </button>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
-                    <a
-                      class="text-primary fw-bold ms-2"
-                      routerLink="/login"
+                    <a class="text-primary fw-bold ms-2" routerLink="/login"
                       >Sign In</a
                     >
                   </div>
@@ -91,6 +86,4 @@
       </div>
     </div>
   </div>
-  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
