@@ -1,5 +1,16 @@
 import { Component } from '@angular/core';
 
+import { Observable } from 'rxjs';
+import { ServicesService } from '../services/services.service';
+
+// Define the Service interface for better type safety
+interface Service {
+  name: string;
+  description: string;
+  icon: string;
+  price: number;
+}
+
 @Component({
   selector: 'app-car-services',
   templateUrl: './car-services.component.html',
@@ -7,27 +18,29 @@ import { Component } from '@angular/core';
 })
 export class CarServicesComponent {
   // List of available services with prices
-  services = [
-    { name: 'Oil Change', description: 'Quick and reliable oil change services for your vehicle.', icon: 'fas fa-oil-can', price: 999 },
-    { name: 'Engine Repair', description: 'Expert engine repair services to keep your car running smoothly.', icon: 'fas fa-tools', price: 4500 },
-    { name: 'Tire Services', description: 'Handle all tire-related issues, from tire change to repair.', icon: 'fas fa-car', price: 1200 },
-    { name: 'Brake Services', description: 'Brake repair, brake pad replacement, and brake fluid services.', icon: 'fas fa-car-crash', price: 1800 },
-    { name: 'Fluid Replacement', description: 'Replace essential fluids like transmission fluid, coolant, etc.', icon: 'fas fa-tint', price: 1500 },
-    { name: 'Battery Services', description: 'Battery testing, charging, and replacement services.', icon: 'fas fa-battery-full', price: 2500 },
-    { name: 'Air Conditioning & Heating', description: 'Ensure your A/C and heating system is fully operational.', icon: 'fas fa-snowflake', price: 3000 },
-    { name: 'Suspension & Steering', description: 'Inspect and replace suspension and steering components.', icon: 'fas fa-cogs', price: 4000 },
-    { name: 'Exhaust System Services', description: 'Repair or replace exhaust system to reduce noise and emissions.', icon: 'fas fa-exclamation-circle', price: 2200 },
-    { name: 'Windshield Services', description: 'Repair cracks or replace windshields for safety.', icon: 'fas fa-shield-alt', price: 2500 },
-    { name: 'Timing Belt Replacement', description: 'Prevent engine damage with timely timing belt replacement.', icon: 'fas fa-clock', price: 5000 },
-    { name: 'Fuel System Services', description: 'Fuel injector cleaning and fuel filter replacement.', icon: 'fas fa-gas-pump', price: 3000 },
-    { name: 'Clutch Services', description: 'Repair or replace manual car’s clutch for smooth gear transitions.', icon: 'fas fa-hand-paper', price: 7000 },
-    { name: 'Detailing & Cleaning', description: 'From exterior washes to full interior detailing and waxing.', icon: 'fas fa-broom', price: 1500 }
-  ];
-
-  cart: any[] = [];
+  services: Service[] = [];
+  cart: Service[] = [];
   showCartPopup = false;
 
-  toggleCart(service: any) {
+  constructor(private servicesService: ServicesService) {}
+
+  ngOnInit() {
+    // Fetch the services from the backend when the component initializes
+    this.fetchServices();
+  }
+
+  fetchServices(): void {
+    this.servicesService.getServices().subscribe(
+      (data: Service[]) => {
+        this.services = data; // Assign the fetched services to the local services array
+      },
+      (error: any) => {
+        console.error('Error fetching services', error);
+      }
+    );
+  }
+
+  toggleCart(service: Service): void {
     const index = this.cart.indexOf(service);
     if (index > -1) {
       this.cart.splice(index, 1);
@@ -36,11 +49,11 @@ export class CarServicesComponent {
     }
   }
 
-  isInCart(service: any): boolean {
+  isInCart(service: Service): boolean {
     return this.cart.includes(service);
   }
 
-  toggleCartPopup() {
+  toggleCartPopup(): void {
     this.showCartPopup = !this.showCartPopup;
   }
 
@@ -56,21 +69,21 @@ export class CarServicesComponent {
     return this.calculateSubtotal() + this.calculateGST();
   }
 
-  removeFromCart(service: any): void {
+  removeFromCart(service: Service): void {
     this.cart = this.cart.filter(item => item.name !== service.name);
   }
 
-  clearCart() {
+  clearCart(): void {
     this.cart = [];
     this.toggleCartPopup();
   }
 
-  checkout() {
+  checkout(): void {
     alert('Thank you for booking our services!');
     this.clearCart();
   }
 
-  scrollToServices() {
+  scrollToServices(): void {
     document.getElementById('services-Section')?.scrollIntoView({ behavior: 'smooth' });
   }
 }

@@ -18,6 +18,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
 import { CallBookingComponent } from './call-booking/call-booking.component';
 import { CarServicesComponent } from './car-services/car-services.component';
+import { HttpClientModule } from '@angular/common/http';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
@@ -41,7 +42,7 @@ import { CarServicesComponent } from './car-services/car-services.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule,CommonModule
+    AppRoutingModule, FormsModule,CommonModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
