@@ -323,6 +323,49 @@ a:focus {
 /********** Hero CSS ***********/
 /*******************************/
 /**************carousel*************/
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust as per your design */
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-text h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.carousel-text p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
 /*****************carousel ends**************/
 /******* how it woeks*******/
 .how-it-works {
@@ -602,8 +645,71 @@ a:focus {
 }
 
 /*******************************/
+/* app.component.css */
+
+
+
 /********* Service CSS *********/
+/* Styling for the service icon (image) */
+.service-icon {
+  width: 100%;   /* Full width of the parent column */
+  height: 200px; /* Adjust height to fit your design */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 8px; /* Rounded corners for the images */
+}
+
+/* Add hover effect on the service item */
+.service-item {
+  position: relative; /* Position the image and overlay */
+  text-align: center;
+  overflow: hidden; /* Prevent the overlay from spilling out of the service item */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+/* Gradient overlay effect on hover */
+.service-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.6), rgba(100, 149, 237, 0.6)); /* Pinkish-blue gradient */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* Put the overlay above the image */
+}
+
+/* Apply the hover effect */
+.service-item:hover .service-icon {
+  filter: brightness(0.7); /* Slightly darken the image to enhance the effect */
+}
+
+.service-item:hover::after {
+  opacity: 1; /* Show the overlay when hovering */
+}
+
+/* Ensure text is visible on top of the overlay */
+.service-item h3,
+.service-item p {
+  position: relative;
+  z-index: 2; /* Ensure text appears above the overlay */
+  color: #101419; /* White text for better contrast */
+}
+
+/* Optional: Add some hover animations for text */
+.service-item:hover h3,
+.service-item:hover p {
+  transform: translateY(-10px); /* Slightly move text upwards on hover */
+  transition: transform 0.3s ease;
+}
+
 /*******************************/
+
 .service {
   position: relative;
   width: 100%;
@@ -645,6 +751,37 @@ a:focus {
 .service .service-item p {
   margin: 0;
 }
+/* Styling for the service icon (image) */
+.service-icon {
+  width: 100px;   /* Set the width to match the typical size of an icon */
+  height: 100px;  /* Maintain square aspect ratio for the icon */
+  object-fit: contain; /* Ensures the image is contained without stretching */
+  margin-bottom: 20px;  /* Space between the image and the title */
+  display: block;  /* Ensures the image doesn't have inline space */
+  margin-left: auto;  /* Center align the image horizontally */
+  margin-right: auto;  /* Center align the image horizontally */
+}
+
+.service-item {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.service-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.service-item p {
+  color: #6c757d;
+  font-size: 14px;
+}
+
 
 /*******************************/
 /********** Facts CSS **********/

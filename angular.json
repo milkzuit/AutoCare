@@ -49,6 +49,7 @@
               "public/assets/libs/jquery/dist/jquery.min.js",
               "public/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
               "public/assets/libs/easing/easing.min.js",
+              
               "public/assets/libs/owlcarousel/owl.carousel.min.js",
               "public/assets/libs/waypoints/waypoints.min.js",
               "public/assets/libs/counterup/counterup.min.js",
