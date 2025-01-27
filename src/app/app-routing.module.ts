@@ -29,6 +29,7 @@ const routes: Routes = [
 
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
+  { path: "dashboard", component: DashboardComponent },
 
   { path: "contact", component: ContactComponent },
   { path: "blog", component: BlogComponent },
@@ -39,7 +40,6 @@ const routes: Routes = [
 
 
   // templates
-  { path: "dash", component: DashboardComponent },
   { path: "prof", component: MyProfileComponent },
   { path: "near", component: NearMeComponent },
   { path: "hero", component: HeroComponent },
