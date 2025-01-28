@@ -4,7 +4,7 @@
     <div class="row align-items-center">
       <div class="col-lg-4 col-md-12">
         <div class="logo">
-          <a href="index.html">
+          <a href="#">
             <h1>Auto<span>Care</span></h1>
           </a>
         </div>
@@ -70,32 +70,39 @@
         id="navbarCollapse"
       >
         <div class="navbar-nav mr-auto">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
-          <a href="about.html" class="nav-item nav-link">About</a>
-          <a href="service.html" class="nav-item nav-link">Service</a>
-          <a href="contact.html" class="nav-item nav-link">Contact</a>
+          <a href="#about" class="nav-item nav-link">About</a>
+          <a href="#services" class="nav-item nav-link">Service</a>
+          <a href="contact" class="nav-item nav-link">Contact</a>
+          <a href="blog" class="nav-item nav-link">Blog</a>
         </div>
         <div class="ml-auto">
           <a class="btn btn-custom" href="login">Login</a>
-          <a class="btn btn-custom1" href="register">Register</a>
+          <a class="btn btn-custom" href="register">Register</a>
         </div>
       </div>
     </nav>
   </div>
 </div>
 <!-- Nav Bar End -->
+
+<!-- Carousel start -->
 <div class="carousel-container">
-  <div class="carousel-item" *ngFor="let image of images; let i = index" [ngClass]="{'active': i === currentImageIndex}">
-    <img [src]="image.src" alt="Image {{i + 1}}">
+  <div
+    class="carousel-item"
+    *ngFor="let image of images; let i = index"
+    [ngClass]="{ active: i === currentImageIndex }"
+  >
+    <img [src]="image.src" alt="Image {{ i + 1 }}" />
     <div class="carousel-text">
       <h3>{{ image.title }}</h3>
       <p>{{ image.subtitle }}</p>
     </div>
   </div>
 </div>
+<!-- Carousel end -->
 
 <!--  -->
-<div class="how-it-works">
+<div class="how-it-works" id="about">
   <div class="container">
     <div class="section-header text-center">
       <p>How It Works</p>
@@ -112,7 +119,11 @@
               <p class="service-text">
                 From AutoCare's board portfolio Of services
               </p>
-              <img src="assets/images/landing/2.png" alt="Exterior Washing" class="service-img" />
+              <img
+                src="assets/images/landing/2.png"
+                alt="Exterior Washing"
+                class="service-img"
+              />
             </div>
           </div>
         </div>
@@ -129,7 +140,11 @@
               <p class="service-text">
                 We offer free pick up and drop for all services booked
               </p>
-              <img src="assets/images/landing/4.png" alt="Interior Washing" class="service-img" />
+              <img
+                src="assets/images/landing/4.png"
+                alt="Interior Washing"
+                class="service-img"
+              />
             </div>
           </div>
         </div>
@@ -146,7 +161,11 @@
               <p class="service-text">
                 We will take care of everything from here..Be Worry Free
               </p>
-              <img src="assets/images/landing/3.png" alt="Vacuum Cleaning" class="service-img" />
+              <img
+                src="assets/images/landing/3.png"
+                alt="Vacuum Cleaning"
+                class="service-img"
+              />
             </div>
           </div>
         </div>
@@ -161,9 +180,13 @@
             <h5 class="service-title">Earn While We Service Your Car</h5>
             <div class="service-details">
               <p class="service-text">
-               Spread the word! You get 40% off. Your friends get Rs.700
+                Spread the word! You get 40% off. Your friends get Rs.700
               </p>
-              <img src="assets/images/landing/5.png" alt="Engine Detailing" class="service-img" />
+              <img
+                src="assets/images/landing/5.png"
+                alt="Engine Detailing"
+                class="service-img"
+              />
             </div>
           </div>
         </div>
@@ -171,16 +194,10 @@
     </div>
   </div>
 </div>
-
-
-
 <!--  -->
 
-<!-- About Start -->
-<!-- About End -->
-
 <!-- Service Start -->
-<div class="service">
+<div class="service" id="services">
   <div class="container">
     <div class="section-header text-center">
       <p>What We Do?</p>
@@ -189,7 +206,11 @@
     <div class="row">
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/1.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/1.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Periodic Services</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -199,7 +220,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/18.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/18.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>AC Service and Repair</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -209,7 +234,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/19.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/19.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Batteries</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -219,7 +248,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/15.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/15.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Tyres and Wheel Care</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -229,7 +262,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/16.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/16.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Denting and Painting</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -239,7 +276,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/17.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/17.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Detailing Services</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -249,7 +290,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/10.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/10.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Car Spa and Cleaning</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -259,7 +304,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/13.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/13.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Car Inspection</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -269,7 +318,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/14.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/14.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Wind Sheilds and Lights</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -277,10 +330,14 @@
           </p>
         </div>
       </div>
-  
+
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/9.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/9.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Suspension and Fitments</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -290,7 +347,11 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/11.png" alt="Car Inspection" class="service-icon" />
+          <img
+            src="assets/images/landing/11.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
           <h3>Clutch and Body Parts</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
@@ -300,17 +361,21 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-item">
-          <img src="assets/images/landing/12.png" alt="Car Inspection" class="service-icon" />
-          <h3> Insurance Claims</h3>
+          <img
+            src="assets/images/landing/12.png"
+            alt="Car Inspection"
+            class="service-icon"
+          />
+          <h3>Insurance Claims</h3>
           <p>
             Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit
             non metus tortor
           </p>
         </div>
       </div>
-      </div>      </div>
     </div>
-
+  </div>
+</div>
 <!-- Service End -->
 
 <!-- Facts Start -->
@@ -398,7 +463,7 @@
                 <i class="fa fa-map-marker-alt"></i>
                 <div class="location-text">
                   <h3>Car Washing Point</h3>
-                  <p> Pisasupatti street, North Korea, NK</p>
+                  <p>Pisasupatti street, North Korea, NK</p>
                   <p><strong>Call:</strong>+012 345 6789</p>
                 </div>
               </div>
@@ -467,7 +532,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="col-lg-5">
         <div class="location-form">
           <h3>Get instant quotes for your car service</h3>
@@ -484,7 +549,7 @@
               <input
                 type="email"
                 class="form-control"
-                placeholder="Email"
+                placeholder="Email or Phone no."
                 required="required"
               />
             </div>
@@ -579,6 +644,7 @@
     </div>
   </div>
 </div>
+<!-- Testimonial End -->
 <!-- game container start -->
 <div class="container mt-4">
   <div class="row justify-content-center">
@@ -628,16 +694,6 @@
           <a href="#">FAQs</a>
           <a href="#">Cookies</a>
           <a href="#">Terms Of Use</a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="footer-link">
-          <h2>Useful Links</h2>
-          <a href="#">Terms of use</a>
-          <a href="#">Privacy policy</a>
-          <a href="#">Cookies</a>
-          <a href="#">Help</a>
-          <a href="#">FQAs</a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">

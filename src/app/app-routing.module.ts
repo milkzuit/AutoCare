@@ -12,7 +12,6 @@ import { NearMeComponent } from './template/near-me/near-me.component';
 import { HeroComponent } from './template/hero/hero.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
-import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
 import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
@@ -24,40 +23,30 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
 
 const routes: Routes = [
-  // final
-  { path: "", component: LandingComponent },
 
+  { path: "", component: LandingComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "dashboard", component: DashboardComponent },
-
   { path: "contact", component: ContactComponent },
   { path: "blog", component: BlogComponent },
 
-  { path: "store-locator", component: StoreLocatorComponent },
+  // profile contains - ps and pe
   { path: "profile", component: MyProfileComponent },
-  { path: "near", component: NearMeComponent },
+  { path: "ps", component: ProfileShowComponent },
+  { path: "pe", component: ProfileEditComponent },
 
+  { path: "near", component: NearMeComponent },
 
   // templates
   { path: "prof", component: MyProfileComponent },
-  { path: "near", component: NearMeComponent },
-  { path: "hero", component: HeroComponent },
-  { path: "nav", component: NavbarComponent },
-
-
-  // templates
 
   // testing
   { path: "feedback", component: FeedbackComponent },
   {path:"store", component: StoreComponent},
   { path: "d", component: DummyComponent },
   { path: "dd", component: Dummy2Component },
-  { path: "ps", component: ProfileShowComponent },
-  { path: "pe", component: ProfileEditComponent },
-  { path: "bookacall", component: BookacallComponent },
-  { path: "review", component: ReviewComponent },
-  { path: "nb", component: NewbookingComponent },
+
 
 ];
 
