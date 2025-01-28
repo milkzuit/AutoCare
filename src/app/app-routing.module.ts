@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "blog", component: BlogComponent },
   { path: "services", component: ProductComponent },
+  { path: "review", component: ReviewComponent },
 
   // profile contains - ps and pe
   { path: "profile", component: MyProfileComponent },

@@ -1,0 +1,7 @@
+.app-header {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+  position: sticky; /* Ensures the header stays at the top when scrolling */
+  top: 0;
+  z-index: 1020; /* Ensures the header is above other content */
+  background-color: #ffffff; /* Makes sure the header has a solid background */
+}
