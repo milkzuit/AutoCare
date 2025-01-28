@@ -17,7 +17,6 @@ import { SimplePageComponent } from './shared/simple-page/simple-page.component'
 import { MyProfileComponent } from './template/my-profile/my-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
 
 import { StoreComponent } from './template/store/store.component';
@@ -41,6 +40,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scroll";
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,6 @@ import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scro
     RowsComponent,
     SimplePageComponent,
     MyProfileComponent,
-    FeedbackComponent,
     StoreComponent,
     DisplayComponent,
     NearMeComponent,
@@ -74,6 +73,7 @@ import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scro
     LandingComponent,
     ContactComponent,
     BlogComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./profile-edit.component.css'],
 })
 export class ProfileEditComponent {
+  details = JSON.parse(localStorage.getItem('user') || '{}');
+
+  // Extracting the details (if they exist)
+  name = this.details.username || null;
+  email = this.details.email || null;
+  phone_no = this.details.phone_no || null;
+  address = this.details.address || null;
+  
   @Output() cancelEdit = new EventEmitter<void>();
 
   showProfile() {

@@ -1,0 +1,62 @@
+<div
+  class="page-wrapper"
+  id="main-wrapper"
+  data-layout="vertical"
+  data-navbarbg="skin6"
+  data-sidebartype="full"
+  data-sidebar-position="fixed"
+  data-header-position="fixed"
+>
+  <app-navbar></app-navbar>
+  <div class="body-wrapper">
+    <app-header></app-header>
+
+    <!-- "Our Services" Section -->
+    <div class="container-fluid">
+      <h2 class="text-center mb-4">Our Services</h2>
+      <div
+        class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-2 justify-content-center"
+      >
+        <div class="col" *ngFor="let service of services">
+          <div class="card h-100 shadow-sm" style="max-width: 12rem">
+            <!-- Image -->
+            <img
+              [src]="service.image"
+              class="card-img-top"
+              [alt]="service.name"
+              style="height: 150px; object-fit: cover"
+            />
+            <!-- Service Name -->
+            <div class="card-body text-center p-2">
+              <h6 class="card-title mb-0" style="font-size: 0.9rem">
+                {{ service.name }}
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-center mb-4 mt-5">Curated Custom Services</h2>
+      <div class="scrollable-carousel d-flex overflow-auto">
+        <div
+          class="curated-item text-center mx-3"
+          *ngFor="let curatedService of curatedServices"
+          style="flex: 0 0 auto; width: 140px"
+        >
+          <!-- Larger Circular Image -->
+          <img
+            [src]="curatedService.image"
+            class="rounded-circle img-fluid mb-2"
+            [alt]="curatedService.name"
+            style="width: 120px; height: 120px; object-fit: cover"
+          />
+          <!-- Service Name -->
+          <p class="mb-0" style="font-size: 1rem; font-weight: 500">
+            {{ curatedService.name }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End "Our Services" Section -->
+  </div>
+</div>

@@ -5,7 +5,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
-import { FeedbackComponent } from './feedback/feedback.component';
 import { StoreComponent } from './template/store/store.component';
 import { DisplayComponent } from './display/display.component';
 import { NearMeComponent } from './template/near-me/near-me.component';
@@ -21,6 +20,7 @@ import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { ProductComponent } from './pages/product/product.component';
 
 const routes: Routes = [
 
@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: "dashboard", component: DashboardComponent },
   { path: "contact", component: ContactComponent },
   { path: "blog", component: BlogComponent },
+  { path: "services", component: ProductComponent },
 
   // profile contains - ps and pe
   { path: "profile", component: MyProfileComponent },
@@ -42,7 +43,6 @@ const routes: Routes = [
   { path: "prof", component: MyProfileComponent },
 
   // testing
-  { path: "feedback", component: FeedbackComponent },
   {path:"store", component: StoreComponent},
   { path: "d", component: DummyComponent },
   { path: "dd", component: Dummy2Component },
