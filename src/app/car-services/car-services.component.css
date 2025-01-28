@@ -10,6 +10,11 @@
   
 }
 
+.alert {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
 .navbar-brand {
   position: absolute;
   left: 0;

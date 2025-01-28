@@ -15,7 +15,7 @@ interface Service {
   providedIn: 'root'
 })
 export class ServicesService {
-  private baseUrl = 'http://localhost:8080/api/services'; // Replace with your backend URL
+  private baseUrl = 'http://localhost:8080/api/services/servicelist'; // Replace with your backend URL
 
   constructor(private http: HttpClient) {}
 
@@ -38,4 +38,6 @@ export class ServicesService {
   deleteService(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  
 }

@@ -16,11 +16,14 @@ interface Service {
   templateUrl: './car-services.component.html',
   styleUrls: ['./car-services.component.css']
 })
+
 export class CarServicesComponent {
   // List of available services with prices
   services: Service[] = [];
   cart: Service[] = [];
   showCartPopup = false;
+  errorMessage: string | null = null; // To store error messages
+
 
   constructor(private servicesService: ServicesService) {}
 
@@ -32,13 +35,16 @@ export class CarServicesComponent {
   fetchServices(): void {
     this.servicesService.getServices().subscribe(
       (data: Service[]) => {
-        this.services = data; // Assign the fetched services to the local services array
+        this.services = data; // Assign fetched data
+        this.errorMessage = null; // Clear any previous error message
       },
       (error: any) => {
         console.error('Error fetching services', error);
+        this.errorMessage = 'Failed to load services. Please try again later.'; // Set error message
       }
     );
   }
+  
 
   toggleCart(service: Service): void {
     const index = this.cart.indexOf(service);
