@@ -12,15 +12,15 @@ export class LandingComponent implements AfterViewInit{
   } 
 
   images = [
-    { src: 'assets/images/brands/b.png', title: 'Service 1', subtitle: 'Description 1' },
-    { src: 'assets/images/brands/c.png', title: 'Service 2', subtitle: 'Description 2' },
-    { src: 'assets/images/brands/d.png', title: 'Service 3', subtitle: 'Description 3' },
-    { src: 'assets/images/brands/e.png', title: 'Service 4', subtitle: 'Description 4' },
-    { src: 'assets/images/brands/g.png', title: 'Service 6', subtitle: 'Description 6' },
-    { src: 'assets/images/brands/i.png', title: 'Service 8', subtitle: 'Description 8' },
-    { src: 'assets/images/brands/j.png', title: 'Service 9', subtitle: 'Description 9' },
-    { src: 'assets/images/brands/k.png', title: 'Service 10', subtitle: 'Description 10' },
-    { src: 'assets/images/brands/l.png', title: 'Service 11', subtitle: 'Description 11' },
+    { src: 'assets/images/brands/b.png', title: 'SMOOTH ENGINE', subtitle: 'Keep Your Engine Running Smoothly' },
+    { src: 'assets/images/brands/c.png', title: 'SAFE STOPS', subtitle: 'Safety First with Reliable Brakes' },
+    { src: 'assets/images/brands/d.png', title: 'TIRE CARE', subtitle: 'Maximize Tire Lifespan and Performance' },
+    { src: 'assets/images/brands/e.png', title: 'POWER UP', subtitle: 'Don’t Let a Dead Battery Stop You'},
+    { src: 'assets/images/brands/g.png', title: 'ENGINE HEALTH', subtitle: 'Get to the Heart of the Problem' },
+    { src: 'assets/images/brands/i.png', title: 'CLIMATE CONTROL', subtitle: 'Stay Comfortable All Year Long With Flawless AC' },
+    { src: 'assets/images/brands/j.png', title: 'GEAR SMOOTH', subtitle: 'Smooth Shifting for Optimal Performance' },
+    { src: 'assets/images/brands/k.png', title: 'RIDE COMFORT', subtitle: 'Drive with Comfort and Control' },
+    { src: 'assets/images/brands/l.png', title: 'FLUID CARE', subtitle: 'Maintain All Key Systems' },
 
   ];
 

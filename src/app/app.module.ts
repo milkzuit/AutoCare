@@ -41,6 +41,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scroll";
+import { TopnavComponent } from './pages/topnav/topnav.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scro
     LandingComponent,
     ContactComponent,
     BlogComponent,
+    TopnavComponent,
   ],
   imports: [
     BrowserModule,
