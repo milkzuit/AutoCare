@@ -21,6 +21,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ProductComponent } from './pages/product/product.component';
+import { TopnavComponent } from './pages/topnav/topnav.component';
 
 const routes: Routes = [
 
@@ -46,6 +47,8 @@ const routes: Routes = [
   {path:"store", component: StoreComponent},
   { path: "d", component: DummyComponent },
   { path: "dd", component: Dummy2Component },
+  { path: "tn", component: TopnavComponent },
+
 
 
 ];
