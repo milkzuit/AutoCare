@@ -17,23 +17,12 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
+import { CallBookingComponent } from './call-booking/call-booking.component';
+import { CarServicesComponent } from './car-services/car-services.component';
+import { HttpClientModule } from '@angular/common/http';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
-import { CardsComponent } from './shared/cards/cards.component';
-import { StoreComponent } from './template/store/store.component';
-import { DisplayComponent } from './display/display.component';
-import { provideHttpClient, withFetch } from '@angular/common/http';
-import { NearMeComponent } from './template/near-me/near-me.component';
-import { HeroComponent } from './template/hero/hero.component';
-import { FAQComponent } from './miscellaneous/faq/faq.component';
-import { TestimonialsComponent } from './miscellaneous/testimonials/testimonials.component';
-import { LandingPageComponent } from './template/landing-page/landing-page.component';
-import { Dummy2Component } from './shared/dummy2/dummy2.component';
-import { AdvantagesComponent } from './miscellaneous/advantages/advantages.component';
-import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
-import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
-import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
-import { ComplaintformComponent } from './complaintform/complaintform.component';
 
 @NgModule({
   declarations: [
@@ -48,25 +37,13 @@ import { ComplaintformComponent } from './complaintform/complaintform.component'
     SimplePageComponent,
     MyProfileComponent,
     FeedbackComponent,
-    CardsComponent,
-    StoreComponent,
-    DisplayComponent,
-    NearMeComponent,
-    HeroComponent,
-    FAQComponent,
-    TestimonialsComponent,
-    LandingPageComponent,
-    Dummy2Component,
-    AdvantagesComponent,
-    StoreLocatorComponent,
-    ProfileShowComponent,
-    ProfileEditComponent,
-    ComplaintformComponent
+    CallBookingComponent,
+    CarServicesComponent,
+    
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule, FormsModule, CommonModule,
+    AppRoutingModule, FormsModule,CommonModule,HttpClientModule
   ],
   providers: [provideHttpClient(withFetch())], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent]
