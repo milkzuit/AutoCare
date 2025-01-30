@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { ServicesService } from '../services/services.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 // Define the Service interface for better type safety
 interface Service {
@@ -23,6 +24,7 @@ export class CarServicesComponent {
   cart: Service[] = [];
   showCartPopup = false;
   errorMessage: string | null = null; // To store error messages
+  successMessage: string |null = null;
 
 
   constructor(private servicesService: ServicesService) {}
@@ -45,7 +47,7 @@ export class CarServicesComponent {
     );
   }
   
-
+//add services to cart
   toggleCart(service: Service): void {
     const index = this.cart.indexOf(service);
     if (index > -1) {
@@ -85,11 +87,33 @@ export class CarServicesComponent {
   }
 
   checkout(): void {
-    alert('Thank you for booking our services!');
-    this.clearCart();
+    const cartData = {
+      userId: 1, // Replace with actual user ID if needed
+      items: this.cart.map(item => ({
+        serviceName: item.name,
+        quantity: 1,
+        price: item.price
+      }))
+    };
+
+    this.servicesService.checkoutCart(cartData).subscribe({
+      next: (response: any) => {
+          console.log("Raw response:", response);
+          alert('Thank you for booking our services!' || response.message  );
+          this.clearCart();
+      },
+      error: (error) => {
+          console.error("Error during checkout:", error);
+          alert(`Checkout failed. ${error.error ? JSON.stringify(error.error) : 'Please try again.'}`);
+      }
+  });
   }
 
+  
+  
   scrollToServices(): void {
     document.getElementById('services-Section')?.scrollIntoView({ behavior: 'smooth' });
   }
+
+
 }

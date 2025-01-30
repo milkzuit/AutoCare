@@ -16,6 +16,7 @@ interface Service {
 })
 export class ServicesService {
   private baseUrl = 'http://localhost:8080/api/services/servicelist'; // Replace with your backend URL
+  private checkoutUrl = 'http://localhost:8080/api/cart/checkout';
 
   constructor(private http: HttpClient) {}
 
@@ -39,5 +40,16 @@ export class ServicesService {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 
-  
+//   checkoutCart(cartData: any): Observable<any> {
+//     const url = 'http://localhost:8080/api/cart/checkout'; 
+//     return this.http.post<any>(url, cartData, {
+//         headers: { 'Content-Type': 'application/json' }
+//     });
+// }
+checkoutCart(cartData: any): Observable<any> {
+  return this.http.post<any>(this.checkoutUrl, cartData, { responseType: 'json' });
+}
+
+
+    
 }
