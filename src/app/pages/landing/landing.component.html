@@ -402,42 +402,62 @@
 
       <div class="col-lg-5">
         <div class="location-form">
-                    <h3>Get instant quotes and exciting offers </h3>
-          <br><br>
+          <h3>Get instant quotes and exciting offers</h3>
+          <br /><br />
 
-         
-          <form>
-            <div class="control-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Name"
-                required="required"
-              />
-            </div>
-            <br>
+          <div class="container">
+            <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()">
+              <div class="control-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name"
+                  formControlName="name"
+                  required
+                />
+              </div>
+              <br />
 
-            <div class="control-group">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="Email or Phone no."
-                required="required"
-              />
-                          </div>
-                          <br>
+              <div class="control-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email or Phone no."
+                  formControlName="email"
+                  required
+                />
+              </div>
+              <br />
 
-            <div class="control-group">
-              <textarea
-                class="form-control"
-                placeholder="Description"
-                required="required"
-              ></textarea>
+              <div class="control-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Description"
+                  formControlName="description"
+                  required
+                ></textarea>
+              </div>
+              <br />
+
+              <div>
+                <button
+                  class="btn btn-custom"
+                  type="submit"
+                  [disabled]="quoteForm.invalid"
+                >
+                  Send Request
+                </button>
+              </div>
+            </form>
+
+            <div *ngIf="successMessage" class="alert alert-success mt-3">
+              {{ successMessage }}
             </div>
-            <div>
-              <button class="btn btn-custom" type="submit">Send Request</button>
+
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+              {{ errorMessage }}
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -570,14 +590,14 @@
           <a href="#">Terms Of Use</a>
         </div>
       </div>
-     
+
       <div class="col-lg-3 col-md-6">
         <div class="footer-newsletter">
           <h2>Newsletter</h2>
-          <form>
-            <input class="form-control" placeholder="Full Name" />
-            <input class="form-control" placeholder="Email" />
-            <button class="btn btn-custom">Submit</button>
+          <form (submit)="submitNewsLetter()">
+            <input class="form-control" placeholder="Full Name" [(ngModel)]="name" name="name" required />
+            <input class="form-control" placeholder="Email" [(ngModel)]="email" name="email" required />
+            <button class="btn btn-custom" type="submit">Submit</button>
           </form>
         </div>
       </div>
