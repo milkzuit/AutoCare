@@ -1,13 +1,13 @@
-/* faq-accordion.component.css */
 .faq-accordion {
   background-color: #ffffff;
   padding: 60px 20px;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  color: #5d87ff;
-  margin-bottom: 30px;
+  font-size: 2.2rem; /* Adjusted font size for better readability */
+  font-weight: bold; /* Make the section title bold */
+  color: #0f0f10;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -15,30 +15,39 @@
   background-color: #f1f1f1;
   color: #333;
   font-size: 1.2rem;
+  font-weight: bold; /* Make the FAQ buttons bold */
+  padding: 15px; /* Increase button padding for better touch targets */
+  border: none; /* Remove default button border */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #5d87ff;
+  background-color: #040506;
   color: white;
 }
 
 .accordion-body {
-  font-size: 1rem;
-  color: #777;
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+  color: #555;
+  font-weight: normal; /* Body text is not bold */
+  padding: 20px; /* Add padding for more breathing room */
+  background-color: #f9f9f9; /* Light background color for readability */
+  border-radius: 5px;
 }
 
 .accordion-item {
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Increased space between items */
 }
 
 .img-fluid {
-  width: 100%; /* Make the image responsive */
-  max-width: 400px; /* Set the default max width on desktop */
+  width: 100%;
+  max-width: 400px;
   margin-top: 20px;
   border-radius: 8px;
-  display: block; /* Centers the image within its container */
+  display: block;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow to the image */
 }
 
 /* Mobile and smaller devices (max-width: 768px) */
@@ -53,20 +62,57 @@
   }
 
   .img-fluid {
-    max-width: 80%; /* Reduce the size for mobile devices */
+    max-width: 90%; /* Slightly increase image size for mobile */
+  }
+
+  .section-title {
+    font-size: 2.2rem; /* Adjust section title size for small screens */
+  }
+
+  .accordion-button {
+    font-size: 1.1rem; /* Make buttons a little larger for better readability on mobile */
+    padding: 12px; /* Add more padding on mobile for easier tapping */
+  }
+
+  .accordion-body {
+    font-size: 1.05rem; /* Make text slightly larger for better mobile readability */
   }
 }
 
-/* Larger desktop (max-width: 1200px) */
+/* Larger desktop (min-width: 992px) */
 @media (min-width: 992px) {
   .img-fluid {
     max-width: 500px; /* Increase the size for medium to large desktops */
   }
+
+  .section-title {
+    font-size: 3rem; /* Increase font size for larger screens */
+  }
+
+  .accordion-button {
+    font-size: 1.3rem; /* Slightly increase font size for better desktop visibility */
+  }
+
+  .accordion-body {
+    font-size: 1.15rem; /* Make text slightly larger on larger screens */
+  }
 }
 
-/* Larger desktops (larger than 1200px) */
+/* Larger desktops (min-width: 1200px) */
 @media (min-width: 1200px) {
   .img-fluid {
-    max-width: 500px; /* Make the image even larger on very large desktops */
+    max-width: 600px; /* Make the image even larger on very large desktops */
+  }
+
+  .section-title {
+    font-size: 3.2rem; /* Maximize the font size for extra-large screens */
+  }
+
+  .accordion-button {
+    font-size: 1.4rem; /* Ensure buttons remain legible on large screens */
+  }
+
+  .accordion-body {
+    font-size: 1.2rem; /* Increase text size further for large desktop screens */
   }
 }
