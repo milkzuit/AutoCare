@@ -42,6 +42,8 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scroll";
 import { ProductComponent } from './pages/product/product.component';
 import { TopnavComponent } from './pages/topnav/topnav.component';
+import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
+import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +78,8 @@ import { TopnavComponent } from './pages/topnav/topnav.component';
     BlogComponent,
     ProductComponent,
     TopnavComponent,
+    PrivacypolicyComponent,
+    TermsofuseComponent,
   ],
   imports: [
     BrowserModule,

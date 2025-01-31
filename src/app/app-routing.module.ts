@@ -22,6 +22,9 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ProductComponent } from './pages/product/product.component';
 import { TopnavComponent } from './pages/topnav/topnav.component';
+import { FAQComponent } from './miscellaneous/faq/faq.component';
+import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
+import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
 
 const routes: Routes = [
 
@@ -33,6 +36,11 @@ const routes: Routes = [
   { path: "blog", component: BlogComponent },
   { path: "services", component: ProductComponent },
   { path: "review", component: ReviewComponent },
+  
+  { path: "tn", component: TopnavComponent },
+  {path:"faq",component:FAQComponent},
+  {path:"pp",component:PrivacypolicyComponent},
+  {path:"term",component:TermsofuseComponent},
 
   // profile contains - ps and pe
   { path: "profile", component: MyProfileComponent },
@@ -47,8 +55,7 @@ const routes: Routes = [
   // testing
   {path:"store", component: StoreComponent},
   { path: "d", component: DummyComponent },
-  { path: "dd", component: Dummy2Component },
-  { path: "tn", component: TopnavComponent },
+  { path: "dd", component: Dummy2Component }
 
 
 

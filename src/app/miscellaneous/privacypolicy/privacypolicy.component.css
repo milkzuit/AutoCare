@@ -1,0 +1,152 @@
+/* Base Styles */
+.privacy-policy {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #defafa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f9ce9;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .content h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: #050506;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile Styles (max-width: 768px) */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 2rem; /* Smaller title font for mobile */
+    }
+  
+    .intro {
+      font-size: 1rem; /* Slightly smaller intro text */
+    }
+  
+    .content h2 {
+      font-size: 1.6rem; /* Adjust heading size */
+    }
+  
+    .content p {
+      font-size: 0.95rem; /* Smaller body text on mobile */
+    }
+  
+    /* Make the container full width on mobile */
+    .container {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+  
+  /* Tablet Styles (min-width: 769px and max-width: 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      max-width: 90%;
+    }
+  
+    .title {
+      font-size: 2.2rem; /* Adjust font size for tablet screens */
+    }
+  
+    .intro {
+      font-size: 1.1rem; /* Slightly larger intro for tablets */
+    }
+  
+    .content h2 {
+      font-size: 1.7rem;
+    }
+  
+    .content p {
+      font-size: 1.05rem;
+    }
+  }
+  
+  /* Desktop Styles (min-width: 1025px) */
+  @media (min-width: 1025px) {
+    .container {
+      max-width: 800px; /* Limit max width for larger screens */
+    }
+  
+    .title {
+      font-size: 2.5rem; /* Large title font for desktop */
+    }
+  
+    .intro {
+      font-size: 1.2rem; /* Standard intro text for desktop */
+    }
+  
+    .content h2 {
+      font-size: 1.8rem; /* Maintain consistent heading size */
+    }
+  
+    .content p {
+      font-size: 1rem; /* Regular body text */
+    }
+  }
+  
+  /* Large Desktop Styles (min-width: 1200px) */
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1000px; /* Increase max width for large screens */
+    }
+  
+    .title {
+      font-size: 2.8rem; /* Larger title for extra-large screens */
+    }
+  
+    .intro {
+      font-size: 1.3rem; /* Slightly larger intro text for larger devices */
+    }
+  
+    .content h2 {
+      font-size: 2rem; /* Increase heading size on large displays */
+    }
+  
+    .content p {
+      font-size: 1.1rem; /* Slightly larger text for readability */
+    }
+  }
+  
