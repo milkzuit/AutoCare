@@ -64,3 +64,84 @@ a:hover {
         font-size: 0.95rem;
     }
 }
+/* General styling */
+.terms-of-use {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.2rem;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Additional styles for better readability */
+.terms-of-use > * + * {
+    margin-top: 20px;
+}
+
+.terms-of-use p + h2 {
+    margin-top: 40px;
+}

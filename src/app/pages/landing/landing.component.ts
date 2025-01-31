@@ -122,7 +122,7 @@ export class LandingComponent implements AfterViewInit {
         error: (error: any) => {
           this.errorMessage = 'Failed to send request. Please try again.';
           this.successMessage = '';
-          console.error('eeeeeeeeeeer', error);
+          console.error('error', error);
         },
       });
     } else {
