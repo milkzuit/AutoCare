@@ -10,6 +10,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { SimplePageComponent } from './shared/simple-page/simple-page.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 
 const routes: Routes = [
   // final

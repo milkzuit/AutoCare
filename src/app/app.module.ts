@@ -19,7 +19,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { CommonModule } from '@angular/common';
 import { CallBookingComponent } from './call-booking/call-booking.component';
 import { CarServicesComponent } from './car-services/car-services.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { ComplaintComponent } from './complaintform/complaintform.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
@@ -39,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     FeedbackComponent,
     CallBookingComponent,
     CarServicesComponent,
+    ComplaintComponent
     
   ],
   imports: [
