@@ -1,3 +1,5 @@
+
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -40,12 +42,7 @@ export class ServicesService {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 
-//   checkoutCart(cartData: any): Observable<any> {
-//     const url = 'http://localhost:8080/api/cart/checkout'; 
-//     return this.http.post<any>(url, cartData, {
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-// }
+
 checkoutCart(cartData: any): Observable<any> {
   return this.http.post<any>(this.checkoutUrl, cartData, { responseType: 'json' });
 }

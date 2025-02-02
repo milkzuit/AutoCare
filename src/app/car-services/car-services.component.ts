@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 import { Observable } from 'rxjs';
@@ -25,8 +26,8 @@ export class CarServicesComponent {
   showCartPopup = false;
   errorMessage: string | null = null; // To store error messages
   successMessage: string |null = null;
-
-
+  
+  
   constructor(private servicesService: ServicesService) {}
 
   ngOnInit() {
@@ -110,10 +111,12 @@ export class CarServicesComponent {
   }
 
   
-  
   scrollToServices(): void {
     document.getElementById('services-Section')?.scrollIntoView({ behavior: 'smooth' });
   }
 
-
+  
 }
+
+
+
