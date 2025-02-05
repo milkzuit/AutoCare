@@ -35,9 +35,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { TopnavComponent } from './pages/topnav/topnav.component';
 import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
-import { AdminpageComponent } from './admin/adminpage/adminpage.component';
 import { Routes } from '@angular/router';
-import { ChatbotComponent } from './ai/chatbot/chatbot.component';
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CarServiceService } from './services/car-service.service';
@@ -73,8 +71,7 @@ import { CartComponent } from './components/cart/cart.component';
     TopnavComponent,
     PrivacypolicyComponent,
     TermsofuseComponent,
-    AdminpageComponent,
-    ChatbotComponent,
+  
     // store
     HomeComponent,
     CheckoutComponent,
