@@ -1,0 +1,58 @@
+<!-- Sidebar with table links -->
+<div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 d-md-block bg-dark text-light sidebar">
+        <div class="position-sticky">
+          <h4 class="sidebar-heading text-center my-3 text-white">Admin Dashboard</h4>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/table1">
+                <i class="fa fa-table"></i> Table 1
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/table2">
+                <i class="fa fa-table"></i> Table 2
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/table3">
+                <i class="fa fa-table"></i> Table 3
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/table4">
+                <i class="fa fa-table"></i> Table 4
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/table5">
+                <i class="fa fa-table"></i> Table 5
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Main content area -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+        <h2 class="text-center">{{ tableName | uppercase }} Admin Dashboard</h2>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <!-- Table data display -->
+        <div class="card shadow-lg border-light rounded">
+          <div class="card-header bg-primary text-white">
+            <h5 class="card-title">Table Data</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let row of tableData" class="list-group-item">
+                {{ row | json }} <!-- Customize display for each row -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  

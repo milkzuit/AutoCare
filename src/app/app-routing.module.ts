@@ -19,6 +19,10 @@ import { TopnavComponent } from './pages/topnav/topnav.component';
 import { FAQComponent } from './miscellaneous/faq/faq.component';
 import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
+import { AdminpageComponent } from './admin/adminpage/adminpage.component';
+import { ChatbotComponent } from './ai/chatbot/chatbot.component';
+import { HomeComponent } from './layout/home/home.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -47,9 +51,26 @@ const routes: Routes = [
 
   // testing
   { path: "d", component: DummyComponent },
-  { path: "dd", component: Dummy2Component }
+  { path: "dd", component: Dummy2Component },
+  { path: "admin", component: AdminpageComponent },
+  { path: "chat", component:ChatbotComponent },
+//store
+  { path: 'home', component: HomeComponent },
+  { path: 'checkout', component: CheckoutComponent },
+    // Define routes for each table
+    { path: "table1", component: AdminpageComponent, data: { tableName: 'contact' } },
+    { path:"table2", component: AdminpageComponent, data: { tableName: 'feedback' } },
+    { path: "table3", component: AdminpageComponent, data: { tableName: 'get_quote' } },
+    { path: "table4", component: AdminpageComponent, data: { tableName: 'news_letter' } },
+    { path: "table5", component: AdminpageComponent, data: { tableName: 'users' } },
+    // Default route if no table is matched
+    { path: '', redirectTo: '/table1', pathMatch: 'full' },
+    // Wildcard for handling 404 errors
+    { path: '**', redirectTo: '/table1' }
+  ];
 
-];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
