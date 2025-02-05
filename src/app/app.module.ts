@@ -13,29 +13,20 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RowsComponent } from './shared/rows/rows.component';
-import { SimplePageComponent } from './shared/simple-page/simple-page.component';
 import { MyProfileComponent } from './template/my-profile/my-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 
-import { StoreComponent } from './template/store/store.component';
-import { DisplayComponent } from './display/display.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { NearMeComponent } from './template/near-me/near-me.component';
-import { HeroComponent } from './template/hero/hero.component';
 import { FAQComponent } from './miscellaneous/faq/faq.component';
-import { TestimonialsComponent } from './miscellaneous/testimonials/testimonials.component';
 import { LandingPageComponent } from './template/landing-page/landing-page.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
-import { AdvantagesComponent } from './miscellaneous/advantages/advantages.component';
-import { StoreLocatorComponent } from './miscellaneous/store-locator/store-locator.component';
 import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
 import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
 import { ReviewComponent } from './shared/review/review.component';
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
-import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
@@ -55,24 +46,15 @@ import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.compo
     DashboardComponent,
     FooterComponent,
     RowsComponent,
-    SimplePageComponent,
     MyProfileComponent,
-    StoreComponent,
-    DisplayComponent,
-    NearMeComponent,
-    HeroComponent,
     FAQComponent,
-    TestimonialsComponent,
     LandingPageComponent,
     Dummy2Component,
-    AdvantagesComponent,
-    StoreLocatorComponent,
     ProfileShowComponent,
     ProfileEditComponent,
     ReviewComponent,
     BookacallComponent,
     DummyComponent,
-    NewbookingComponent,
     LandingComponent,
     ContactComponent,
     BlogComponent,
