@@ -19,7 +19,6 @@ import { TopnavComponent } from './pages/topnav/topnav.component';
 import { FAQComponent } from './miscellaneous/faq/faq.component';
 import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
-import { ChatbotComponent } from './ai/chatbot/chatbot.component';
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RowsComponent } from './shared/rows/rows.component';
@@ -52,14 +51,16 @@ const routes: Routes = [
   // testing
   { path: "d", component: DummyComponent },
   { path: "dd", component: Dummy2Component },
-  { path: "chat", component: ChatbotComponent },
-  //store
+ 
+//store
   { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
-  // Define routes for each table
-  { path: 'gg', component: RowsComponent },
+    // Define routes for each table
+   
+  ];
 
-];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
