@@ -27,6 +27,8 @@ import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypol
 import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
 import { AdminpageComponent } from './admin/adminpage/adminpage.component';
 import { ChatbotComponent } from './ai/chatbot/chatbot.component';
+import { HomeComponent } from './layout/home/home.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -60,8 +62,9 @@ const routes: Routes = [
   { path: "dd", component: Dummy2Component },
   { path: "admin", component: AdminpageComponent },
   { path: "chat", component:ChatbotComponent },
-
- 
+//store
+  { path: 'home', component: HomeComponent },
+  { path: 'checkout', component: CheckoutComponent },
     // Define routes for each table
     { path: "table1", component: AdminpageComponent, data: { tableName: 'contact' } },
     { path:"table2", component: AdminpageComponent, data: { tableName: 'feedback' } },

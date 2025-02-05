@@ -47,6 +47,12 @@ import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.compo
 import { AdminpageComponent } from './admin/adminpage/adminpage.component';
 import { Routes } from '@angular/router';
 import { ChatbotComponent } from './ai/chatbot/chatbot.component';
+import { HomeComponent } from './layout/home/home.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CarServiceService } from './services/car-service.service';
+import { ServiceCarouselComponent } from './components/service-carousel/service-carousel.component';
+import { ServiceCardComponent } from './components/service-card/service-card.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -87,6 +93,12 @@ import { ChatbotComponent } from './ai/chatbot/chatbot.component';
     TermsofuseComponent,
     AdminpageComponent,
     ChatbotComponent,
+    // store
+    HomeComponent,
+    CheckoutComponent,
+    ServiceCarouselComponent,
+    ServiceCardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +108,9 @@ import { ChatbotComponent } from './ai/chatbot/chatbot.component';
     FormsModule,
     ReactiveFormsModule,
     RatingModule,
-    InfiniteScrollDirective
+    InfiniteScrollDirective,
+   
+    
   ],
   providers: [provideHttpClient(withFetch()), NewsService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],
