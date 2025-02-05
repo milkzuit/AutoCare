@@ -44,6 +44,11 @@ import { ProductComponent } from './pages/product/product.component';
 import { TopnavComponent } from './pages/topnav/topnav.component';
 import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
+import { AdminpageComponent } from './admin/adminpage/adminpage.component';
+import { Routes } from '@angular/router';
+import { ChatbotComponent } from './ai/chatbot/chatbot.component';
+
+
 
 @NgModule({
   declarations: [
@@ -80,6 +85,8 @@ import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.compo
     TopnavComponent,
     PrivacypolicyComponent,
     TermsofuseComponent,
+    AdminpageComponent,
+    ChatbotComponent,
   ],
   imports: [
     BrowserModule,
