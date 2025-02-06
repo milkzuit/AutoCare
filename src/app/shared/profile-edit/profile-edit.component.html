@@ -24,15 +24,13 @@
         <div class="card">
           <div class="card-body">
             <div class="row mb-3">
-              <label for="fullName" class="col-sm-3 col-form-label"
-                >Full Name</label
-              >
+              <label for="fullName" class="col-sm-3 col-form-label">Full Name</label>
               <div class="col-sm-9">
                 <input
                   type="text"
                   class="form-control"
                   id="fullName"
-                  [value]="name"
+                  [(ngModel)]="name"
                 />
               </div>
             </div>
@@ -44,6 +42,7 @@
                   class="form-control"
                   id="email"
                   [value]="email"
+                  disabled
                 />
               </div>
             </div>
@@ -54,20 +53,19 @@
                   type="text"
                   class="form-control"
                   id="mobile"
-                  [value]="phone_no"
+                  [(ngModel)]="mobile"
+                  maxlength="10"
                 />
               </div>
             </div>
             <div class="row mb-3">
-              <label for="address" class="col-sm-3 col-form-label"
-                >Address</label
-              >
+              <label for="address" class="col-sm-3 col-form-label">Address</label>
               <div class="col-sm-9">
                 <input
                   type="text"
                   class="form-control"
                   id="address"
-                  [value]="address"
+                  [(ngModel)]="address"
                 />
               </div>
             </div>
