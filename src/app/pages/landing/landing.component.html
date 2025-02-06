@@ -16,90 +16,25 @@
 </div>
 <!-- Carousel end -->
 
-<!--  -->
+<!-- How It Works start -->
 <div class="how-it-works" id="about">
   <div class="container">
     <div class="section-header text-center">
       <p>How It Works</p>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-3 col-md-6" *ngFor="let step of steps">
         <div class="service-card">
           <div class="number">
-            <span>1</span>
+            <span>{{ step.number }}</span>
           </div>
           <div class="service-content">
-            <h5 class="service-title">Select The Perfect Car Service</h5>
+            <h5 class="service-title">{{ step.title }}</h5>
             <div class="service-details">
-              <p class="service-text">
-                From AutoCare's board portfolio Of services
-              </p>
+              <p class="service-text">{{ step.text }}</p>
               <img
-                src="assets/images/landing/2.png"
-                alt="Exterior Washing"
-                class="service-img"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="service-card">
-          <div class="number">
-            <span>2</span>
-          </div>
-          <div class="service-content">
-            <h5 class="service-title">Schedule Free Door- Step Pickup</h5>
-            <div class="service-details">
-              <p class="service-text">
-                We offer free pick up and drop for all services booked
-              </p>
-              <img
-                src="assets/images/landing/4.png"
-                alt="Interior Washing"
-                class="service-img"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="service-card">
-          <div class="number">
-            <span>3</span>
-          </div>
-          <div class="service-content">
-            <h5 class="service-title">Track Your Car Service Real-Time</h5>
-            <div class="service-details">
-              <p class="service-text">
-                We will take care of everything from here..Be Worry Free
-              </p>
-              <img
-                src="assets/images/landing/3.png"
-                alt="Vacuum Cleaning"
-                class="service-img"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="service-card">
-          <div class="number">
-            <span>4</span>
-          </div>
-          <div class="service-content">
-            <h5 class="service-title">Earn While We Service Your Car</h5>
-            <div class="service-details">
-              <p class="service-text">
-                Spread the word! You get 40% off. Your friends get Rs.700
-              </p>
-              <img
-                src="assets/images/landing/5.png"
-                alt="Engine Detailing"
+                [src]="step.imgSrc"
+                [alt]="step.imgAlt"
                 class="service-img"
               />
             </div>
@@ -109,7 +44,7 @@
     </div>
   </div>
 </div>
-<!--  -->
+<!-- How It Works end -->
 
 <!-- Service Start -->
 <div class="service" id="services">
@@ -119,125 +54,14 @@
       <h2>Premium AutoCare Services</h2>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-3 col-md-6" *ngFor="let service of services">
         <div class="service-item">
           <img
-            src="assets/images/landing/1.png"
-            alt="Car Inspection"
+            [src]="service.imgSrc"
+            alt="{{ service.title }}"
             class="service-icon"
           />
-          <h3>Periodic Services</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/18.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>AC Service and Repair</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/19.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Batteries</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/15.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Tyres and Wheel Care</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/16.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Denting and Painting</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/17.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Detailing Services</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/10.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Car Spa and Cleaning</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/13.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Car Inspection</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/14.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Wind Sheilds and Lights</h3>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/9.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Suspension and Fitments</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/11.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Clutch and Body Parts</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="service-item">
-          <img
-            src="assets/images/landing/12.png"
-            alt="Car Inspection"
-            class="service-icon"
-          />
-          <h3>Insurance Claims</h3>
+          <h3>{{ service.title }}</h3>
         </div>
       </div>
     </div>
@@ -305,94 +129,13 @@
         </div>
         <div class="location-wrapper">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" *ngFor="let location of locations">
               <div class="location-item">
                 <i class="fa fa-map-marker-alt"></i>
                 <div class="location-text">
                   <h3>AUTOCARE POINTS</h3>
-                  <p>123, Amman koil street, New York, USA</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>4/90, Vivekanandra Theru , Dubai</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>Pisasupatti street, North Korea, NK</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>Valuuvar street, Valluvarkottam, England</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>123 Street, New York, USA</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>123 Street, New York, USA</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>123 Street, New York, USA</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <!-- Repeat this block for each additional point -->
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>123 Street, New York, USA</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="location-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <div class="location-text">
-                  <h3>AUTOCARE POINTS</h3>
-                  <p>123 Street, New York, USA</p>
-                  <p><strong>Call:</strong>+012 345 6789</p>
+                  <p>{{ location.address }}</p>
+                  <p><strong>Call:</strong> {{ location.phone }}</p>
                 </div>
               </div>
             </div>
@@ -473,66 +216,14 @@
       <h2>What our clients say</h2>
     </div>
     <div class="owl-carousel testimonials-carousel">
-      <div class="testimonial-item">
-        <img src="../assets/images/landing/testimonial-1.jpg" alt="Image" />
-        <div class="testimonial-text">
-          <h3>Akit Kishan</h3>
-          <h4>Google Review</h4>
-          <p>
-            Fantastic service, superb punctuality. Availed their service twice
-            and truly most satisfying. The response of coordinator is prompt and
-            she was greatly supportive. Thanks a lot..!!
-          </p>
-        </div>
-      </div>
-      <div class="testimonial-item">
-        <img src="../assets/images/landing/testimonial-2.jpg" alt="Image" />
-        <div class="testimonial-text">
-          <h3>Manny</h3>
-          <h4>Facebook Review</h4>
-          <p>
-            This is my first time experience with Automechanica. But, I would
-            say the service of Automechanica is much better in comparison to any
-            authorized dealer in terms of quality, service and very reasonable
-            charge. Even, I was surprised to get all updates through WhatsApp
-            photos and videos. Really impressed with the service. I would
-            recommend all my friends to go for Automechanica without a second
-            thought.
-          </p>
-        </div>
-      </div>
-      <div class="testimonial-item">
-        <img src="../assets/images/landing/testimonial-3.jpg" alt="Image" />
-        <div class="testimonial-text">
-          <h3>Eline</h3>
-          <h4>IG Influencer</h4>
-          <p>
-            Experience has been smooth every time i have opted for their
-            services. Best part I think is the door step pickup service which
-            everyone will appreciate. You are being notified about the progress
-            of the work through WhatsApp pics which makes experience very
-            transparent. Staff is helpful and courteous, mechanics are also
-            experienced and Skilled based on my experience . Over all I would
-            highly recommend Auto Mechanica for general maintenance and denting
-            and painting. The 2 services which i have availed from them yet.
-          </p>
-        </div>
-      </div>
-      <div class="testimonial-item">
-        <img src="../assets/images/landing/testimonial-4.jpg" alt="Image" />
-        <div class="testimonial-text">
-          <h3>Jade</h3>
-          <h4>Google Review</h4>
-          <p>
-            It is so smooth to deal with AutoMechanica team that ensures best of
-            experience. From picking-up the car from the doorstep to
-            servicing/best of work, all repair work done to satisfaction to
-            returning the car on the promised date. They keep you updated on the
-            progress at their garage. I don't have to worry anymore for
-            servicing/repairing/painting of any of my vehicles anymore.
-            AutoMechanica is where i will go, they take away all my stress.
-            Highly recommended! Thank you team!
-          </p>
+      <div *ngFor="let testimonial of testimonials">
+        <div class="testimonial-item">
+          <img [src]="testimonial.imgSrc" alt="Image" />
+          <div class="testimonial-text">
+            <h3>{{ testimonial.name }}</h3>
+            <h4>{{ testimonial.reviewSource }}</h4>
+            <p>{{ testimonial.text }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -576,9 +267,9 @@
       <div class="col-lg-3 col-md-6">
         <div class="footer-link">
           <h2>Popular Links</h2>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Our Service</a>
+          <a href="#about">About Us</a>
+          <a href="contact">Contact Us</a>
+          <a href="#services">Our Service</a>
         </div>
       </div>
 
@@ -595,8 +286,20 @@
         <div class="footer-newsletter">
           <h2>Newsletter</h2>
           <form (submit)="submitNewsLetter()">
-            <input class="form-control" placeholder="Full Name" [(ngModel)]="name" name="name" required />
-            <input class="form-control" placeholder="Email" [(ngModel)]="email" name="email" required />
+            <input
+              class="form-control"
+              placeholder="Full Name"
+              [(ngModel)]="name"
+              name="name"
+              required
+            />
+            <input
+              class="form-control"
+              placeholder="Email"
+              [(ngModel)]="email"
+              name="email"
+              required
+            />
             <button class="btn btn-custom" type="submit">Submit</button>
           </form>
         </div>
