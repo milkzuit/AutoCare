@@ -51,6 +51,7 @@ import { CarServiceService } from './services/car-service.service';
 import { ServiceCarouselComponent } from './components/service-carousel/service-carousel.component';
 import { ServiceCardComponent } from './components/service-card/service-card.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ChatbotComponent } from './ai/chatbot/chatbot.component';
 
 
 
@@ -95,7 +96,8 @@ import { CartComponent } from './components/cart/cart.component';
     CheckoutComponent,
     ServiceCarouselComponent,
     ServiceCardComponent,
-    CartComponent
+    CartComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,

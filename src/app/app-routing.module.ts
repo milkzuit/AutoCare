@@ -28,6 +28,7 @@ import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.compo
 
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ChatbotComponent } from './ai/chatbot/chatbot.component';
 
 const routes: Routes = [
 
@@ -64,7 +65,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
     // Define routes for each table
-   
+   //ai chatbot
+   { path: 'chat', component: ChatbotComponent },
+
   ];
 
 
