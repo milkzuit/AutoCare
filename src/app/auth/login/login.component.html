@@ -74,13 +74,19 @@
                   </div>
 
                   <!-- Alert for Form Invalid -->
-                  <div
+                  <!-- <div
                     *ngIf="!loginForm.dirty || loginForm.invalid"
                     class="alert alert-warning mt-3"
                     role="alert"
                   >
                     Please fill out the form correctly before submitting.
+                  </div> -->
+
+                  <div class="form-check text-center">
+                    <a class="text-primary fw-bold" href="/forget"
+                    >Forgot Password ?</a>
                   </div>
+                  
 
                   <!-- Submit Button -->
                   <button
@@ -91,7 +97,9 @@
                     Sign In
                   </button>
 
-                  <div class="d-flex align-items-center justify-content-center mt-4">
+                  <div
+                    class="d-flex align-items-center justify-content-center mt-4"
+                  >
                     <p class="fs-4 mb-0 fw-bold">New to Auto Care?</p>
                     <a class="text-primary fw-bold ms-2" routerLink="/register"
                       >Create new account</a

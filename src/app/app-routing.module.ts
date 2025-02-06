@@ -22,48 +22,53 @@ import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.compo
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RowsComponent } from './shared/rows/rows.component';
+import { authGuard } from './auth/auth.guard';
+import { LogoutResolver } from './auth/logout.resolver';
 
 const routes: Routes = [
+  { path: '', component: LandingComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: "logout",
+    component: LandingComponent, // Redirect to home after logout
+    resolve: { logout: LogoutResolver }, // Call logout before navigating
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'contact', component: ContactComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'services', component: ProductComponent },
+  { path: 'review', component: ReviewComponent },
 
-  { path: "", component: LandingComponent },
-  { path: "login", component: LoginComponent },
-  { path: "register", component: RegisterComponent },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "contact", component: ContactComponent },
-  { path: "blog", component: BlogComponent },
-  { path: "services", component: ProductComponent },
-  { path: "review", component: ReviewComponent },
-
-  { path: "tn", component: TopnavComponent },
-  { path: "faq", component: FAQComponent },
-  { path: "pp", component: PrivacypolicyComponent },
-  { path: "term", component: TermsofuseComponent },
+  { path: 'tn', component: TopnavComponent },
+  { path: 'faq', component: FAQComponent },
+  { path: 'pp', component: PrivacypolicyComponent },
+  { path: 'term', component: TermsofuseComponent },
 
   // profile contains - ps and pe
-  { path: "profile", component: MyProfileComponent },
-  { path: "ps", component: ProfileShowComponent },
-  { path: "pe", component: ProfileEditComponent },
-
+  { path: 'profile', component: MyProfileComponent },
+  { path: 'ps', component: ProfileShowComponent },
+  { path: 'pe', component: ProfileEditComponent },
 
   // templates
-  { path: "prof", component: MyProfileComponent },
+  { path: 'prof', component: MyProfileComponent },
 
   // testing
-  { path: "d", component: DummyComponent },
-  { path: "dd", component: Dummy2Component },
- 
-//store
+  { path: 'd', component: DummyComponent },
+  { path: 'dd', component: Dummy2Component },
+
+  //store
   { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
-    // Define routes for each table
-   
-  ];
-
-
-
+  // Define routes for each table
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

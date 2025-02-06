@@ -21,16 +21,18 @@ export class LoginComponent {
       .post<any>('http://localhost:8080/login', this.loginData)
       .subscribe({
         next: (response) => {
-          // Check if a response with a token is received
+          console.log("sdfds", response);
           // Store the user info and token in local storage
           localStorage.setItem('user', JSON.stringify(response));
-
-          // Redirect to the dashboard after successful login
+          alert('Login successful!');
           this.router.navigate(['/dashboard']);
         },
         error: (error) => {
+          console.log('Error:', error);
           // If login fails, show an alert and redirect to register page
-          alert('Invalid login credentials. Please sign up.');
+          alert(
+            error.error.message || 'Invalid login credentials. Please sign up.'
+          );
           this.router.navigate(['/register']);
         },
       });
