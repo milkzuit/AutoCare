@@ -13,7 +13,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-          <i class="ti ti-shopping-cart"></i>
+          <i class="ti ti-bell-ringing"></i>
           <div class="notification bg-primary rounded-circle"></div>
         </a>
       </li>
@@ -37,8 +37,9 @@
             aria-expanded="false"
           >
             <img
-              src="../assets/images/profile/user-1.jpg"
-              alt=""
+              [src]="imageUrl"
+              alt="Profile"
+              style="object-fit: cover"
               width="35"
               height="35"
               class="rounded-circle"

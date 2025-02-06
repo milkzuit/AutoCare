@@ -5,16 +5,30 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
-              <img
-                src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                alt="Admin"
-                class="rounded-circle"
-                width="150"
-              />
+              <div class="position-relative">
+                <img
+                  [src]="imageUrl"
+                  alt="Profile"
+                  class="rounded-circle"
+                  width="150"
+                  height="150"
+                  style="object-fit: cover"
+                />
+                <div class="position-absolute bottom-0 end-0">
+                  <label class="btn btn-light btn-sm rounded-circle">
+                    <i class="fas fa-camera"></i>
+                    <input
+                      type="file"
+                      (change)="onFileSelected($event)"
+                      accept="image/*"
+                      style="display: none"
+                    />
+                  </label>
+                </div>
+              </div>
               <div class="mt-3">
                 <h4>{{ name }}</h4>
-                <p class="text-secondary mb-1">Full Stack Developer</p>
-                <p class="text-muted small">{{ address }}</p>
+                <p class="text-secondary mb-1">{{email}}</p>
               </div>
             </div>
           </div>
