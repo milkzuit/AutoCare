@@ -1,7 +1,7 @@
 <body>
   <!--  Body Wrapper -->
   <div
-    class="page-wrapper"
+    class="page-wrapper registerme"
     id="main-wrapper"
     data-layout="vertical"
     data-navbarbg="skin6"
@@ -24,7 +24,6 @@
                   <img src="assets/images/logos/AUTO.svg" width="180" alt="" />
                 </a>
                 <p class="text-center">Care For Car</p>
-
                 <!-- Login Form -->
                 <form (ngSubmit)="onLogin()" #loginForm="ngForm">
                   <!-- Email -->
@@ -74,13 +73,19 @@
                   </div>
 
                   <!-- Alert for Form Invalid -->
-                  <div
+                  <!-- <div
                     *ngIf="!loginForm.dirty || loginForm.invalid"
                     class="alert alert-warning mt-3"
                     role="alert"
                   >
                     Please fill out the form correctly before submitting.
+                  </div> -->
+
+                  <div class="form-check text-center">
+                    <a class="text-primary fw-bold" href="/forget"
+                    >Forgot Password ?</a>
                   </div>
+                  
 
                   <!-- Submit Button -->
                   <button
@@ -91,7 +96,9 @@
                     Sign In
                   </button>
 
-                  <div class="d-flex align-items-center justify-content-center mt-4">
+                  <div
+                    class="d-flex align-items-center justify-content-center mt-4"
+                  >
                     <p class="fs-4 mb-0 fw-bold">New to Auto Care?</p>
                     <a class="text-primary fw-bold ms-2" routerLink="/register"
                       >Create new account</a

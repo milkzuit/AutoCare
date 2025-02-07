@@ -24,7 +24,7 @@ export class RegisterComponent {
     });
   }
 
-  onSubmit() {
+  onRegister() {
     this.errorMessage = null; // Reset error message
 
     if (this.registerForm.invalid) {
@@ -37,18 +37,24 @@ export class RegisterComponent {
       })
       .subscribe({
         next: (response) => {
-          console.log('Success:', response);
+          console.log("sdfds", response);
           // On success, store the user data in localStorage
-          localStorage.setItem('user', JSON.stringify(this.registerForm.value));
+          localStorage.setItem('user', JSON.stringify(response));
           alert(response.message || 'Registration successful!'); // Show success message
           this.router.navigate(['/dashboard']); // Navigate to the dashboard
         },
         error: (err) => {
           console.log('Error:', err);
           // Handle error response
-          if (err.status === 400) {
+          if (err.status === 409) {
             this.errorMessage =
-              err.error || 'Registration failed. Please try again.';
+              err.error.message ||
+              'Email is already in use. Redirecting to login page.';
+            alert(this.errorMessage);
+            this.router.navigate(['/login']); // Navigate to the login page
+          } else if (err.status === 400) {
+            this.errorMessage =
+              err.error.message || 'Registration failed. Please try again.';
           } else {
             this.errorMessage =
               'An unexpected error occurred. Please try again later.';
@@ -57,5 +63,3 @@ export class RegisterComponent {
       });
   }
 }
-
-

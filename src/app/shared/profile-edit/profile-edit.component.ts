@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -11,10 +12,12 @@ export class ProfileEditComponent {
   // Extracting the details (if they exist)
   name = this.details.username || null;
   email = this.details.email || null;
-  phone_no = this.details.phone_no || null;
+  mobile = this.details.mobile || null;
   address = this.details.address || null;
-  
+
   @Output() cancelEdit = new EventEmitter<void>();
+
+  constructor(private http: HttpClient) {}
 
   showProfile() {
     // Emit the event to notify the parent component
@@ -28,8 +31,29 @@ export class ProfileEditComponent {
 
   // Add this method for saving changes if needed
   saveChanges() {
-    // Logic for saving changes goes here
-    console.log('Changes saved.');
-    this.cancelEdit.emit();
+    const userId = JSON.parse(localStorage.getItem('user') || '{}').id;
+
+    // Create update payload with only the fields that can be updated
+    const updatePayload = {
+      username: this.name,
+      mobile: this.mobile,
+      address: this.address,
+    };
+
+    this.http
+      .patch(`http://localhost:8080/api/userModels/${userId}`, updatePayload)
+      .subscribe({
+        next: (response) => {
+          console.log('Changes saved successfully', response);
+          // Update the local storage with new values
+          const updatedUser = { ...this.details, ...updatePayload };
+          localStorage.setItem('user', JSON.stringify(updatedUser));
+          this.cancelEdit.emit();
+        },
+        error: (error) => {
+          console.error('Error saving changes', error);
+          // Handle error appropriately (show message to user)
+        },
+      });
   }
 }

@@ -4,11 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
-import { SimplePageComponent } from './shared/simple-page/simple-page.component';
-import { StoreComponent } from './template/store/store.component';
-import { DisplayComponent } from './display/display.component';
-import { NearMeComponent } from './template/near-me/near-me.component';
-import { HeroComponent } from './template/hero/hero.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
 import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
@@ -16,7 +11,6 @@ import { ProfileEditComponent } from './shared/profile-edit/profile-edit.compone
 import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { ReviewComponent } from './shared/review/review.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { NewbookingComponent } from './shared/newbooking/newbooking.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
@@ -25,43 +19,50 @@ import { TopnavComponent } from './pages/topnav/topnav.component';
 import { FAQComponent } from './miscellaneous/faq/faq.component';
 import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
-
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { RowsComponent } from './shared/rows/rows.component';
+import { authGuard } from './auth/auth.guard';
+import { LogoutResolver } from './auth/logout.resolver';
 
 const routes: Routes = [
+  { path: '', component: LandingComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: "logout",
+    component: LandingComponent, // Redirect to home after logout
+    resolve: { logout: LogoutResolver }, // Call logout before navigating
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'contact', component: ContactComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'services', component: ProductComponent },
+  { path: 'review', component: ReviewComponent },
 
-  { path: "", component: LandingComponent },
-  { path: "login", component: LoginComponent },
-  { path: "register", component: RegisterComponent },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "contact", component: ContactComponent },
-  { path: "blog", component: BlogComponent },
-  { path: "services", component: ProductComponent },
-  { path: "review", component: ReviewComponent },
-  
-  { path: "tn", component: TopnavComponent },
-  {path:"faq",component:FAQComponent},
-  {path:"pp",component:PrivacypolicyComponent},
-  {path:"term",component:TermsofuseComponent},
+  { path: 'tn', component: TopnavComponent },
+  { path: 'faq', component: FAQComponent },
+  { path: 'pp', component: PrivacypolicyComponent },
+  { path: 'term', component: TermsofuseComponent },
 
   // profile contains - ps and pe
-  { path: "profile", component: MyProfileComponent },
-  { path: "ps", component: ProfileShowComponent },
-  { path: "pe", component: ProfileEditComponent },
-
-  { path: "near", component: NearMeComponent },
+  { path: 'profile', component: MyProfileComponent },
+  { path: 'ps', component: ProfileShowComponent },
+  { path: 'pe', component: ProfileEditComponent },
 
   // templates
-  { path: "prof", component: MyProfileComponent },
+  { path: 'prof', component: MyProfileComponent },
 
   // testing
-  {path:"store", component: StoreComponent},
-  { path: "d", component: DummyComponent },
-  { path: "dd", component: Dummy2Component },
- 
-//store
+  { path: 'd', component: DummyComponent },
+  { path: 'dd', component: Dummy2Component },
+
+  //store
   { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
     // Define routes for each table
@@ -75,6 +76,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

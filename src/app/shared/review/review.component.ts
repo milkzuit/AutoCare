@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';  // Import HttpClient to make HTTP requests
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-review',
@@ -7,24 +9,46 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./review.component.css'],
 })
 export class ReviewComponent {
-  formGroup: FormGroup; // Declare the formGroup property
+  formGroup: FormGroup;
   rating: number = 0;
 
-  // Constructor to initialize FormBuilder
-  constructor(private fb: FormBuilder) {
-    // Initialize the form group with a control for the rating
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    // Initialize the form group with controls for rating, name, email, and feedback
     this.formGroup = this.fb.group({
-      value: [0], // Default rating value
+      rating: [0, Validators.required],
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      feedback: ['', Validators.required],
     });
   }
 
   // Method to set the rating
   setRating(value: number) {
     this.rating = value;
+    this.formGroup.get('rating')?.setValue(value);  // Set the rating control value when it changes
   }
 
-  // Optional: onSubmit method to log the form value
+  // onSubmit method to send the review data to the backend
   onSubmit(): void {
-    console.log('Submitted Form Value:', this.formGroup.value);
+    if (this.formGroup.valid) {
+      const reviewData = this.formGroup.value;  // Get the form data
+
+      // Send a POST request to the backend
+      console.log(reviewData);
+
+      this.http
+        .post('http://localhost:8080/api/feedbackModels', reviewData)
+        .subscribe({
+          next: (response) => {
+            console.log('Success!', response);
+            alert('Feedbacked successfully!');
+          },
+          error: (error) => {
+            console.error('Error!', error);
+            alert('Something went wrong!');
+          },
+        });
+
+    }
   }
 }

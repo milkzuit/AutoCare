@@ -23,29 +23,20 @@
             <div class="col-md-12">
               <div class="feedback-form">
                 <div id="success"></div>
-                <form
-                  name="sentMessage"
-                  id="feedbackForm"
-                  novalidate="novalidate"
-                >
+                <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
                   <!-- Rating Component -->
                   <div class="mb-3">
                     <label for="rating" class="form-label">Rating</label>
                     <div id="star-rating" class="d-flex">
-                      <form [formGroup]="formGroup">
-                        <p-rating
-                          formControlName="value"
-                          [(ngModel)]="rating"
-                          [style]="{ width: '100%' }"
-                        ></p-rating>
-                      </form>
+                      <p-rating
+                        formControlName="rating"
+                        [(ngModel)]="rating"
+                        [style]="{ width: '100%' }"
+                      ></p-rating>
                     </div>
-                    <!-- Make sure there's no "null" value display -->
-                    <p>
-                      Selected Rating:
-                      {{ formGroup.get("value")?.value || "Not rated yet" }}
-                    </p>
+                    <p>Selected Rating: {{ formGroup.get('rating')?.value || 'Not rated yet' }}</p>
                   </div>
+                
                   <!-- Name -->
                   <div class="control-group">
                     <input
@@ -53,12 +44,11 @@
                       class="form-control"
                       id="name"
                       placeholder="Your Name"
-                      required="required"
-                      data-validation-required-message="Please enter your name"
+                      formControlName="name"
+                      required
                     />
-                    <p class="help-block text-danger"></p>
                   </div>
-
+                
                   <!-- Email -->
                   <div class="control-group">
                     <input
@@ -66,35 +56,30 @@
                       class="form-control"
                       id="email"
                       placeholder="Your Email"
-                      required="required"
-                      data-validation-required-message="Please enter your email"
+                      formControlName="email"
+                      required
                     />
-                    <p class="help-block text-danger"></p>
                   </div>
-
+                
                   <!-- Feedback Message -->
                   <div class="control-group">
                     <textarea
                       class="form-control"
-                      id="message"
+                      id="feedback"
                       placeholder="Your Feedback"
-                      required="required"
-                      data-validation-required-message="Please enter your feedback"
+                      formControlName="feedback"
+                      required
                     ></textarea>
-                    <p class="help-block text-danger"></p>
                   </div>
-
+                
                   <!-- Submit Button -->
                   <div>
-                    <button
-                      class="btn btn-custom"
-                      type="submit"
-                      id="sendMessageButton"
-                    >
+                    <button class="btn btn-custom" type="submit" [disabled]="formGroup.invalid">
                       Submit Feedback
                     </button>
                   </div>
                 </form>
+                
               </div>
             </div>
           </div>
