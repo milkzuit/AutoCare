@@ -11,7 +11,7 @@ export class ProfileShowComponent {
   // Extracting the details (if they exist)
   name = this.details.username || null;
   email = this.details.email || null;
-  phone_no = this.details.phone_no || null;
+  mobile = this.details.mobile || null;
   address = this.details.address || null;
 
   @Output() editClicked = new EventEmitter<void>();

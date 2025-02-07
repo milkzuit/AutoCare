@@ -43,26 +43,28 @@
       <div class="col-md-7">
         <div class="contact-form">
           <div id="success"></div>
-          <form name="sentMessage" id="contactForm" novalidate="novalidate">
+          <form name="sentMessage" id="contactForm" novalidate="novalidate" (ngSubmit)="onSubmit()">
             <div class="control-group">
               <input
                 type="text"
                 class="form-control"
                 id="name"
+                [(ngModel)]="name"
+                name="name"
                 placeholder="Your Name"
-                required="required"
-                data-validation-required-message="Please enter your name"
+                required
               />
               <p class="help-block text-danger"></p>
             </div>
             <div class="control-group">
               <input
-                type="email"
+                type="text"
                 class="form-control"
-                id="email"
+                id="phone"
+                [(ngModel)]="phone"
+                name="phone"
                 placeholder="Your Email or Phone No."
-                required="required"
-                data-validation-required-message="Please enter your email"
+                required
               />
               <p class="help-block text-danger"></p>
             </div>
@@ -71,9 +73,10 @@
                 type="text"
                 class="form-control"
                 id="subject"
+                [(ngModel)]="subject"
+                name="subject"
                 placeholder="Subject"
-                required="required"
-                data-validation-required-message="Please enter a subject"
+                required
               />
               <p class="help-block text-danger"></p>
             </div>
@@ -81,22 +84,20 @@
               <textarea
                 class="form-control"
                 id="message"
+                [(ngModel)]="message"
+                name="message"
                 placeholder="Message"
-                required="required"
-                data-validation-required-message="Please enter your message"
+                required
               ></textarea>
               <p class="help-block text-danger"></p>
             </div>
             <div>
-              <button
-                class="btn btn-custom"
-                type="submit"
-                id="sendMessageButton"
-              >
+              <button class="btn btn-custom" type="submit" id="sendMessageButton">
                 Send Message
               </button>
             </div>
           </form>
+          
         </div>
       </div>
       <div class="col-md-12">

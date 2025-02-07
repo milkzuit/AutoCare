@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
   private apiUrl = 'http://localhost:8080/api/student'; // Your Spring Boot API URL
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getData(): any {
     console.log(this.http.get(this.apiUrl));
@@ -16,6 +16,10 @@ export class DataService {
   }
 
   getData1(): any {
-    return this.http.get("http://localhost:8080/api/student/12");
+    return this.http.get('http://localhost:8080/api/student/12');
+  }
+
+  submitQuote(data: any): Observable<any> {
+    return this.http.post('http://localhost:8080/api/getQuoteModels', data);
   }
 }

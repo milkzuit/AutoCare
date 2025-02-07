@@ -5,10 +5,15 @@ import { Router } from '@angular/router';
 export const authGuard: CanActivateFn = (route, state) => {
   // Inject Router
   const router = inject(Router);
+  let role: any = null; // Initialize role
 
   // Get the user role from localStorage
-  const role = localStorage.getItem('role');
-  console.log('Role from localStorage: ', role);
+  const userData = localStorage.getItem('user'); // Retrieve the stored data
+  if (userData) {
+    const userObject = JSON.parse(userData); // Parse the JSON string
+    role = userObject.role; // ✅ Assign to the outer role variable
+    console.log('Role from localStorage: ', role);
+  }
 
   // Get the current URL we are trying to navigate to from RouterStateSnapshot
   const currentRoute = state.url;
@@ -16,9 +21,7 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   // Define allowed routes for each role
   const roleAllowedRoutes: { [key: string]: string[] } = {
-    student: ['/dashboard', '/check', '/login'],
-    manager: ['/manager', '/course', '/login'],
-    trainer: ['/home', '/marks', '/login'],
+    regular: ['/dashboard'],
   };
 
   // Check if the role is valid and if the current route is allowed
@@ -31,3 +34,4 @@ export const authGuard: CanActivateFn = (route, state) => {
   console.log('Navigation blocked. Redirecting to login.');
   return router.createUrlTree(['/login']);
 };
+
