@@ -9,7 +9,7 @@ describe('GeminiService', () => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(GeminiService);
   });
-
+  
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
