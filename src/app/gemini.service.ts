@@ -13,7 +13,7 @@
     providedIn: 'root'
   })
   export class GeminiService {
-    private readonly API_KEY = 'AIzaSyAgOUHAhKm41VdeCd-QXg3tpQJfSy0YkVA';
+    private readonly API_KEY = '';
     private readonly API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
   
     constructor(private http: HttpClient) {}

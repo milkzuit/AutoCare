@@ -1,23 +1,30 @@
-<div class="chat-container">
+<!-- Chatbot Button -->
+<div class="chatbot-button" (click)="toggleChat()">
+  <img src="assets\images\backgrounds\dino.png" alt="MOJO Logo" class="mojo-logo">
+  <span>MOJO</span>
+</div>
+
+<!-- Chat Container -->
+<div class="chat-container" *ngIf="isChatOpen">
   <div class="chat-header">
-    <h2>Chat with MOJO</h2>
+    <img style="width:40px;height:40px;object-fit: contain;" src="assets\images\backgrounds\dino.png">
+    <h2>MOJO</h2>
   </div>
 
-  <div class="messages-container">
+  <div class="messages-container" #messagesContainer>
     <div *ngFor="let message of messages" 
          [ngClass]="{'user-message': message.type === 'user', 'bot-message': message.type === 'bot'}"
          class="message">
       <div class="message-content">
-        <!-- User messages stay as plain text -->
         <p *ngIf="message.type === 'user'">{{ message.content }}</p>
-        <!-- Bot messages use markdown -->
         <div *ngIf="message.type === 'bot'" [innerHTML]="message.content | markdown| async"></div>
         <small>{{ message.timestamp | date:'shortTime' }}</small>
       </div>
     </div>
-    
+
     <div *ngIf="isLoading" class="loading-indicator">
       MOJO is typing...
+      <img src="assets\scss\chatbotloader.gif" alt="Typing..." class="typing-gif">
     </div>
   </div>
 
@@ -25,7 +32,7 @@
     <input type="text" 
            [(ngModel)]="userInput" 
            (keyup.enter)="sendMessage()"
-           placeholder="Type your message..."
+           placeholder="Say hi..."
            [disabled]="isLoading">
     <button (click)="sendMessage()" 
             [disabled]="!userInput.trim() || isLoading">

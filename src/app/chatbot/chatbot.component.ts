@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ChatMessage, GeminiService } from '../gemini.service';
 
-// Define the GeminiResponse interface outside the class
 interface GeminiResponse {
   generatedText: string;
 }
@@ -9,13 +8,30 @@ interface GeminiResponse {
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
-  styleUrls: ['./chatbot.component.css']  // Fix 'styleUrl' to 'styleUrls'
+  styleUrls: ['./chatbot.component.css']
 })
-export class ChatbotComponent { messages: ChatMessage[] = [];
+export class ChatbotComponent implements AfterViewInit {
+  messages: ChatMessage[] = [];
   userInput = '';
   isLoading = false;
+  isChatOpen = false; // Flag to toggle chat visibility
+  isFirstOpen = true; // To check if it's the first time opening the chat
+  @ViewChild('messagesContainer')
+  private messagesContainer!: ElementRef;
 
   constructor(private geminiService: GeminiService) {}
+
+  ngAfterViewInit() {
+    // Automatically send the bot's first message when the chat opens
+    if (this.isChatOpen && this.isFirstOpen) {
+      this.isFirstOpen = false;
+      this.messages.push({
+        content: 'hey Its me MOJO...How may I help you?',
+        type: 'bot',
+        timestamp: new Date()
+      });
+    }
+  }
 
   sendMessage() {
     if (!this.userInput.trim()) return;
@@ -28,7 +44,7 @@ export class ChatbotComponent { messages: ChatMessage[] = [];
     });
 
     this.isLoading = true;
-    
+
     // Get AI response
     this.geminiService.generateResponse(this.userInput)
       .subscribe({
@@ -54,4 +70,26 @@ export class ChatbotComponent { messages: ChatMessage[] = [];
       });
   }
 
+  toggleChat() {
+    this.isChatOpen = !this.isChatOpen; // Toggle chat modal
+
+    // Automatically send the first message when chat opens
+    if (this.isChatOpen && this.isFirstOpen) {
+      this.isFirstOpen = false;
+      this.messages.push({
+        content: "Hey I'm MOJO..How may I help you?",
+        type: 'bot',
+        timestamp: new Date()
+      });
+    }
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  private scrollToBottom() {
+    const container = this.messagesContainer.nativeElement;
+    container.scrollTop = container.scrollHeight;
+  }
 }
