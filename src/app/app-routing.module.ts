@@ -24,6 +24,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RowsComponent } from './shared/rows/rows.component';
 import { authGuard } from './auth/auth.guard';
 import { LogoutResolver } from './auth/logout.resolver';
+import { UsersTableComponent } from './tables/users-table/users-table.component';
+import { MainLayoutComponent } from './tables/main-layout/main-layout.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -41,9 +43,9 @@ const routes: Routes = [
   },
   { path: 'contact', component: ContactComponent },
   { path: 'blog', component: BlogComponent },
-  { path: 'services', component: ProductComponent },
   { path: 'review', component: ReviewComponent },
 
+  // home
   { path: 'tn', component: TopnavComponent },
   { path: 'faq', component: FAQComponent },
   { path: 'pp', component: PrivacypolicyComponent },
@@ -54,17 +56,22 @@ const routes: Routes = [
   { path: 'ps', component: ProfileShowComponent },
   { path: 'pe', component: ProfileEditComponent },
 
-  // templates
-  { path: 'prof', component: MyProfileComponent },
-
   // testing
   { path: 'd', component: DummyComponent },
   { path: 'dd', component: Dummy2Component },
+  { path: 'services', component: ProductComponent },
 
   //store
   { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
-  // Define routes for each table
+  
+  // tables
+  { path: 'user-list', component: MainLayoutComponent,
+    children: [
+      { path: '', component: UsersTableComponent },  
+    ]
+  },
+  
 ];
 
 @NgModule({

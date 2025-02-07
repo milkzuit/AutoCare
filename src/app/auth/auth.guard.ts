@@ -22,6 +22,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   // Define allowed routes for each role
   const roleAllowedRoutes: { [key: string]: string[] } = {
     regular: ['/dashboard'],
+    admin: ['/dashboard']
   };
 
   // Check if the role is valid and if the current route is allowed

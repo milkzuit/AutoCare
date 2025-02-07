@@ -30,7 +30,10 @@ import { DummyComponent } from './shared/dummy/dummy.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { InfiniteScrollDirective, InfiniteScrollModule } from "ngx-infinite-scroll";
+import {
+  InfiniteScrollDirective,
+  InfiniteScrollModule,
+} from 'ngx-infinite-scroll';
 import { ProductComponent } from './pages/product/product.component';
 import { TopnavComponent } from './pages/topnav/topnav.component';
 import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypolicy.component';
@@ -42,8 +45,8 @@ import { CarServiceService } from './services/car-service.service';
 import { ServiceCarouselComponent } from './components/service-carousel/service-carousel.component';
 import { ServiceCardComponent } from './components/service-card/service-card.component';
 import { CartComponent } from './components/cart/cart.component';
-
-
+import { UsersTableComponent } from './tables/users-table/users-table.component';
+import { MainLayoutComponent } from './tables/main-layout/main-layout.component';
 
 @NgModule({
   declarations: [
@@ -71,13 +74,15 @@ import { CartComponent } from './components/cart/cart.component';
     TopnavComponent,
     PrivacypolicyComponent,
     TermsofuseComponent,
-  
+
     // store
     HomeComponent,
     CheckoutComponent,
     ServiceCarouselComponent,
     ServiceCardComponent,
-    CartComponent
+    CartComponent,
+    UsersTableComponent,
+    MainLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,8 +93,6 @@ import { CartComponent } from './components/cart/cart.component';
     ReactiveFormsModule,
     RatingModule,
     InfiniteScrollDirective,
-   
-    
   ],
   providers: [provideHttpClient(withFetch()), NewsService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],

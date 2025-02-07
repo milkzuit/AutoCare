@@ -16,11 +16,11 @@
 
   <ul class="service-list">
     <li *ngFor="let item of service.serviceList | slice : 0 : 4">
-      {{ item }} oooo
+      {{ item }}
     </li>
     <ng-container *ngIf="isExpanded">
       <li *ngFor="let item of service.serviceList | slice : 4">
-        {{ item }} ppp
+        {{ item }}
       </li>
     </ng-container>
   </ul>

@@ -1,6 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataService } from '../../data.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -106,26 +105,26 @@ export class LandingComponent implements AfterViewInit {
       imgSrc: '../assets/images/landing/testimonial-1.jpg',
       name: 'Akit Kishan',
       reviewSource: 'Google Review',
-      text: 'Fantastic service, superb punctuality. Availed their service twice and truly most satisfying. The response of coordinator is prompt and she was greatly supportive. Thanks a lot..!!'
+      text: 'Fantastic service, superb punctuality. Availed their service twice and truly most satisfying. The response of coordinator is prompt and she was greatly supportive. Thanks a lot..!!',
     },
     {
       imgSrc: '../assets/images/landing/testimonial-2.jpg',
       name: 'Manny',
       reviewSource: 'Facebook Review',
-      text: 'This is my first time experience with Automechanica. But, I would say the service of Automechanica is much better in comparison to any authorized dealer in terms of quality, service and very reasonable charge. Even, I was surprised to get all updates through WhatsApp photos and videos. Really impressed with the service. I would recommend all my friends to go for Automechanica without a second thought.'
+      text: 'This is my first time experience with Automechanica. But, I would say the service of Automechanica is much better in comparison to any authorized dealer in terms of quality, service and very reasonable charge. Even, I was surprised to get all updates through WhatsApp photos and videos. Really impressed with the service. I would recommend all my friends to go for Automechanica without a second thought.',
     },
     {
       imgSrc: '../assets/images/landing/testimonial-3.jpg',
       name: 'Eline',
       reviewSource: 'IG Influencer',
-      text: 'Experience has been smooth every time I have opted for their services. Best part I think is the door step pickup service which everyone will appreciate. You are being notified about the progress of the work through WhatsApp pics which makes experience very transparent. Staff is helpful and courteous, mechanics are also experienced and skilled based on my experience. Overall I would highly recommend Auto Mechanica for general maintenance and denting and painting. The 2 services which I have availed from them yet.'
+      text: 'Experience has been smooth every time I have opted for their services. Best part I think is the door step pickup service which everyone will appreciate. You are being notified about the progress of the work through WhatsApp pics which makes experience very transparent. Staff is helpful and courteous, mechanics are also experienced and skilled based on my experience. Overall I would highly recommend Auto Mechanica for general maintenance and denting and painting. The 2 services which I have availed from them yet.',
     },
     {
       imgSrc: '../assets/images/landing/testimonial-4.jpg',
       name: 'Jade',
       reviewSource: 'Google Review',
-      text: 'It is so smooth to deal with AutoMechanica team that ensures best of experience. From picking-up the car from the doorstep to servicing/best of work, all repair work done to satisfaction to returning the car on the promised date. They keep you updated on the progress at their garage. I don\'t have to worry anymore for servicing/repairing/painting of any of my vehicles anymore. AutoMechanica is where I will go, they take away all my stress. Highly recommended! Thank you team!'
-    }
+      text: "It is so smooth to deal with AutoMechanica team that ensures best of experience. From picking-up the car from the doorstep to servicing/best of work, all repair work done to satisfaction to returning the car on the promised date. They keep you updated on the progress at their garage. I don't have to worry anymore for servicing/repairing/painting of any of my vehicles anymore. AutoMechanica is where I will go, they take away all my stress. Highly recommended! Thank you team!",
+    },
   ];
 
   images = [
@@ -176,8 +175,6 @@ export class LandingComponent implements AfterViewInit {
     },
   ];
 
-
-
   currentImageIndex: number = 0;
 
   ngOnInit(): void {
@@ -208,11 +205,7 @@ export class LandingComponent implements AfterViewInit {
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(
-    private fb: FormBuilder,
-    private quoteService: DataService,
-    private http: HttpClient
-  ) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.quoteForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -224,18 +217,20 @@ export class LandingComponent implements AfterViewInit {
   // - get quote
   onSubmit() {
     if (this.quoteForm.valid) {
-      this.quoteService.submitQuote(this.quoteForm.value).subscribe({
-        next: (response: any) => {
-          this.successMessage = 'Request sent successfully!';
-          this.errorMessage = '';
-          this.quoteForm.reset(); // Clear form after successful submission
-        },
-        error: (error: any) => {
-          this.errorMessage = 'Failed to send request. Please try again.';
-          this.successMessage = '';
-          console.error('error', error);
-        },
-      });
+      this.http
+        .post('http://localhost:8080/api/getQuoteModels', this.quoteForm.value)
+        .subscribe({
+          next: (response: any) => {
+            this.successMessage = 'Request sent successfully!';
+            this.errorMessage = '';
+            this.quoteForm.reset(); // Clear form after successful submission
+          },
+          error: (error: any) => {
+            this.errorMessage = 'Failed to send request. Please try again.';
+            this.successMessage = '';
+            console.error('error', error);
+          },
+        });
     } else {
       this.errorMessage = 'Please fill all required fields correctly.';
       this.successMessage = '';
