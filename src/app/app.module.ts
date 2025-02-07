@@ -4,7 +4,7 @@ import { RatingModule } from 'primeng/rating';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -51,7 +51,10 @@ import { CarServiceService } from './services/car-service.service';
 import { ServiceCarouselComponent } from './components/service-carousel/service-carousel.component';
 import { ServiceCardComponent } from './components/service-card/service-card.component';
 import { CartComponent } from './components/cart/cart.component';
-import { ChatbotComponent } from './ai/chatbot/chatbot.component';
+import { GeminiService } from './gemini.service';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { MarkdownPipe } from './markdown.pipe';
+
 
 
 
@@ -97,7 +100,8 @@ import { ChatbotComponent } from './ai/chatbot/chatbot.component';
     ServiceCarouselComponent,
     ServiceCardComponent,
     CartComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    MarkdownPipe
   ],
   imports: [
     BrowserModule,
@@ -108,10 +112,11 @@ import { ChatbotComponent } from './ai/chatbot/chatbot.component';
     ReactiveFormsModule,
     RatingModule,
     InfiniteScrollDirective,
+    
    
     
   ],
-  providers: [provideHttpClient(withFetch()), NewsService], // Enable the fetch API for HttpClient
+  providers: [provideHttpClient(withFetch()), NewsService,GeminiService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],
 })
 export class AppModule {}

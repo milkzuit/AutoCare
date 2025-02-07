@@ -28,7 +28,7 @@ import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.compo
 
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { ChatbotComponent } from './ai/chatbot/chatbot.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
 
