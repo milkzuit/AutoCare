@@ -1,0 +1,27 @@
+/* Blue Section Styling */
+.blue-section {
+    background-color: #5d87ff; /* Blue background */
+    border-radius: 8px; /* Optional rounded corners */
+    color: #ffffff; /* White text for labels and dropdowns */
+  }
+  
+  .blue-section h2 {
+    color: #f1e6e6; /* White heading text */
+    font-weight: bolder;
+  }
+  
+  .blue-section .form-label {
+    color: #ffffff; /* White labels */
+  }
+  
+  .blue-section .form-select {
+    border-color: #ffffff; /* White border for dropdowns */
+    background-color: #ffffff; /* White background for dropdowns */
+    color: #5d87ff; /* Blue text in dropdowns */
+  }
+  
+  .blue-section .form-select:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  

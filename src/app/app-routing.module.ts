@@ -21,6 +21,7 @@ import { PrivacypolicyComponent } from './miscellaneous/privacypolicy/privacypol
 import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.component';
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 import { RowsComponent } from './shared/rows/rows.component';
 import { authGuard } from './auth/auth.guard';
 import { LogoutResolver } from './auth/logout.resolver';
@@ -32,7 +33,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {
-    path: "logout",
+    path: 'logout',
     component: LandingComponent, // Redirect to home after logout
     resolve: { logout: LogoutResolver }, // Call logout before navigating
   },
@@ -64,14 +65,17 @@ const routes: Routes = [
   //store
   { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
-  
+
   // tables
-  { path: 'user-list', component: MainLayoutComponent,
-    children: [
-      { path: '', component: UsersTableComponent },  
-    ]
+  {
+    path: 'user-list',
+    component: MainLayoutComponent,
+    children: [{ path: '', component: UsersTableComponent }],
   },
-  
+
+  // Define routes for each table
+  //ai chatbot
+  { path: 'chat', component: ChatbotComponent },
 ];
 
 @NgModule({

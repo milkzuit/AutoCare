@@ -4,7 +4,7 @@ import { RatingModule } from 'primeng/rating';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -47,6 +47,12 @@ import { ServiceCardComponent } from './components/service-card/service-card.com
 import { CartComponent } from './components/cart/cart.component';
 import { UsersTableComponent } from './tables/users-table/users-table.component';
 import { MainLayoutComponent } from './tables/main-layout/main-layout.component';
+import { GeminiService } from './gemini.service';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { MarkdownPipe } from './markdown.pipe';
+
+
+
 
 @NgModule({
   declarations: [
@@ -83,6 +89,8 @@ import { MainLayoutComponent } from './tables/main-layout/main-layout.component'
     CartComponent,
     UsersTableComponent,
     MainLayoutComponent,
+    ChatbotComponent,
+    MarkdownPipe
   ],
   imports: [
     BrowserModule,
@@ -93,8 +101,11 @@ import { MainLayoutComponent } from './tables/main-layout/main-layout.component'
     ReactiveFormsModule,
     RatingModule,
     InfiniteScrollDirective,
+    
+   
+    
   ],
-  providers: [provideHttpClient(withFetch()), NewsService], // Enable the fetch API for HttpClient
+  providers: [provideHttpClient(withFetch()), NewsService,GeminiService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],
 })
 export class AppModule {}
