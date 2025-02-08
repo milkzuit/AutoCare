@@ -21,20 +21,27 @@ export class LoginComponent {
       .post<any>('http://localhost:8080/login', this.loginData)
       .subscribe({
         next: (response) => {
-          console.log("sdfds", response);
           // Store the user info and token in local storage
           localStorage.setItem('user', JSON.stringify(response));
           alert('Login successful!');
           this.router.navigate(['/dashboard']);
         },
         error: (error) => {
-          console.log('Error:', error);
           // If login fails, show an alert and redirect to register page
-          alert(
-            error.error.message || 'Invalid login credentials. Please sign up.'
-          );
-          this.router.navigate(['/register']);
+          if (error.error.message === 'Email not registered!') {
+            alert(error.error.message + '. Please sign up.');
+            this.router.navigate(['/register']);
+          } else {
+            alert(error.error.message + '. Try again.');
+            // Clear the form
+            this.loginData.password = ''; // Reset the form data
+          }
         },
       });
+  }
+
+  onForgot(){
+    this.loginData.email = prompt('Enter your email to reset password') || '';
+    localStorage.setItem('email', this.loginData.email);
   }
 }

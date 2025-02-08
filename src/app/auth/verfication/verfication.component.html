@@ -1,0 +1,46 @@
+<div class="parent">
+  <div class="content-area">
+    <h1>Verify Login Code</h1>
+  </div>
+  <form
+    [formGroup]="verificationForm"
+    (ngSubmit)="verifyCode()"
+    class="content-area"
+  >
+    <h4>Please enter the 4-digit verification code sent to your email:</h4>
+    <p style="text-align: center">
+      <code>{{ email }}</code>
+    </p>
+    <fieldset class="number-code">
+      <legend>Security Code</legend>
+      <div formArrayName="code" style="padding: 10px; border: 3px solid white;">
+        <input
+          *ngFor="let control of codeArray.controls; let i = index"
+          [formControlName]="i"
+          class="code-input"
+          required
+          (input)="onInputChange($event, i)"
+          (keydown)="onKeyDown($event, i)"
+          (paste)="handlePaste($event)"
+        />
+      </div>
+    </fieldset>
+    <div>
+      <legend>Didn't receive the code?</legend>
+      <p>Please check your spam folder or click on resend.</p>
+      <div style="text-align: center">
+        <a
+          href="javascript:void(0)"
+          (click)="resendCode()"
+          [class.disabled]="showResendTimer"
+          [style.cursor]="showResendTimer ? 'not-allowed' : 'pointer'"
+          >Resend Code</a
+        >
+      </div>
+    </div>
+    <p class="timer" *ngIf="showResendTimer" style="text-align: center">
+      Resend available in {{ resendTimer }} seconds
+    </p>
+    <input type="submit" value="Submit" [disabled]="verificationForm.invalid" />
+  </form>
+</div>

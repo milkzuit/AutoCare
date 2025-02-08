@@ -50,9 +50,8 @@ import { MainLayoutComponent } from './tables/main-layout/main-layout.component'
 import { GeminiService } from './gemini.service';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { MarkdownPipe } from './markdown.pipe';
-
-
-
+import { VerficationComponent } from './auth/verfication/verfication.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +89,9 @@ import { MarkdownPipe } from './markdown.pipe';
     UsersTableComponent,
     MainLayoutComponent,
     ChatbotComponent,
-    MarkdownPipe
+    MarkdownPipe,
+    VerficationComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,11 +102,8 @@ import { MarkdownPipe } from './markdown.pipe';
     ReactiveFormsModule,
     RatingModule,
     InfiniteScrollDirective,
-    
-   
-    
   ],
-  providers: [provideHttpClient(withFetch()), NewsService,GeminiService], // Enable the fetch API for HttpClient
+  providers: [provideHttpClient(withFetch()), NewsService, GeminiService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],
 })
 export class AppModule {}
