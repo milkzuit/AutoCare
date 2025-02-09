@@ -4,3 +4,33 @@
     background-position: center;
     background-attachment: fixed;
 }
+/* You can add this in your CSS */
+.bi {
+    font-size: 20px;
+    color: #999;
+align-items: center;  }
+  
+
+  .password-eye-icon {
+    position: absolute;
+    top: 70%; /* Increase this value to move it lower */
+    right: 15px;
+    transform: translateY(-50%); /* Keeps it centered but further down */
+    cursor: pointer;
+  }
+  /* CSS for the "LOGIN" title */
+.login-title {
+    font-size: 25px; /* Make it larger */
+    font-weight: bold; /* Make it bold */
+    color: #3c3c3c; /* Dark color for emphasis */
+    margin-top: 20px; /* Add some space above */
+    text-transform: uppercase; /* Make it uppercase */
+    letter-spacing: 2px; /* Increase letter spacing for a more attractive look */
+    font-family:'Times New Roman', Times, serif
+  }
+  
+  /* Optional: Add a subtle shadow to make it more attractive */
+  .login-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
