@@ -21,10 +21,10 @@
         <div *ngIf="authService.isAdmin()">
           <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">Admin</span>
+            <span class="hide-menu">Admin List</span>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="dashboard" aria-expanded="false">
+            <a class="sidebar-link" routerLink="" aria-expanded="false">
               <span>
                 <i class="ti ti-layout-dashboard"></i>
               </span>
@@ -32,22 +32,64 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="dashboard" aria-expanded="false">
+            <a class="sidebar-link" routerLink="user-list/admin" aria-expanded="false">
               <span>
                 <i class="ti ti-layout-dashboard"></i>
               </span>
-              <span class="hide-menu">Admin List</span>
+              <span class="hide-menu">Admin</span>
             </a>
           </li>
+       
           <li class="sidebar-item">
-            <a class="sidebar-link" href="user-list" aria-expanded="false">
+            <a class="sidebar-link" routerLink="user-list" aria-expanded="false">
               <span>
                 <i class="ti ti-layout-dashboard"></i>
               </span>
               <span class="hide-menu">Regular Users</span>
             </a>
           </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" routerLink="user-list/" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Feedbacks</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" routerLink="user-list/" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Newsletter Users</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" routerLink="user-list/getquote" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Quote</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" routerLink="user-list/product" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Product</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" routerLink="user-list/product" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Contacted Users</span>
+            </a>
+          </li>
         </div>
+
         <!-- ? Heading -->
         <li class="nav-small-cap" *ngIf="authService.isAdmin()">
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
