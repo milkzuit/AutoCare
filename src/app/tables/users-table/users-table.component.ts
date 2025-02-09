@@ -16,10 +16,10 @@ export class UsersTableComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // this.role = JSON.parse(localStorage.getItem('user') || '{}').role;
-
     // Get the role from the route parameter
     this.route.url.subscribe((url) => {
+      console.log('1', url);
+      console.log('2', url[0].path);
       if (url.length > 0 && url[0].path === 'admin') {
         this.role = 'admin';
       } else {
@@ -33,9 +33,14 @@ export class UsersTableComponent implements OnInit {
   fetchUsers() {
     // Fetch users based on the current role (either 'admin' or 'regular')
     this.http
-      .get<any>(`http://localhost:8080/api/userModels/search/findByRole?role=${this.role}`)
+      .get<any>(
+        `http://localhost:8080/api/userModels/search/findByRole?role=${this.role}`
+      )
       .subscribe((data) => {
-        console.log(`${this.role.charAt(0).toUpperCase() + this.role.slice(1)} Users:`, data); // Debugging output
+        console.log(
+          `${this.role.charAt(0).toUpperCase() + this.role.slice(1)} Users:`,
+          data
+        ); // Debugging output
         this.users = data; // Assign users data
 
         // Extract columns dynamically, excluding '_links', 'imageData', and 'password'
