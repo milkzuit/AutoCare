@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-verification',
@@ -107,13 +108,31 @@ export class VerficationComponent implements OnInit, OnDestroy {
       })
       .subscribe({
         next: (response) => {
-          alert('Code verified successfully!');
+          // alert('Code verified successfully!');
+          // Success example
+          Swal.fire({
+            icon: 'success',
+            title: 'Verified!',
+            text: 'Your email has been successfully verified.',
+            confirmButtonColor: '#ffd700', // Matches your yellow theme
+            background: '#112240', // Matches your dark theme
+            color: '#ccd6f6', // For text color
+          });
           this.router.navigate(['/reset-password'], {
             queryParams: { email: this.email, token: response.token },
           });
         },
         error: (error) => {
-          alert('Invalid verification code. Please try again.');
+          // alert('Invalid verification code. Please try again.');
+          // Error example
+          Swal.fire({
+            icon: 'error',
+            title: 'Verification Failed',
+            text: 'Please check your code and try again.',
+            confirmButtonColor: '#ffd700',
+            background: '#112240',
+            color: '#ccd6f6',
+          });
           // Clear inputs on error
           this.verificationForm.reset();
           const firstInput = document.querySelector(

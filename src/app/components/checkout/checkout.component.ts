@@ -92,7 +92,7 @@ import { CartService } from '../../services/cart.service';
               <span class="float-end">₹{{ item.price }}</span>
             </p>
           </div>
-          <hr />
+          <hr class="mt-9"/>
           <p>
             <strong
               >Total <span class="float-end">₹{{ total }}</span></strong
@@ -106,7 +106,8 @@ import { CartService } from '../../services/cart.service';
     `
       .checkout-container {
         max-width: 900px;
-        margin: auto;
+        margin: auto;\
+        margin-top: 50px;
       }
     `,
   ],

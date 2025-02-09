@@ -25,6 +25,9 @@
         />
       </div>
     </fieldset>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <input type="submit" value="Verify Code" [disabled]="verificationForm.invalid" />
+    </div>
     <div>
       <legend>Didn't receive the code?</legend>
       <p>Please check your spam folder or click on resend.</p>
@@ -41,6 +44,5 @@
     <p class="timer" *ngIf="showResendTimer" style="text-align: center">
       Resend available in {{ resendTimer }} seconds
     </p>
-    <input type="submit" value="Submit" [disabled]="verificationForm.invalid" />
   </form>
 </div>

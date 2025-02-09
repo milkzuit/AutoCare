@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { PurchaseService } from './purchase.service';
 
 export interface CartItem {
   serviceName: string;
@@ -12,7 +13,6 @@ export interface CartItem {
   providedIn: 'root',
 })
 export class CartService {
-  
   private readonly CART_STORAGE_KEY = 'cartItems';
   public cartItems: CartItem[] = [];
   private cartSubject = new BehaviorSubject<CartItem[]>([]);
@@ -21,7 +21,10 @@ export class CartService {
   cart$ = this.cartSubject.asObservable();
   isCartOpen$ = this.isCartOpenSubject.asObservable();
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private purchaseService: PurchaseService
+  ) {
     this.loadCartFromStorage();
   }
 
@@ -91,6 +94,7 @@ export class CartService {
     alert(`Proceeding to checkout with ${this.cartItems.length} items`);
     // ✅ Navigate to the checkout page
     this.router.navigate(['/checkout']);
+    this.getCartItems();
   }
 
   /** Mock Payment Gateway Integration - runs for 1500sec's*/
@@ -107,16 +111,38 @@ export class CartService {
     }
 
     if (paymentDetails.amount > 0) {
-      this.clearCart(); // Clear cart after successful payment
-      this.router.navigate(['/']);
-      return { success: true, message: 'Payment processed successfully' };
+      // Get user and cart data
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      const cartItems = JSON.parse(
+        localStorage.getItem(this.CART_STORAGE_KEY) || '[]'
+      );
+
+      // Save purchase to backend
+      try {
+        await this.purchaseService
+          .savePurchase(user.id, cartItems, paymentDetails.amount)
+          .toPromise();
+
+        // Clear cart only after successful save
+        this.clearCart();
+        this.router.navigate(['/']);
+        return {
+          success: true,
+          message: 'Payment processed and purchase saved successfully',
+        };
+      } catch (error) {
+        console.error('Failed to save purchase:', error);
+        return { success: false, message: 'Failed to save purchase details' };
+      }
     }
 
     return { success: false, message: 'Payment failed' };
   }
 
-  // getCartItems(): any{
-  //   const storedCart = localStorage.getItem(this.CART_STORAGE_KEY);
-  //     this.cartItems = JSON.parse(storedCart);
-  // }
+  getCartItems(): any {
+    const storedCart = localStorage.getItem(this.CART_STORAGE_KEY);
+    const user = localStorage.getItem('user');
+    console.log(storedCart);
+    console.log(user);
+  }
 }

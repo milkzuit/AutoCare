@@ -1,5 +1,6 @@
 import { NewsService } from './news.service';
 import { IInfiniteScrollAction } from './../../node_modules/ngx-infinite-scroll/models.d';
+import { SweetAlert2Module } from './../../node_modules/@sweetalert2/ngx-sweetalert2';
 import { RatingModule } from 'primeng/rating';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -102,6 +103,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
     ReactiveFormsModule,
     RatingModule,
     InfiniteScrollDirective,
+    SweetAlert2Module.forRoot()
   ],
   providers: [provideHttpClient(withFetch()), NewsService, GeminiService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],
