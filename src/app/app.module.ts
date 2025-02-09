@@ -53,6 +53,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import { MarkdownPipe } from './markdown.pipe';
 import { VerficationComponent } from './auth/verfication/verfication.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { ReceiptsComponent } from './components/receipts/receipts.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
     MarkdownPipe,
     VerficationComponent,
     ResetPasswordComponent,
+    ReceiptsComponent,
   ],
   imports: [
     BrowserModule,

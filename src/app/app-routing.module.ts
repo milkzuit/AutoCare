@@ -29,6 +29,7 @@ import { UsersTableComponent } from './tables/users-table/users-table.component'
 import { MainLayoutComponent } from './tables/main-layout/main-layout.component';
 import { VerficationComponent } from './auth/verfication/verfication.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { ReceiptsComponent } from './components/receipts/receipts.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -69,6 +70,10 @@ const routes: Routes = [
   //store
   { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
+  {
+    path: 'receipts',
+    component: ReceiptsComponent
+  },
 
   // tables
   {
