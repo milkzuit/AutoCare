@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
@@ -11,7 +12,7 @@ export class HeaderComponent {
   details = JSON.parse(localStorage.getItem('user') || '{}');
   imageUrl: SafeUrl = '../assets/images/profile/user-1.jpg'; // fallback image
 
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer, public authService: AuthService) {}
 
   ngOnInit(): void {
     this.loadProfileImage();
