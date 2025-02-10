@@ -144,7 +144,6 @@ interface Purchase {
       }
     `,
   ],
-  encapsulation: ViewEncapsulation.None,
 })
 export class ReceiptsComponent implements OnInit {
   getServicesSummary(items: Array<{ serviceName: string }>) {
