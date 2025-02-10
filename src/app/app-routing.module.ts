@@ -64,26 +64,21 @@ const routes: Routes = [
     children: [
       { path: 'review', component: ReviewComponent },
       { path: 'services', component: ProductComponent },
+      { path: 'profile', component: MyProfileComponent },
+      {
+        path: 'receipts',
+        component: ReceiptsComponent,
+      },
+      { path: 'home', component: HomeComponent },
     ],
   },
-  
-
-  // profile contains - ps and pe
-  { path: 'profile', component: MyProfileComponent },
-  { path: 'ps', component: ProfileShowComponent },
-  { path: 'pe', component: ProfileEditComponent },
 
   // testing
   { path: 'd', component: DummyComponent },
   { path: 'dd', component: Dummy2Component },
 
   //store
-  { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
-  {
-    path: 'receipts',
-    component: ReceiptsComponent,
-  },
 
   // tables
   {
