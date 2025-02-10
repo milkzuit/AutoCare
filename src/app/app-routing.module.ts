@@ -80,8 +80,13 @@ const routes: Routes = [
     path: 'user-list',
     component: MainLayoutComponent,
     children: [
-      { path: 'regular', component: UsersTableComponent },
+      { path: 'stat', component: UsersTableComponent },
       { path: 'admin', component: UsersTableComponent },
+      { path: 'regular', component: UsersTableComponent },
+      { path: 'feedback', component: UsersTableComponent },
+      { path: 'news-letter', component: UsersTableComponent },
+      { path: 'getquote', component: UsersTableComponent },
+      { path: 'contact', component: UsersTableComponent },
     ],
   },
 

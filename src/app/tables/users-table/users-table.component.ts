@@ -10,40 +10,49 @@ import { ActivatedRoute } from '@angular/router';
 export class UsersTableComponent implements OnInit {
   users: any[] = [];
   columns: string[] = [];
-  fallbackImage: string = '../assets/images/profile/user-1.jpg'; // Replace with your actual fallback image path
-  role: string = 'regular'; // Default role if no parameter is passed
+  fallbackImage: string = '../assets/images/profile/user-1.jpg'; // Fallback image
+  title = 'Table';
+  role: string = 'regular'; // Default role
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Get the role from the route parameter
     this.route.url.subscribe((url) => {
-      console.log('1', url);
-      console.log('2', url[0].path);
-      if (url.length > 0 && url[0].path === 'admin') {
-        this.role = 'admin';
-      } else {
-        this.role = 'regular';
-      }
+      console.log('URL:', url.map((u) => u.path).join('/')); // Debugging output
 
-      this.fetchUsers();
+      if (url.length > 0) {
+        const path = url[0].path;
+
+        if (path === 'admin' || path === 'regular') {
+          this.role = path;
+          this.fetchUsersByRole();
+        } else if (path === 'getquote') {
+          this.fetchGetQuoteModels();
+        } else if (path === 'news-letter') {
+          this.fetchNewsLetterModels();
+        } else if (path === 'feedback') {
+          this.fetchFeedbackModels();
+        } else if (path === 'contact') {
+          this.fetchContactModels(); // New function for contact models
+        }
+      }
     });
   }
 
-  fetchUsers() {
-    // Fetch users based on the current role (either 'admin' or 'regular')
+  // Fetch users based on role (admin or regular)
+  fetchUsersByRole() {
     this.http
       .get<any>(
         `http://localhost:8080/api/userModels/search/findByRole?role=${this.role}`
       )
       .subscribe((data) => {
-        console.log(
-          `${this.role.charAt(0).toUpperCase() + this.role.slice(1)} Users:`,
-          data
-        ); // Debugging output
-        this.users = data; // Assign users data
+        this.title = this.role.charAt(0).toUpperCase() + this.role.slice(1)
+        // console.log(
+        //   `${this.role.charAt(0).toUpperCase() + this.role.slice(1)} Users:`,
+        //   data
+        // );
+        this.users = data;
 
-        // Extract columns dynamically, excluding '_links', 'imageData', and 'password'
         if (this.users.length > 0) {
           this.columns = Object.keys(this.users[0]).filter(
             (key) =>
@@ -53,9 +62,80 @@ export class UsersTableComponent implements OnInit {
       });
   }
 
+  // Fetch Get Quote models
+  fetchGetQuoteModels() {
+    this.http
+      .get<any>('http://localhost:8080/api/getQuoteModels')
+      .subscribe((data) => {
+        console.log('Get Quote Data:', data);
+
+        this.title = 'List of People Who Have Requested to Ask for Price.';
+        this.users = data._embedded?.getQuoteModels || [];
+
+        if (this.users.length > 0) {
+          this.columns = Object.keys(this.users[0]).filter(
+            (key) => key !== '_links' // Exclude unwanted fields
+          );
+        }
+      });
+  }
+
+  // Fetch NewsLetter models
+  fetchNewsLetterModels() {
+    this.http
+      .get<any>('http://localhost:8080/api/newsLetterModels')
+      .subscribe((data) => {
+        console.log('NewsLetter Data:', data);
+
+        this.title = 'List of People Who Have Signed up for NewsLetter Servcie.';
+        this.users = data._embedded?.newsLetterModels || [];
+
+        if (this.users.length > 0) {
+          this.columns = Object.keys(this.users[0]).filter(
+            (key) => key !== '_links' // Exclude unwanted fields
+          );
+        }
+      });
+  }
+
+  fetchFeedbackModels() {
+    this.http
+      .get<any>('http://localhost:8080/api/feedbackModels')
+      .subscribe((data) => {
+        console.log('Feedback Data:', data);
+
+        this.title = 'Feedback offered by people.';
+        this.users = data._embedded?.feedbackModels || [];
+
+        if (this.users.length > 0) {
+          this.columns = Object.keys(this.users[0]).filter(
+            (key) => key !== '_links' // Exclude unwanted fields
+          );
+        }
+      });
+  }
+
+  fetchContactModels() {
+    this.http
+      .get<any>('http://localhost:8080/api/contactModels')
+      .subscribe((data) => {
+        console.log('Contact Data:', data);
+
+        this.title = 'List of People to be contacted.';
+        this.users = data._embedded?.contactModels || [];
+
+        if (this.users.length > 0) {
+          this.columns = Object.keys(this.users[0]).filter(
+            (key) => key !== '_links' // Exclude unwanted fields
+          );
+        }
+      });
+  }
+
+  // Function to display fallback image if no image exists
   getUserImage(user: any): string {
     return user.imageData
-      ? `data:image/jpeg;base64,${user.imageData}` // Display the actual image if available
-      : this.fallbackImage; // Otherwise, use the fallback image
+      ? `data:image/jpeg;base64,${user.imageData}`
+      : this.fallbackImage;
   }
 }
