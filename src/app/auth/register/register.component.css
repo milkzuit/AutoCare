@@ -4,3 +4,17 @@
     background-position: center;
     background-attachment: fixed;
 }
+.register-title {
+    font-size: 25px; /* Make it larger */
+    font-weight: bold; /* Make it bold */
+    color: #3c3c3c; /* Dark color for emphasis */
+    margin-top: 20px; /* Add some space above */
+    text-transform: uppercase; /* Make it uppercase */
+    letter-spacing: 2px; /* Increase letter spacing for a more attractive look */
+    font-family:'Times New Roman', Times, serif
+  }
+  
+  /* Optional: Add a subtle shadow to make it more attractive */
+  .register-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }

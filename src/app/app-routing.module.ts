@@ -79,7 +79,10 @@ const routes: Routes = [
   {
     path: 'user-list',
     component: MainLayoutComponent,
-    children: [{ path: '', component: UsersTableComponent }],
+    children: [
+      { path: 'regular', component: UsersTableComponent },
+      { path: 'admin', component: UsersTableComponent },
+    ],
   },
 
   // Define routes for each table

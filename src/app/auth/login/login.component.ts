@@ -12,6 +12,11 @@ export class LoginComponent {
   // The login data model (email and password)
   loginData = { email: '', password: '' };
 
+  isPasswordVisible = false;
+
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
   constructor(private http: HttpClient, private router: Router) {}
 
   // This function will handle the form submission (login)

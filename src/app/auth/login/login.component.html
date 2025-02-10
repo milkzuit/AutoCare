@@ -1,5 +1,5 @@
 <body>
-  <!--  Body Wrapper -->
+  <!-- Body Wrapper -->
   <div
     class="page-wrapper registerme"
     id="main-wrapper"
@@ -24,6 +24,9 @@
                   <img src="assets/images/logos/AUTO.svg" width="180" alt="" />
                 </a>
                 <p class="text-center">Care For Car</p>
+                <!-- Login Title -->
+                <h2 class="login-title text-center">LOGIN</h2> <!-- Add this line for the title -->
+
                 <!-- Login Form -->
                 <form (ngSubmit)="onLogin()" #loginForm="ngForm">
                   <!-- Email -->
@@ -53,10 +56,10 @@
                   </div>
 
                   <!-- Password -->
-                  <div class="mb-3">
+                  <div class="mb-3 position-relative">
                     <label for="password" class="form-label">Password</label>
                     <input
-                      type="password"
+                      [type]="isPasswordVisible ? 'text' : 'password'"
                       id="password"
                       class="form-control"
                       [(ngModel)]="loginData.password"
@@ -64,6 +67,13 @@
                       required
                       #password="ngModel"
                     />
+                    <!-- Eye Icon Toggle -->
+                    <span
+                      class="password-eye-icon"
+                      (click)="togglePasswordVisibility()"
+                    >
+                      <i [ngClass]="isPasswordVisible ? 'bi bi-eye-slash' : 'bi bi-eye'"></i>
+                    </span>
                     <div
                       *ngIf="password.touched && password.invalid"
                       class="text-danger mt-2"
