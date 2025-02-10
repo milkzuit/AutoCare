@@ -9,6 +9,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import { LoaderService } from '../../shared/services/loader.service';
 
 @Component({
   selector: 'app-verification',
@@ -28,7 +29,8 @@ export class VerficationComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loaderService: LoaderService
   ) {
     this.verificationForm = this.fb.group({
       code: this.fb.array([
@@ -46,8 +48,12 @@ export class VerficationComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.email = params['email'] || localStorage.getItem('email') || '';
+      this.email = params['email'] || '';
       if (this.email) {
+        // ? Show loader
+        this.loaderService.showLoader(
+          'Sending verification code to your email...'
+        );
         this.sendVerificationCode();
       }
     });
@@ -85,11 +91,39 @@ export class VerficationComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response) => {
           this.isCodeSent = true;
-          alert('Verification code sent to your email!');
+          // ? Hide loader
+          this.loaderService.hideLoader();
+          // alert('Verification code sent to your email!');
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: 'success',
+            title: 'Verification code sent to your email!',
+          });
           this.startResendTimer();
         },
         error: (error) => {
-          alert('Failed to send verification code. Please try again.');
+          // ? Hide loader
+          this.loaderService.hideLoader();
+          // alert('Failed to send verification code. Please try again.');
+          // Error example
+          Swal.fire({
+            icon: 'error',
+            title: 'Verification Failed',
+            text: 'Failed to send verification code. Please try again.',
+            confirmButtonColor: '#ffd700',
+            background: '#112240',
+            color: '#ccd6f6',
+          });
         },
       });
   }

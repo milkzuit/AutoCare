@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PurchaseService } from '../../services/purchase.service';
 import { LoaderService } from '../../shared/services/loader.service';
-// import { LoaderComponent } from '../shared/loader/loader.component';
+import Swal from 'sweetalert2';
 
 interface Purchase {
   id: number;
@@ -18,35 +18,42 @@ interface Purchase {
   template: `
     <div class="container mx-auto px-4 py-8">
       @if (purchases.length) {
-      <!-- Your existing purchases display code -->
-      <h2 class="text-2xl font-bold mb-6">Your Purchase History</h2>
+      <h2 class="text-2xl font-bold mb-6 text-primary">
+        Your Purchase History
+      </h2>
       <div class="space-y-6">
         @for (purchase of purchases; track purchase.id) {
-        <div class="bg-white rounded-lg shadow-md p-6 relative">
+        <div
+          class="bg-secondary rounded-lg shadow-xl p-6 relative border border-accent/20 hover:border-accent/40 transition-all"
+        >
           <!-- Timeline dot and line -->
           <div class="absolute left-[-2rem] top-1/2 transform -translate-y-1/2">
-            <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
             <div
-              class="w-0.5 h-full bg-blue-200 absolute top-4 left-1/2 transform -translate-x-1/2"
+              class="w-4 h-4 bg-accent rounded-full shadow-[0_0_10px_rgba(255,215,0,0.3)]"
+            ></div>
+            <div
+              class="w-0.5 h-full bg-accent/20 absolute top-4 left-1/2 transform -translate-x-1/2"
             ></div>
           </div>
 
           <!-- Purchase content -->
           <div class="flex justify-between items-start mb-4">
             <div>
-              <h3 class="text-lg font-semibold">Purchase #{{ purchase.id }}</h3>
-              <p class="text-gray-600">
+              <h3 class="text-lg font-semibold text-primary">
+                Purchase #{{ purchase.id }}
+              </h3>
+              <p class="text-secondary-text">
                 {{ purchase.purchaseDate | date : 'medium' }}
               </p>
             </div>
-            <span class="text-xl font-bold text-green-600">
-              ₹{{ purchase.totalAmount }}
-            </span>
+            <span class="text-xl font-bold text-accent"
+              >₹{{ purchase.totalAmount }}</span
+            >
           </div>
 
           <!-- Services summary -->
           <div class="mb-4">
-            <p class="text-gray-700">
+            <p class="text-primary-text">
               Services: {{ getServicesSummary(purchase.items) }}
             </p>
           </div>
@@ -55,7 +62,7 @@ interface Purchase {
           <div class="flex justify-end">
             <button
               (click)="downloadReceipt(purchase.id)"
-              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+              class="bg-accent/10 text-accent px-4 py-2 rounded hover:bg-accent/20 transition-all border border-accent/50 hover:border-accent shadow-lg"
             >
               Download Receipt
             </button>
@@ -64,21 +71,22 @@ interface Purchase {
         }
       </div>
       } @else {
-      <!-- Your existing empty state code -->
-      <div class="text-center py-12">
+      <div class="text-center py-12 bg-secondary rounded-lg shadow-xl p-8">
         <img
           src="/api/placeholder/400/300"
           alt="No purchases"
-          class="mx-auto mb-6"
+          class="mx-auto mb-6 rounded-lg"
         />
-        <h2 class="text-2xl font-bold mb-4">No Purchase History Found</h2>
-        <p class="text-gray-600 mb-6">
+        <h2 class="text-2xl font-bold mb-4 text-primary">
+          No Purchase History Found
+        </h2>
+        <p class="text-secondary-text mb-6">
           Looks like you haven't made any purchases yet. Start your car service
           journey today!
         </p>
         <button
           (click)="navigateToServices()"
-          class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors"
+          class="bg-accent/10 text-accent px-6 py-3 rounded-lg hover:bg-accent/20 transition-all border border-accent/50 hover:border-accent shadow-lg"
         >
           Explore Services
         </button>
@@ -90,6 +98,9 @@ interface Purchase {
     `
       :host {
         display: block;
+        background-color: #0a192f;
+        min-height: 100vh;
+        color: #ccd6f6;
       }
 
       .container {
@@ -109,7 +120,27 @@ interface Purchase {
         top: 0;
         bottom: 0;
         width: 2px;
-        background-color: #e5e7eb;
+        background-color: rgba(255, 215, 0, 0.1);
+      }
+
+      /* Theme colors */
+      .text-primary {
+        color: #ccd6f6;
+      }
+      .text-secondary-text {
+        color: #8892b0;
+      }
+      .text-primary-text {
+        color: #a8b2d1;
+      }
+      .bg-secondary {
+        background-color: #112240;
+      }
+      .text-accent {
+        color: #ffd700;
+      }
+      .bg-accent {
+        background-color: #ffd700;
       }
     `,
   ],
@@ -144,7 +175,7 @@ export class ReceiptsComponent implements OnInit {
       return;
     }
 
-    // Show loader
+    // ? Show loader
     this.loaderService.showLoader('Fetching your purchase history...');
 
     this.purchaseService.getUserPurchases(user.id).subscribe({
@@ -161,23 +192,63 @@ export class ReceiptsComponent implements OnInit {
     });
   }
 
+  // In your ReceiptsComponent
   downloadReceipt(purchaseId: number) {
     this.loaderService.showLoader('Generating your receipt...');
 
     this.purchaseService.downloadReceipt(purchaseId).subscribe({
-      next: (blob) => {
+      next: (response: Blob) => {
+        if (response.size === 0) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Download Failed',
+            text: 'Received empty PDF from server',
+            background: '#112240',
+            color: '#ccd6f6',
+            confirmButtonColor: '#ffd700',
+          });
+          this.loaderService.hideLoader();
+          return;
+        }
+
+        // Create blob URL
+        const blob = new Blob([response], { type: 'application/pdf' });
         const url = window.URL.createObjectURL(blob);
+
+        // Create temporary link
         const link = document.createElement('a');
         link.href = url;
         link.download = `receipt-${purchaseId}.pdf`;
+
+        // Append to body, click, and remove
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
+
+        // Clean up
         window.URL.revokeObjectURL(url);
         this.loaderService.hideLoader();
       },
       error: (error) => {
         console.error('Failed to download receipt:', error);
+        // ? Hide loader
         this.loaderService.hideLoader();
-        // Show error message
+
+        let errorMessage = 'Failed to download the receipt. Please try again.';
+        if (error.status === 404) {
+          errorMessage = 'Receipt not found.';
+        } else if (error.status === 403) {
+          errorMessage = 'You do not have permission to download this receipt.';
+        }
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Download Failed',
+          text: errorMessage,
+          background: '#112240',
+          color: '#ccd6f6',
+          confirmButtonColor: '#ffd700',
+        });
       },
     });
   }

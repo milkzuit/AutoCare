@@ -1,34 +1,414 @@
-.card {
-  border-radius: 10px; /* Optional: Rounded corners */
+/*******************************/
+/********* General CSS *********/
+/*******************************/
+body {
+  color: #444444;
+  font-weight: 400;
+  background: #ffffff;
+  font-family: "Barlow", sans-serif;
 }
 
-.card:hover {
-  transform: scale(1.05); /* Optional: Subtle hover effect */
-  transition: transform 0.2s ease-in-out;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
 }
 
-.card-title {
-  font-weight: bold; /* Optional: Emphasize title */
-}
-.scrollable-carousel {
-  padding: 1rem 0;
-  gap: 1.5rem; /* Increase space between items */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #5d87ff transparent; /* Firefox */
-
-  /* For custom scrollbars in WebKit browsers (like Chrome) */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+a {
+  color: #000;
+  transition: 0.3s;
 }
 
-.scrollable-carousel::-webkit-scrollbar {
-  height: 6px;
+a:hover,
+a:active,
+a:focus {
+  color: #38b6ff;
+  outline: none;
+  text-decoration: none;
 }
 
-.scrollable-carousel::-webkit-scrollbar-thumb {
-  background: #5d87ff;
-  border-radius: 10px;
+.btn.btn-custom {
+  padding: 10px 30px 12px 30px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #38b6ff;
+  border: none;
+  border-radius: 60px;
+  box-shadow: inset 0 0 0 0 #000;
+  transition: ease-out 0.5s;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
 }
 
-.scrollable-carousel::-webkit-scrollbar-track {
+.btn.btn-custom:hover {
+  color: #38b6ff;
+  background: #000;
+  box-shadow: inset 200px 0 0 0 #000;
+}
+
+.btn:focus,
+.form-control:focus {
+  box-shadow: none;
+}
+
+.container-fluid {
+  max-width: 1366px;
+}
+
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+  font-size: inherit;
+  margin-left: 0;
+}
+
+/*******************************/
+/******* Page Header CSS *******/
+/*******************************/
+.page-header {
+  position: relative;
+  margin-bottom: 45px;
+  padding: 90px 0;
+  text-align: center;
+  background: #000;
+  border-top: 1px dotted #ffffff;
+}
+
+.page-header h2 {
+  position: relative;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.page-header h2::after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 2px;
+  left: calc(50% - 50px);
+  bottom: 0;
+  background: #ffffff;
+}
+
+.page-header a {
+  position: relative;
+  padding: 0 12px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.page-header a:hover {
+  color: #38b6ff;
+}
+
+.page-header a::after {
+  position: absolute;
+  content: "/";
+  width: 8px;
+  height: 8px;
+  top: -2px;
+  right: -7px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.page-header a:last-child::after {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .page-header {
+    padding: 60px 0;
+  }
+
+  .page-header h2 {
+    font-size: 45px;
+  }
+
+  .page-header a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-header {
+    padding: 45px 0;
+  }
+
+  .page-header h2 {
+    font-size: 35px;
+  }
+
+  .page-header a {
+    font-size: 18px;
+  }
+}
+
+/*******************************/
+/******* Section Header ********/
+/*******************************/
+.section-header {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 45px auto;
+}
+
+.section-header p {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #38b6ff;
+}
+
+.section-header p::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 2px;
+  left: 25%;
+  bottom: 0;
+  background: #38b6ff;
+}
+
+.section-header.text-left p::after {
+  left: 0;
+}
+
+.section-header.text-right p::after {
+  left: 50%;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+@media (max-width: 991.98px) {
+  .section-header h2 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-header h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-header h2 {
+    font-size: 35px;
+  }
+}
+
+/*******************************/
+/******** Location CSS *********/
+/*******************************/
+.location {
+  position: relative;
+  width: 100%;
+  padding: 45px 0;
+}
+
+.location .location-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.location .location-item i {
+  padding-top: 3px;
+  font-size: 30px;
+  color: #38b6ff;
+}
+
+.location .location-text {
+  padding-left: 15px;
+}
+
+.location .location-text h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.location .location-text p {
+  margin-bottom: 5px;
+}
+
+.location .location-text p strong {
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.location .location-form {
+  padding: 45px 30px;
+  background: #38b6ff;
+  border-radius: 5px;
+}
+
+.location .location-form h3 {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.location .location-form .control-group {
+  margin-bottom: 15px;
+}
+
+.location .location-form .form-control {
+  height: 45px;
+  color: #ffffff;
+  padding: 0 15px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
   background: transparent;
+}
+
+.location .location-form textarea.form-control {
+  height: 120px;
+  padding: 15px;
+}
+
+.location .location-form .form-control::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.location .location-form .form-control:-ms-input-placeholder,
+.location .location-form .form-control::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.location .location-form .btn.btn-custom {
+  width: 100%;
+  color: #38b6ff;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 0 #000;
+}
+
+.location .location-form .btn.btn-custom:hover {
+  color: #ffffff;
+  background: #38b6ff;
+  box-shadow: inset 400px 0 0 0 #000;
+}
+
+@media (min-width: 576px) and (max-width: 991.89px) {
+  .location .location-form .btn.btn-custom:hover {
+    box-shadow: inset 650px 0 0 0 #000;
+  }
+}
+
+/*******************************/
+/********* Contact CSS *********/
+/*******************************/
+.contact {
+  position: relative;
+  /* width: 100%; */
+  padding: 45px 0;
+}
+
+.contact .contact-info {
+  width: 100%;
+  margin-bottom: 45px;
+  padding: 35px 30px 10px 30px;
+  border-radius: 5px;
+  background: #000;
+}
+
+.contact .contact-info h2 {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.contact .contact-info-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.contact .contact-info-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50px;
+}
+
+.contact .contact-info-icon i {
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+}
+
+.contact .contact-info-text {
+  padding-left: 20px;
+}
+
+.contact .contact-info-text h3 {
+  margin: 0 0 5px 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.contact .contact-info-text p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact .contact-form {
+  position: relative;
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.contact .contact-form input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.contact .contact-form textarea {
+  height: 125px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.contact .help-block ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.contact iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 5px;
 }

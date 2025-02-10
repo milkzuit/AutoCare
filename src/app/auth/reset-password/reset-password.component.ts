@@ -22,7 +22,8 @@ export class ResetPasswordComponent implements OnInit {
   ) {
     this.resetForm = this.fb.group(
       {
-        password: ['', [Validators.required, Validators.minLength(8)]],
+        // password: ['', [Validators.required, Validators.minLength(8)]],
+        password: ['', [Validators.required, Validators.minLength(4)]],
         confirmPassword: ['', Validators.required],
       },
       { validator: this.passwordMatchValidator }
@@ -49,18 +50,28 @@ export class ResetPasswordComponent implements OnInit {
   onSubmit() {
     if (this.resetForm.valid) {
       this.http
-        .post('http://localhost:8080/api/reset-password', {
-          email: this.email,
-          token: this.token,
-          newPassword: this.resetForm.get('password')?.value,
-        })
+        .patch(
+          'http://localhost:8080/update-password',
+          {
+            email: this.email,
+            password: this.resetForm.get('password')?.value,
+          },
+          { responseType: 'json' }
+        ) // Ensure Angular expects JSON
         .subscribe({
-          next: () => {
-            alert('Password reset successfully!');
+          next: (response: any) => {
+            // Explicitly handle the response
+            console.log('Success:', response);
+            alert(response.message || 'Password reset successfully!');
             this.router.navigate(['/login']);
           },
           error: (error) => {
-            alert('Failed to reset password. Please try again.');
+            console.error('Error:', error);
+            alert(
+              `Failed to reset password: ${
+                error.error?.error || 'Unknown error'
+              }`
+            );
           },
         });
     }
