@@ -73,6 +73,11 @@ const routes: Routes = [
     children: [
       { path: 'regular', component: UsersTableComponent },
       { path: 'admin', component: UsersTableComponent },
+      { path: 'product', component: UsersTableComponent },
+      { path: 'getquote', component: UsersTableComponent },
+      { path: 'newsletter', component: UsersTableComponent },
+      { path: 'feedback', component: UsersTableComponent },
+      { path: 'contact', component: UsersTableComponent },
     ],
   },
 
