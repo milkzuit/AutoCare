@@ -87,6 +87,7 @@ const routes: Routes = [
       { path: 'news-letter', component: UsersTableComponent },
       { path: 'getquote', component: UsersTableComponent },
       { path: 'contact', component: UsersTableComponent },
+      { path: 'order', component: UsersTableComponent },
     ],
   },
 

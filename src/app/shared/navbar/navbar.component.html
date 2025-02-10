@@ -17,79 +17,6 @@
     <!-- # Sidebar navigation-->
     <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
       <ul id="sidebarnav">
-        <!-- # Admin -->
-        <div *ngIf="authService.isAdmin()">
-          <li class="nav-small-cap">
-            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">Admin List</span>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/stat" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Statistics</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/admin" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Admin</span>
-            </a>
-          </li>
-       
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/regular" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Regular Users</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/feedback" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Feedbacks</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/news-letter" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Newsletter Users</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/getquote" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Quote</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/product" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Purchases</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="/user-list/contact" aria-expanded="false">
-              <span>
-                <i class="ti ti-layout-dashboard"></i>
-              </span>
-              <span class="hide-menu">Contacted Users</span>
-            </a>
-          </li>
-        </div>
-
         <!-- ? Heading -->
         <li class="nav-small-cap" *ngIf="authService.isAdmin()">
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -103,39 +30,99 @@
             <span class="hide-menu">Dashboard</span>
           </a>
         </li>
-        <!-- ? Heading -->
-        <li class="nav-small-cap">
-          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-          <span class="hide-menu">Services</span>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
-            <span>
-              <i class="ti ti-history-toggle"></i>
-            </span>
-            <span class="hide-menu">Service History</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="./home" aria-expanded="false">
-            <span>
-              <i class="ti ti-playlist-add"></i>
-            </span>
-            <span class="hide-menu">Book Services</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link"
-            href="receipts"
-            aria-expanded="false"
-          >
-            <span>
-              <i class="ti ti-receipt"></i>
-            </span>
-            <span class="hide-menu">Receipts</span>
-          </a>
-        </li>
+        <!-- # Admin -->
+        <div *ngIf="authService.isAdmin()">
+          <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Admin View</span>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="/user-list/admin"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Admin Users</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="/user-list/regular"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Regular Users</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="/user-list/feedback"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Feedbacks</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="/user-list/news-letter"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Newsletter Subscribers</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="/user-list/getquote"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Price Enquiry Request</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="/user-list/contact"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Contact List</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="/user-list/order"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Orders</span>
+            </a>
+          </li>
+        </div>
+        <!-- Heading -->
         <li class="nav-small-cap">
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
           <span class="hide-menu">Log out</span>
@@ -148,27 +135,66 @@
             <span class="hide-menu">Logout</span>
           </a>
         </li>
-        <!-- ? Heading -->
-        <li class="nav-small-cap">
-          <i class="#"></i>
-          <span class="hide-menu">Customer Support</span>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" routerLink="/services" aria-expanded="false">
-            <span>
-              <i class="ti ti-phone-plus"></i>
-            </span>
-            <span class="hide-menu">Book a Call</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="/review" aria-expanded="false">
-            <span>
-              <i class="ti ti-notebook"></i>
-            </span>
-            <span class="hide-menu">Feedback</span>
-          </a>
-        </li>
+        <!-- ? Regular user - Navbar  -->
+        <div *ngIf="!authService.isAdmin()">
+          <!-- ? Heading -->
+          <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Services</span>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              href="./ui-alerts.html"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-history-toggle"></i>
+              </span>
+              <span class="hide-menu">Service History</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="./home" aria-expanded="false">
+              <span>
+                <i class="ti ti-playlist-add"></i>
+              </span>
+              <span class="hide-menu">Book Services</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="receipts" aria-expanded="false">
+              <span>
+                <i class="ti ti-receipt"></i>
+              </span>
+              <span class="hide-menu">Receipts</span>
+            </a>
+          </li>
+          <li class="nav-small-cap">
+            <i class="#"></i>
+            <span class="hide-menu">Customer Support</span>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link"
+              routerLink="/services"
+              aria-expanded="false"
+            >
+              <span>
+                <i class="ti ti-phone-plus"></i>
+              </span>
+              <span class="hide-menu">Book a Call</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/review" aria-expanded="false">
+              <span>
+                <i class="ti ti-notebook"></i>
+              </span>
+              <span class="hide-menu">Feedback</span>
+            </a>
+          </li>
+        </div>
       </ul>
     </nav>
   </div>
