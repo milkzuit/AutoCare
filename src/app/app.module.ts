@@ -55,6 +55,7 @@ import { VerficationComponent } from './auth/verfication/verfication.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ReceiptsComponent } from './components/receipts/receipts.component';
 import { ChatbotRowsWrapperComponent } from './template/chatbot-rows-wrapper/chatbot-rows-wrapper.component';
+import { OrderTableComponent } from './tables/order-table/order-table.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { ChatbotRowsWrapperComponent } from './template/chatbot-rows-wrapper/cha
     ResetPasswordComponent,
     ReceiptsComponent,
     ChatbotRowsWrapperComponent,
+    OrderTableComponent,
   ],
   imports: [
     BrowserModule,

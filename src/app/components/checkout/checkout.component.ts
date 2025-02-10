@@ -93,7 +93,7 @@ import { CartService } from '../../services/cart.service';
             </p>
           </div>
           <hr class="mt-9"/>
-          <p>
+          <p> 
             <strong
               >Total <span class="float-end">₹{{ total }}</span></strong
             >

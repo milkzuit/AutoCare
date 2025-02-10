@@ -125,7 +125,7 @@ export class CartService {
 
         // Clear cart only after successful save
         this.clearCart();
-        this.router.navigate(['/']);
+        this.router.navigate(['/main-layout/receipts']);
         return {
           success: true,
           message: 'Payment processed and purchase saved successfully',

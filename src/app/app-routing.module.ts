@@ -1,3 +1,4 @@
+import { OrderTableComponent } from './tables/order-table/order-table.component';
 import { MyProfileComponent } from './template/my-profile/my-profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -56,6 +57,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [authGuard]
   },
 
   {
@@ -92,7 +94,7 @@ const routes: Routes = [
       { path: 'news-letter', component: UsersTableComponent },
       { path: 'getquote', component: UsersTableComponent },
       { path: 'contact', component: UsersTableComponent },
-      { path: 'order', component: UsersTableComponent },
+      { path: 'order', component: OrderTableComponent },
     ],
   },
 
