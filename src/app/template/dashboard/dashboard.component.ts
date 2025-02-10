@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 // as we import - SimpleBar - it gets bundled auto
 import SimpleBar from 'simplebar';
 // no need in angular.json - "node_modules/simplebar/dist/simplebar.min.js"
