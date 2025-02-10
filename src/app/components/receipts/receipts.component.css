@@ -1,249 +1,222 @@
-/* Main container */
-.purchase-container {
-    /* max-width: 1200px; */
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    background: linear-gradient(135deg, #a7cceb, #eb6e98);
+}
+  
+  /* Primary Colors */
+  .text-primary {
+    color: #5d87ff; /* Blue */
+  }
+  
+  .text-secondary-text {
+    color: #7f8c8d; /* Light Gray */
+  }
+  
+  .bg-primary {
+    background-color: #5d87ff; /* Blue */
+  }
+  
+  .bg-secondary {
+    background-color: #ffffff; /* White */
+  }
+  
+  .text-accent {
+    color: #f39c12; /* Bright Yellow Accent */
+  }
+  
+  .bg-accent {
+    background-color: #f39c12; /* Bright Yellow Accent */
+  }
+  
+  
+  
+  .border-accent {
+    border-color: #f39c12;
+  }
+  
+  .border-accent{
+    border-color: rgba(243, 156, 18, 0.2);
+  }
+  
+  .border-accent {
+    border-color: rgba(243, 156, 18, 0.5);
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-xl {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #0a192f, #112240);
+    padding: 2rem 1rem;
   }
   
-  /* Header Styles */
-  .purchase-header {
-    margin-bottom: 3rem;
-    text-align: center;
+  /* Headings */
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5d87ff; /* Blue */
+    margin-bottom: 1.5rem;
   }
   
-  .title {
-    font-size: 2.5rem;
-    color: #ccd6f6;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #5d87ff; /* Blue */
   }
   
-  .subtitle {
-    color: #8892b0;
-    font-size: 1.1rem;
-  }
-  
-  /* Timeline Container */
-  .timeline-container {
-    position: relative;
-    padding-left: 3rem;
-  }
-  
-  .timeline-container::before {
-    content: '';
-    position: absolute;
-    left: 1.25rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.3), transparent);
-  }
-  
-  /* Purchase Card */
+  /* Purchase Cards */
   .purchase-card {
-    position: relative;
-    background: rgba(17, 34, 64, 0.95);
+    background-color: #ffffff; /* White */
     border-radius: 1rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    padding: 2rem;
+    position: relative;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(93, 135, 255, 0.2);
   }
   
   .purchase-card:hover {
-    transform: translateX(10px);
-    border-color: rgba(255, 215, 0, 0.4);
-    box-shadow: 
-      0 10px 20px rgba(0, 0, 0, 0.2),
-      0 0 15px rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(93, 135, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
   
-  /* Timeline Marker */
-  .timeline-marker {
+  /* Timeline Dot and Line */
+  .purchase-card .timeline-dot {
     position: absolute;
-    left: -3rem;
+    left: -2rem;
     top: 50%;
     transform: translateY(-50%);
   }
   
-  .dot {
+  .purchase-card .timeline-dot .circle {
     width: 1rem;
     height: 1rem;
-    background: #ffd700;
+    background-color: #5d87ff; /* Blue */
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    animation: pulse 2s infinite;
+    box-shadow: 0 0 10px rgba(93, 135, 255, 0.3);
   }
   
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-  }
-  
-  .line {
+  .purchase-card .timeline-dot .line {
     position: absolute;
-    width: 2px;
-    height: 100%;
-    background: rgba(255, 215, 0, 0.2);
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    top: 1rem;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(93, 135, 255, 0.2);
   }
   
-  /* Card Content */
-  .card-content {
-    padding: 0.5rem;
-  }
-  
-  .purchase-header-content {
+  /* Purchase Content */
+  .purchase-card .purchase-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1.5rem;
   }
   
-  .purchase-info {
-    flex: 1;
-  }
-  
-  .purchase-id {
+  .purchase-card .purchase-content h3 {
     font-size: 1.25rem;
-    color: #ccd6f6;
-    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #5d87ff; /* Blue */
   }
   
-  .purchase-date {
-    color: #8892b0;
-    font-size: 0.9rem;
+  .purchase-card .purchase-content p {
+    color: #7f8c8d;
+    margin-top: 0.25rem;
   }
   
-  .purchase-amount {
-    text-align: right;
-  }
-  
-  .amount-label {
-    display: block;
-    color: #8892b0;
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-  }
-  
-  .amount-value {
+  .purchase-card .purchase-content .total-amount {
     font-size: 1.5rem;
-    color: #ffd700;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    font-weight: bold;
+    color: #5d87ff; /* Blue */
   }
   
-  /* Services Section */
-  .services-section {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    border-radius: 0.5rem;
+  /* Services Summary */
+  .purchase-card .services-summary {
     margin-bottom: 1.5rem;
   }
   
-  .services-title {
-    color: #a8b2d1;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .purchase-card .services-summary p {
+    font-size: 1rem;
+    color: #7f8c8d;
   }
   
-  .services-list {
-    color: #ccd6f6;
-    line-height: 1.6;
+  /* Actions */
+  .purchase-card .actions {
+    display: flex;
+    justify-content: flex-end;
   }
   
-  /* Buttons */
-  .download-btn, .explore-btn {
-    background: rgba(255, 215, 0, 0.1);
-    color: #ffd700;
-    padding: 0.75rem 1.5rem;
+  .purchase-card .actions .download-btn {
+    background-color: rgba(93, 135, 255, 0.1);
+    color: #5d87ff; /* Blue */
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    border: 1px solid rgba(93, 135, 255, 0.5);
+    cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
   }
   
-  .download-btn:hover, .explore-btn:hover {
-    background: rgba(255, 215, 0, 0.2);
-    border-color: rgba(255, 215, 0, 0.6);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+  .purchase-card .actions .download-btn:hover {
+    background-color: rgba(93, 135, 255, 0.2);
+    border: 1px solid rgba(93, 135, 255, 0.7);
   }
   
   /* Empty State */
   .empty-state {
-    background: rgba(17, 34, 64, 0.95);
-    border-radius: 1rem;
-    padding: 3rem 2rem;
     text-align: center;
-    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 3rem 2rem;
+    background-color: #ffffff; /* White */
+    border-radius: 1rem;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   }
   
-  .empty-state-content {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .empty-state-image {
+  .empty-state img {
     max-width: 100%;
     height: auto;
     border-radius: 1rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
   }
   
-  .empty-state-title {
-    font-size: 1.75rem;
-    color: #ccd6f6;
+  .empty-state h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5d87ff; /* Blue */
     margin-bottom: 1rem;
   }
   
-  .empty-state-message {
-    color: #8892b0;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+  .empty-state p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .purchase-container {
-      padding: 1rem;
-    }
-    
-    .timeline-container {
-      padding-left: 2rem;
-    }
-    
-    .purchase-card {
-      margin-left: 0.5rem;
-    }
-    
-    .timeline-marker {
-      left: -2rem;
-    }
-    
-    .title {
-      font-size: 2rem;
-    }
-    
-    .purchase-header-content {
-      flex-direction: column;
-    }
-    
-    .purchase-amount {
-      text-align: left;
-      margin-top: 1rem;
-    }
+  .empty-state button {
+    background-color: rgba(93, 135, 255, 0.1);
+    color: #5d87ff; /* Blue */
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(93, 135, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
+  
+  .empty-state button:hover {
+    background-color: rgba(93, 135, 255, 0.2);
+    border: 1px solid rgba(93, 135, 255, 0.7);
+  }
+  
