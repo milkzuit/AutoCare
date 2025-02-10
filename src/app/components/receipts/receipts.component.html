@@ -1,1 +1,72 @@
-<p>receipts works!</p>
+<div class="purchase-container">
+    @if (purchases.length) {
+      <div class="purchase-header">
+        <h2 class="title">
+          <i class="fas fa-shopping-bag mr-2"></i>
+          Your Purchase History
+        </h2>
+        <div class="subtitle">Track your service bookings and receipts</div>
+      </div>
+      
+      <div class="timeline-container">
+        @for (purchase of purchases; track purchase.id) {
+          <div class="purchase-card">
+            <!-- Timeline elements -->
+            <div class="timeline-marker">
+              <div class="dot"></div>
+              <div class="line"></div>
+            </div>
+  
+            <!-- Purchase content -->
+            <div class="card-content">
+              <div class="purchase-header-content">
+                <div class="purchase-info">
+                  <h3 class="purchase-id">Order #{{ purchase.id }}</h3>
+                  <p class="purchase-date">
+                    <i class="far fa-calendar-alt mr-2"></i>
+                    {{ purchase.purchaseDate | date : 'medium' }}
+                  </p>
+                </div>
+                <div class="purchase-amount">
+                  <span class="amount-label">Total</span>
+                  <span class="amount-value">₹{{ purchase.totalAmount }}</span>
+                </div>
+              </div>
+  
+              <div class="services-section">
+                <h4 class="services-title">Services Booked</h4>
+                <p class="services-list">
+                  {{ getServicesSummary(purchase.items) }}
+                </p>
+              </div>
+  
+              <div class="card-actions">
+                <button (click)="downloadReceipt(purchase.id)" class="download-btn">
+                  <i class="fas fa-download mr-2"></i>
+                  Download Receipt
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="empty-state">
+        <div class="empty-state-content">
+          <img
+            src="/api/placeholder/400/300"
+            alt="No purchases"
+            class="empty-state-image"
+          />
+          <h2 class="empty-state-title">No Purchase History Found</h2>
+          <p class="empty-state-message">
+            Your service history is empty. Start your car care journey today!
+          </p>
+          <button (click)="navigateToServices()" class="explore-btn">
+            <i class="fas fa-car mr-2"></i>
+            Explore Services
+          </button>
+        </div>
+      </div>
+    }
+  </div>
