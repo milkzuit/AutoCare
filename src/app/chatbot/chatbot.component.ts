@@ -8,7 +8,7 @@ interface GeminiResponse {
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
-  styleUrls: ['./chatbot.component.css']
+  styleUrls: ['./chatbot.component.css'],
 })
 export class ChatbotComponent implements AfterViewInit {
   messages: ChatMessage[] = [];
@@ -28,7 +28,7 @@ export class ChatbotComponent implements AfterViewInit {
       this.messages.push({
         content: 'hey Its me MOJO...How may I help you?',
         type: 'bot',
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }
   }
@@ -40,34 +40,33 @@ export class ChatbotComponent implements AfterViewInit {
     this.messages.push({
       content: this.userInput,
       type: 'user',
-      timestamp: new Date()
+      timestamp: new Date(),
     });
 
     this.isLoading = true;
 
     // Get AI response
-    this.geminiService.generateResponse(this.userInput)
-      .subscribe({
-        next: (response) => {
-          this.messages.push({
-            content: response.candidates[0].content.parts[0].text,
-            type: 'bot',
-            timestamp: new Date()
-          });
-        },
-        error: (error) => {
-          console.error('Error:', error);
-          this.messages.push({
-            content: 'Sorry, I encountered an error. Please try again.',
-            type: 'bot',
-            timestamp: new Date()
-          });
-        },
-        complete: () => {
-          this.isLoading = false;
-          this.userInput = '';
-        }
-      });
+    this.geminiService.generateResponse(this.userInput).subscribe({
+      next: (response) => {
+        this.messages.push({
+          content: response.candidates[0].content.parts[0].text,
+          type: 'bot',
+          timestamp: new Date(),
+        });
+      },
+      error: (error) => {
+        console.error('Error:', error);
+        this.messages.push({
+          content: 'Sorry, I encountered an error. Please try again.',
+          type: 'bot',
+          timestamp: new Date(),
+        });
+      },
+      complete: () => {
+        this.isLoading = false;
+        this.userInput = '';
+      },
+    });
   }
 
   toggleChat() {
@@ -79,7 +78,7 @@ export class ChatbotComponent implements AfterViewInit {
       this.messages.push({
         content: "Hey I'm MOJO..How may I help you?",
         type: 'bot',
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }
   }

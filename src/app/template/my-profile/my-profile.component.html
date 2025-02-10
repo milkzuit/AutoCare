@@ -1,32 +1,11 @@
-<div
-  class="page-wrapper"
-  id="main-wrapper"
-  data-layout="vertical"
-  data-navbarbg="skin6"
-  data-sidebartype="full"
-  data-sidebar-position="fixed"
-  data-header-position="fixed"
->
-  <!-- Sidebar start -->
-  <app-navbar></app-navbar>
-  <!-- Sidebar end -->
-  <!-- Main wrapper start -->
-  <div class="body-wrapper">
-    <!-- Header Start -->
-    <app-header></app-header>
-    <!-- Header end -->
-    <!-- container start -->
-    <div class="container-fluid">
-      <!-- My profile start -->
-      <div *ngIf="!isEditMode">
-        <app-profile-show (editClicked)="toggleEditMode()"></app-profile-show>
-      </div>
-      <div *ngIf="isEditMode">
-        <app-profile-edit (cancelEdit)="toggleEditMode()"></app-profile-edit>
-      </div>
-      <!-- My profile end -->
-    </div>
-    <!-- container end -->
+<!-- container start -->
+<div class="container-fluid" style="margin-top: 13vh;">
+  <!-- My profile start -->
+  <div *ngIf="!isEditMode">
+    <app-profile-show (editClicked)="toggleEditMode()"></app-profile-show>
   </div>
-  <!-- Main wrapper end -->
+  <div *ngIf="isEditMode">
+    <app-profile-edit (cancelEdit)="toggleEditMode()"></app-profile-edit>
+  </div>
+  <!-- My profile end -->
 </div>

@@ -30,6 +30,7 @@ import { MainLayoutComponent } from './tables/main-layout/main-layout.component'
 import { VerficationComponent } from './auth/verfication/verfication.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ReceiptsComponent } from './components/receipts/receipts.component';
+import { ChatbotRowsWrapperComponent } from './template/chatbot-rows-wrapper/chatbot-rows-wrapper.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -42,14 +43,8 @@ const routes: Routes = [
     component: LandingComponent, // Redirect to home after logout
     resolve: { logout: LogoutResolver }, // Call logout before navigating
   },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [authGuard],
-  },
   { path: 'contact', component: ContactComponent },
   { path: 'blog', component: BlogComponent },
-  { path: 'review', component: ReviewComponent },
 
   // home
   { path: 'tn', component: TopnavComponent },
@@ -57,23 +52,33 @@ const routes: Routes = [
   { path: 'pp', component: PrivacypolicyComponent },
   { path: 'term', component: TermsofuseComponent },
 
-  // profile contains - ps and pe
-  { path: 'profile', component: MyProfileComponent },
-  { path: 'ps', component: ProfileShowComponent },
-  { path: 'pe', component: ProfileEditComponent },
+  // # dashboard
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+
+  {
+    path: 'main-layout',
+    component: MainLayoutComponent,
+    children: [
+      { path: 'review', component: ReviewComponent },
+      { path: 'services', component: ProductComponent },
+      { path: 'profile', component: MyProfileComponent },
+      {
+        path: 'receipts',
+        component: ReceiptsComponent,
+      },
+      { path: 'home', component: HomeComponent },
+    ],
+  },
 
   // testing
   { path: 'd', component: DummyComponent },
   { path: 'dd', component: Dummy2Component },
-  { path: 'services', component: ProductComponent },
 
   //store
-  { path: 'home', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
-  {
-    path: 'receipts',
-    component: ReceiptsComponent
-  },
 
   // tables
   {
@@ -91,7 +96,6 @@ const routes: Routes = [
     ],
   },
 
-  // Define routes for each table
   //ai chatbot
   { path: 'chat', component: ChatbotComponent },
 ];

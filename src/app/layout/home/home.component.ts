@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { ServiceModel } from "../../models/service.model";
-import { CarServiceService } from "../../services/car-service.service";
+import { Component, OnInit } from '@angular/core';
+import { ServiceModel } from '../../models/service.model';
+import { CarServiceService } from '../../services/car-service.service';
 
 interface GroupedServices {
   [key: string]: ServiceModel[];
@@ -9,21 +9,23 @@ interface GroupedServices {
 @Component({
   selector: 'app-home',
   template: `
-    <app-service-carousel
-      (categorySelect)="onCategorySelect($event)"
-    ></app-service-carousel>
-    <app-cart></app-cart>
-    <div class="container mt-1">
-      <div *ngFor="let group of Object.entries(groupedServices)">
-        <div class="section-title">{{ group[0] }}</div>
-        <ng-container *ngFor="let service of group[1]">
-          <app-service-card [service]="service"></app-service-card>
-        </ng-container>
+    <div style="margin-top: 10vh;">
+      <app-service-carousel
+        (categorySelect)="onCategorySelect($event)"
+      ></app-service-carousel>
+      <app-cart></app-cart>
+      <div class="container mt-1">
+        <div *ngFor="let group of Object.entries(groupedServices)">
+          <div class="section-title">{{ group[0] }}</div>
+          <ng-container *ngFor="let service of group[1]">
+            <app-service-card [service]="service"></app-service-card>
+          </ng-container>
+        </div>
       </div>
     </div>
   `,
 
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   services: ServiceModel[] = [];
