@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-users-table',
@@ -8,54 +8,58 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./users-table.component.css'],
 })
 export class UsersTableComponent implements OnInit {
-  users: any[] = [];
-  columns: string[] = [];
-  fallbackImage: string = '../assets/images/profile/user-1.jpg'; // Replace with your actual fallback image path
+getUserImage(_t20: any) {
+throw new Error('Method not implemented.');
+}
+  data: any[] = []; // To store the fetched data
+  columns: string[] = []; // To store the column names dynamically
   role: string = 'regular'; // Default role if no parameter is passed
+  model: string = ''; // This will hold the model name (quoteModels, etc.)
+  fallbackImage: string = '../assets/images/profile/user-1.jpg'; // Replace with your fallback image
+  users: any[] = [];
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Get the role from the route parameter
+    // Get the role and model from the route parameter
     this.route.url.subscribe((url) => {
-      console.log('1', url);
-      console.log('2', url[0].path);
-      if (url.length > 0 && url[0].path === 'admin') {
-        this.role = 'admin';
-      } else {
-        this.role = 'regular';
-      }
+      console.log('URL Parameters:', url);
+      this.role = url[0]?.path === 'admin' ? 'admin' : 'regular'; // Check role from route
+      this.model = url[1]?.path; // Model is the second parameter (e.g., 'quoteModels')
 
-      this.fetchUsers();
+      console.log('Role:', this.role, 'Model:', this.model);
+      this.fetchData();
     });
   }
-
-  fetchUsers() {
-    // Fetch users based on the current role (either 'admin' or 'regular')
-    this.http
-      .get<any>(
-        `http://localhost:8080/api/userModels/search/findByRole?role=${this.role}`
-      )
-      .subscribe((data) => {
-        console.log(
-          `${this.role.charAt(0).toUpperCase() + this.role.slice(1)} Users:`,
-          data
-        ); // Debugging output
-        this.users = data; // Assign users data
-
-        // Extract columns dynamically, excluding '_links', 'imageData', and 'password'
-        if (this.users.length > 0) {
-          this.columns = Object.keys(this.users[0]).filter(
+  fetchData() {
+    // Define the API endpoints for different models
+    const apiUrls = {
+      getquote: 'http://localhost:8080/api/getQuoteModels',
+      newsletter: 'http://localhost:8080/api/newsletterModels',
+      feedback: 'http://localhost:8080/api/feedbackModels',
+      product: 'http://localhost:8080/api/productModels',
+      contact: 'http://localhost:8080/api/contactModels',
+    };
+  
+    // Use keyof to explicitly type the model
+    const modelKey = this.model as keyof typeof apiUrls;
+  
+    // Check if the model is a valid key and make the API call
+    if (apiUrls[modelKey]) {
+      this.http.get<any>(apiUrls[modelKey]).subscribe((data) => {
+        console.log(`${this.model} Data:`, data);
+        this.data = data;
+  
+        // Dynamically extract columns, excluding unwanted keys
+        if (this.data.length > 0) {
+          this.columns = Object.keys(this.data[0]).filter(
             (key) =>
               key !== '_links' && key !== 'imageData' && key !== 'password'
           );
         }
       });
+    } else {
+      console.error(`Invalid model: ${this.model}`);
+    }
   }
-
-  getUserImage(user: any): string {
-    return user.imageData
-      ? `data:image/jpeg;base64,${user.imageData}` // Display the actual image if available
-      : this.fallbackImage; // Otherwise, use the fallback image
-  }
-}
+}  
