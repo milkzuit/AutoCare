@@ -252,7 +252,7 @@ export class ServiceCarouselComponent implements AfterViewInit {
     },
     {
       name: 'SOS Service',
-      image: 'assets/images/landing/12.png',
+      image: 'assets/images/logos/sos.png',
       isActive: false,
     },
   ];
