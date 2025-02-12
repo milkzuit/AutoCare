@@ -69,7 +69,7 @@ export class UsersTableComponent implements OnInit {
       .subscribe((data) => {
         console.log('Get Quote Data:', data);
 
-        this.title = 'List of People Who Have Requested to Ask for Price.';
+        this.title = 'Quotation Request';
         this.users = data._embedded?.getQuoteModels || [];
 
         if (this.users.length > 0) {
@@ -87,7 +87,7 @@ export class UsersTableComponent implements OnInit {
       .subscribe((data) => {
         console.log('NewsLetter Data:', data);
 
-        this.title = 'List of People Who Have Signed up for NewsLetter Servcie.';
+        this.title = ' NewsLetter Subscribers';
         this.users = data._embedded?.newsLetterModels || [];
 
         if (this.users.length > 0) {
@@ -104,7 +104,7 @@ export class UsersTableComponent implements OnInit {
       .subscribe((data) => {
         console.log('Feedback Data:', data);
 
-        this.title = 'Feedback offered by people.';
+        this.title = 'Feedbacks Received';
         this.users = data._embedded?.feedbackModels || [];
 
         if (this.users.length > 0) {
@@ -121,7 +121,7 @@ export class UsersTableComponent implements OnInit {
       .subscribe((data) => {
         console.log('Contact Data:', data);
 
-        this.title = 'List of People to be contacted.';
+        this.title = 'To be contacted';
         this.users = data._embedded?.contactModels || [];
 
         if (this.users.length > 0) {
