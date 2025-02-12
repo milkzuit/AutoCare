@@ -17,21 +17,20 @@
     <!-- # Sidebar navigation-->
     <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
       <ul id="sidebarnav">
-        <!-- ? Heading -->
-        <li class="nav-small-cap">
-          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-          <span class="hide-menu">Home</span>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="dashboard" aria-expanded="false">
-            <span>
-              <i class="ti ti-layout-dashboard"></i>
-            </span>
-            <span class="hide-menu">Dashboard</span>
-          </a>
-        </li>
         <!-- # Admin -->
         <div *ngIf="authService.isAdmin()">
+          <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Home</span>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="dashboard" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Dashboard</span>
+            </a>
+          </li>
           <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Admin View</span>
@@ -122,21 +121,29 @@
             </a>
           </li>
         </div>
-        <!-- Heading -->
-        <li class="nav-small-cap">
-          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-          <span class="hide-menu">Log out</span>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="logout" aria-expanded="false">
-            <span>
-              <i class="ti ti-logout"></i>
-            </span>
-            <span class="hide-menu">Logout</span>
-          </a>
-        </li>
-        <!-- ? Regular user - Navbar  -->
+        <!-- # Regular user - Navbar  -->
         <div *ngIf="!authService.isAdmin()">
+          <!-- ? Heading -->
+          <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">AUTH</span>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="main-layout/profile" aria-expanded="false">
+              <span>
+                <i class="ti ti-logout"></i>
+              </span>
+              <span class="hide-menu">Profile</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="logout" aria-expanded="false">
+              <span>
+                <i class="ti ti-logout"></i>
+              </span>
+              <span class="hide-menu">Logout</span>
+            </a>
+          </li>
           <!-- ? Heading -->
           <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -155,7 +162,11 @@
             </a>
           </li> -->
           <li class="sidebar-item">
-            <a class="sidebar-link" href="main-layout/home" aria-expanded="false">
+            <a
+              class="sidebar-link"
+              href="main-layout/home"
+              aria-expanded="false"
+            >
               <span>
                 <i class="ti ti-playlist-add"></i>
               </span>
@@ -163,7 +174,11 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="main-layout/receipts" aria-expanded="false">
+            <a
+              class="sidebar-link"
+              href="main-layout/receipts"
+              aria-expanded="false"
+            >
               <span>
                 <i class="ti ti-receipt"></i>
               </span>
@@ -187,7 +202,11 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="main-layout/review" aria-expanded="false">
+            <a
+              class="sidebar-link"
+              href="main-layout/review"
+              aria-expanded="false"
+            >
               <span>
                 <i class="ti ti-notebook"></i>
               </span>
