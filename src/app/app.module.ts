@@ -1,4 +1,5 @@
 import { NewsService } from './news.service';
+import { NgApexchartsModule } from 'ng-apexcharts';
 import { IInfiniteScrollAction } from './../../node_modules/ngx-infinite-scroll/models.d';
 import { SweetAlert2Module } from './../../node_modules/@sweetalert2/ngx-sweetalert2';
 import { RatingModule } from 'primeng/rating';
@@ -109,7 +110,8 @@ import { OrderTableComponent } from './tables/order-table/order-table.component'
     ReactiveFormsModule,
     RatingModule,
     InfiniteScrollDirective,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    NgApexchartsModule
   ],
   providers: [provideHttpClient(withFetch()), NewsService, GeminiService], // Enable the fetch API for HttpClient
   bootstrap: [AppComponent],

@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-rows',
   templateUrl: './rows.component.html',
-  styleUrl: './rows.component.css'
+  styleUrls: ['./rows.component.css'],
 })
-export class RowsComponent {
-
-}
+export class RowsComponent {}

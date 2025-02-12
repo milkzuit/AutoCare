@@ -32,6 +32,7 @@ import { VerficationComponent } from './auth/verfication/verfication.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ReceiptsComponent } from './components/receipts/receipts.component';
 import { ChatbotRowsWrapperComponent } from './template/chatbot-rows-wrapper/chatbot-rows-wrapper.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },

@@ -46,7 +46,7 @@ export class UsersTableComponent implements OnInit {
         `http://localhost:8080/api/userModels/search/findByRole?role=${this.role}`
       )
       .subscribe((data) => {
-        this.title = this.role.charAt(0).toUpperCase() + this.role.slice(1)
+        this.title = this.role.charAt(0).toUpperCase() + this.role.slice(1);
         // console.log(
         //   `${this.role.charAt(0).toUpperCase() + this.role.slice(1)} Users:`,
         //   data
