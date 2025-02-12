@@ -121,7 +121,7 @@ export class UsersTableComponent implements OnInit {
       .subscribe((data) => {
         console.log('Contact Data:', data);
 
-        this.title = 'To be contacted';
+        this.title = 'To Be Contacted';
         this.users = data._embedded?.contactModels || [];
 
         if (this.users.length > 0) {
