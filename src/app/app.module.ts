@@ -14,7 +14,6 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { RowsComponent } from './shared/rows/rows.component';
 import { MyProfileComponent } from './template/my-profile/my-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -57,6 +56,9 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { ReceiptsComponent } from './components/receipts/receipts.component';
 import { ChatbotRowsWrapperComponent } from './template/chatbot-rows-wrapper/chatbot-rows-wrapper.component';
 import { OrderTableComponent } from './tables/order-table/order-table.component';
+import { MonthlyChartComponent } from './charts/monthly-chart/monthly-chart.component';
+import { YearlyChartComponent } from './charts/yearly-chart/yearly-chart.component';
+import { LineChartComponent } from './charts/line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,6 @@ import { OrderTableComponent } from './tables/order-table/order-table.component'
     HeaderComponent,
     DashboardComponent,
     FooterComponent,
-    RowsComponent,
     MyProfileComponent,
     FAQComponent,
     LandingPageComponent,
@@ -100,6 +101,9 @@ import { OrderTableComponent } from './tables/order-table/order-table.component'
     ReceiptsComponent,
     ChatbotRowsWrapperComponent,
     OrderTableComponent,
+    MonthlyChartComponent,
+    YearlyChartComponent,
+    LineChartComponent,
   ],
   imports: [
     BrowserModule,

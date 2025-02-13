@@ -12,8 +12,20 @@
     <app-header></app-header>
 
     <!-- component -->
-     <app-rows></app-rows>
-     <app-chatbot></app-chatbot>
-    
+    <div style="margin-top: 13vh">
+      <div class="row g-4">
+        <div class="card p-3">
+          <app-yearly-chart></app-yearly-chart>
+        </div>
+        <div class="card p-3">
+          <app-monthly-chart></app-monthly-chart>
+        </div>
+        <div class="card p-3">
+          <app-line-chart></app-line-chart>
+        </div>
+      </div>
+    </div>
+
+    <app-chatbot></app-chatbot>
   </div>
 </div>

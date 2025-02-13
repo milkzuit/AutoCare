@@ -23,7 +23,6 @@ import { TermsofuseComponent } from './miscellaneous/termsofuse/termsofuse.compo
 import { HomeComponent } from './layout/home/home.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
-import { RowsComponent } from './shared/rows/rows.component';
 import { authGuard } from './auth/auth.guard';
 import { LogoutResolver } from './auth/logout.resolver';
 import { UsersTableComponent } from './tables/users-table/users-table.component';
@@ -33,6 +32,10 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { ReceiptsComponent } from './components/receipts/receipts.component';
 import { ChatbotRowsWrapperComponent } from './template/chatbot-rows-wrapper/chatbot-rows-wrapper.component';
 import { CartComponent } from './components/cart/cart.component';
+import { MonthlyChartComponent } from './charts/monthly-chart/monthly-chart.component';
+import { YearlyChartComponent } from './charts/yearly-chart/yearly-chart.component';
+import { LineChartComponent } from './charts/line-chart/line-chart.component';
+import { ChartComponent } from 'ng-apexcharts';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -79,6 +82,10 @@ const routes: Routes = [
   // testing
   { path: 'd', component: DummyComponent },
   { path: 'dd', component: Dummy2Component },
+  { path: 'mc', component: MonthlyChartComponent },
+  { path: 'yc', component: YearlyChartComponent },
+  { path: 'lc', component: LineChartComponent },
+  { path: 'cc', component: ChartComponent },
 
   //store
   { path: 'checkout', component: CheckoutComponent },

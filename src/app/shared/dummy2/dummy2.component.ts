@@ -1,5 +1,18 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexDataLabels,
+  ApexXAxis,
+  ApexTitleSubtitle,
+  ChartComponent,
+} from 'ng-apexcharts';
+
+interface Purchase {
+  purchaseDate: string;
+  totalAmount: number;
+}
 
 @Component({
   selector: 'app-dummy2',
@@ -7,20 +20,47 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dummy2.component.css'],
 })
 export class Dummy2Component implements OnInit {
-  totalThisYear: number = 0;
-  totalLastYear: number = 0;
-  percentageChange: number = 0;
+  @ViewChild('chart') chart!: ChartComponent;
 
-  constructor(private http: HttpClient) {}
+  public chartOptions: {
+    series: ApexAxisChartSeries;
+    chart: ApexChart;
+    xaxis: ApexXAxis;
+    dataLabels: ApexDataLabels;
+    title: ApexTitleSubtitle;
+  };
 
-  ngOnInit(): void {
-    this.fetchData();
+  purchases: Purchase[] = [
+    // { purchaseDate: '2024-12-10T12:43:03.029418', totalAmount: 3869 },
+    // { purchaseDate: '2025-01-12T14:15:50.981957', totalAmount: 10085 },
+    // { purchaseDate: '2025-02-09T08:10:50.44878', totalAmount: 21744 },
+    // { purchaseDate: '2025-02-09T09:34:43.66443', totalAmount: 1298 },
+    // { purchaseDate: '2025-02-10T09:54:00.198066', totalAmount: 3869 },
+    // { purchaseDate: '2025-02-10T12:04:00.477025', totalAmount: 9190 },
+    // { purchaseDate: '2025-02-12T11:57:50.639821', totalAmount: 4399 },
+  ];
+
+  constructor(private httpClient: HttpClient) {
+    // Convert purchase dates to readable format (YYYY-MM-DD)
+    const formattedDates = this.purchases.map(
+      (p) => new Date(p.purchaseDate).toISOString().split('T')[0]
+    );
+
+    const amounts = this.purchases.map((p) => p.totalAmount);
+
+    this.chartOptions = {
+      series: [{ name: 'Total Spend', data: amounts }],
+      chart: { type: 'line', height: 350 },
+      title: { text: 'Purchase Trends Over Time' },
+      xaxis: { categories: formattedDates },
+      dataLabels: { enabled: false },
+    };
   }
-
-  fetchData() {
-    this.http.get<any>('http://localhost:8080/api/purchases').subscribe(
-      (data) => {
-        this.processYearlyData(data._embedded.purchases);
+  ngOnInit(): void {
+    this.httpClient.get('http://localhost:8080/api/purchases').subscribe(
+      (data: any) => {
+        this.purchases = data._embedded.purchases;
+        console.log(this.purchases);
       },
       (error) => {
         console.error('Error fetching data:', error);
@@ -28,44 +68,4 @@ export class Dummy2Component implements OnInit {
     );
   }
 
-  processYearlyData(purchases: any[]) {
-    const currentYear = new Date().getFullYear();
-    const lastYear = currentYear - 1;
-
-    let thisYearTotal = 0;
-    let lastYearTotal = 0;
-
-    purchases.forEach((purchase) => {
-      const purchaseYear = new Date(purchase.purchaseDate).getFullYear();
-
-      if (purchaseYear === currentYear) {
-        thisYearTotal += purchase.totalAmount;
-      } else if (purchaseYear === lastYear) {
-        lastYearTotal += purchase.totalAmount;
-      }
-    });
-
-    this.totalThisYear = thisYearTotal;
-    this.totalLastYear = lastYearTotal;
-
-    // if (this.totalLastYear > 0) {
-    //   this.percentageChange =
-    //     ((this.totalThisYear - this.totalLastYear) / this.totalLastYear) * 100;
-
-    //   // Cap the percentage change at 100%
-    //   this.percentageChange = Math.min(this.percentageChange, 100);
-    // } else {
-    //   this.percentageChange = this.totalThisYear > 0 ? 100 : 0;
-    // }
-
-    // if (this.totalLastYear > 0) {
-    //   let growthFactor = this.totalThisYear / this.totalLastYear;
-    //   this.percentageChange = Math.log(growthFactor + 1) * 100; // Logarithmic scaling
-    // } else {
-    //   this.percentageChange = this.totalThisYear > 0 ? 100 : 0;
-    // }
-
-    let timesGrowth = this.totalThisYear / this.totalLastYear;
-    this.percentageChange = Math.round(timesGrowth * 100) / 100; // Show as a multiple (e.g., "12x")
-  }
 }

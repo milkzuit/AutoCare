@@ -1,91 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import { ApexAxisChartSeries, ApexChart, ApexXAxis, ApexDataLabels, ApexYAxis, ApexTitleSubtitle, ApexStroke, ApexLegend } from 'ng-apexcharts';
-import { HttpClient } from '@angular/common/http';
+import { Component, ViewChild } from '@angular/core';
+import {
+  ApexChart,
+  ApexAxisChartSeries,
+  ApexDataLabels,
+  ApexTitleSubtitle,
+  ApexXAxis,
+  ChartComponent
+} from "ng-apexcharts";
 
-export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  xaxis: ApexXAxis;
-  yaxis: ApexYAxis;
-  title: ApexTitleSubtitle;
-  stroke: ApexStroke;
-  legend: ApexLegend;
-};
+interface Purchase {
+  userId: number;
+  totalAmount: number;
+}
 
 @Component({
-  selector: 'app-dummy',
+  selector: 'app-user-spend-chart',
   templateUrl: './dummy.component.html',
-  styleUrls: ['./dummy.component.css'],
+  styleUrls: ['./dummy.component.css']
 })
-export class DummyComponent implements OnInit {
-  public chartOptions!: ChartOptions;
+export class DummyComponent {
+  @ViewChild("chart") chart!: ChartComponent;
 
-  constructor(private http: HttpClient) {}
+  public chartOptions: {
+    series: ApexAxisChartSeries;
+    chart: ApexChart;
+    xaxis: ApexXAxis;
+    dataLabels: ApexDataLabels;
+    title: ApexTitleSubtitle;
+  };
 
-  ngOnInit(): void {
-    this.fetchData();
-  }
+  purchases: Purchase[] = [
+    { userId: 23, totalAmount: 23042 },
+    { userId: 6, totalAmount: 16928 },
+    { userId: 26, totalAmount: 14484 }
+  ];
 
-  fetchData() {
-    this.http.get<any>('http://localhost:8080/api/purchases').subscribe(
-      (data) => {
-        this.processChartData(data._embedded.purchases);
-      },
-      (error) => {
-        console.error('Error fetching data:', error);
-      }
-    );
-  }
-
-  processChartData(purchases: any[]) {
-    const monthlyData: { [key: string]: number } = {};
-
-    purchases.forEach((purchase) => {
-      const date = new Date(purchase.purchaseDate);
-      const monthYear = `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear()}`;
-
-      if (!monthlyData[monthYear]) {
-        monthlyData[monthYear] = 0;
-      }
-      monthlyData[monthYear] += purchase.totalAmount;
-    });
-
-    const categories = Object.keys(monthlyData);
-    const seriesData = Object.values(monthlyData);
+  constructor() {
+    const users = this.purchases.map(p => `User ${p.userId}`);
+    const amounts = this.purchases.map(p => p.totalAmount);
 
     this.chartOptions = {
-      series: [
-        {
-          name: 'Total Earnings',
-          data: seriesData,
-        },
-      ],
-      chart: {
-        type: 'line',
-        height: 350,
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        categories: categories,
-      },
-      yaxis: {
-        title: {
-          text: 'Total Amount (Rs)',
-        },
-      },
-      title: {
-        text: 'Monthly Earnings',
-        align: 'center',
-      },
-      stroke: {
-        curve: 'smooth',
-      },
-      legend: {
-        position: 'top',
-      },
+      series: [{ name: "Total Spend", data: amounts }],
+      chart: { type: "bar", height: 350 },
+      title: { text: "Total Spend Per User" },
+      xaxis: { categories: users },
+      dataLabels: { enabled: false }
     };
   }
 }
