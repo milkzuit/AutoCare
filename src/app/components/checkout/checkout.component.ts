@@ -3,8 +3,7 @@ import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-checkout',
-  templateUrl: './checkout.component.html'
-,
+  templateUrl: './checkout.component.html',
   styleUrl:'./checkout.component.html',
 
 })
