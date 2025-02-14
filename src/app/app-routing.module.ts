@@ -7,11 +7,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { DummyComponent } from './shared/dummy/dummy.component';
 import { Dummy2Component } from './shared/dummy2/dummy2.component';
-import { ProfileShowComponent } from './shared/profile-show/profile-show.component';
-import { ProfileEditComponent } from './shared/profile-edit/profile-edit.component';
-import { BookacallComponent } from './shared/bookacall/bookacall.component';
 import { ReviewComponent } from './shared/review/review.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
@@ -30,12 +26,6 @@ import { MainLayoutComponent } from './tables/main-layout/main-layout.component'
 import { VerficationComponent } from './auth/verfication/verfication.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ReceiptsComponent } from './components/receipts/receipts.component';
-import { ChatbotRowsWrapperComponent } from './template/chatbot-rows-wrapper/chatbot-rows-wrapper.component';
-import { CartComponent } from './components/cart/cart.component';
-import { MonthlyChartComponent } from './charts/monthly-chart/monthly-chart.component';
-import { YearlyChartComponent } from './charts/yearly-chart/yearly-chart.component';
-import { LineChartComponent } from './charts/line-chart/line-chart.component';
-import { ChartComponent } from 'ng-apexcharts';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -51,7 +41,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'blog', component: BlogComponent },
 
-  // home
   { path: 'tn', component: TopnavComponent },
   { path: 'faq', component: FAQComponent },
   { path: 'pp', component: PrivacypolicyComponent },
@@ -82,10 +71,6 @@ const routes: Routes = [
   // testing
   { path: 'd', component: DummyComponent },
   { path: 'dd', component: Dummy2Component },
-  { path: 'mc', component: MonthlyChartComponent },
-  { path: 'yc', component: YearlyChartComponent },
-  { path: 'lc', component: LineChartComponent },
-  { path: 'cc', component: ChartComponent },
 
   //store
   { path: 'checkout', component: CheckoutComponent },

@@ -35,7 +35,8 @@ export class LoginComponent {
             text: 'Login successful!',
             icon: 'success',
           });
-          this.router.navigate(['/dashboard']);
+          if (response.role === 'regular') this.router.navigate(['/main-layout/home']);
+          else this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           // If login fails, show an alert and redirect to register page

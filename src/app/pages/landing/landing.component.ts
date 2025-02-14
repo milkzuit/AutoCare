@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-landing',
@@ -252,11 +253,23 @@ export class LandingComponent implements AfterViewInit {
       .subscribe({
         next: (response) => {
           console.log('Success!', response);
-          alert('Subscribed successfully!');
+          // alert('Subscribed successfully!');
+          Swal.fire({
+            title: 'Success!',
+            text: 'Subscribed successfully!',
+            icon: 'success',
+            confirmButtonText: 'OK',
+          });
         },
         error: (error) => {
           console.error('Error!', error);
-          alert('Something went wrong!');
+          // alert('Something went wrong!');
+          Swal.fire({
+            title: 'Error!',
+            text: 'Server did not respond!',
+            icon: 'error',
+            confirmButtonText: 'Try Later',
+          });
         },
       });
   }

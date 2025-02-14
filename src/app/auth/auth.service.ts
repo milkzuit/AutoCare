@@ -11,7 +11,7 @@ export class AuthService {
   isAdmin() {
     let role = JSON.parse(localStorage.getItem('user') || '{}').role;
 
-    if(role == 'admin') return true;
+    if (role == 'admin') return true;
 
     return false;
   }
@@ -19,8 +19,15 @@ export class AuthService {
   isRegular() {
     let role = JSON.parse(localStorage.getItem('user') || '{}').role;
 
-    if(role == 'regular') return true;
+    if (role == 'regular') return true;
 
     return false;
+  }
+
+  isLoggedIn() {
+    let role = JSON.parse(localStorage.getItem('user') ?? '{}').role;
+    console.log(role , "ooooooooooooooooooooooo");
+    console.log(role == undefined);
+    return role == undefined;
   }
 }

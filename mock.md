@@ -3,109 +3,152 @@
 AIzaSyAgOUHAhKm41VdeCd-QXg3tpQJfSy0YkVA
 
 # Table code
-```html
-<div style="margin-top: 7%; overflow-x: hidden">
-  <!--  Row 1 -->
-  <div class="row">
-    <div class="col-lg-8 d-flex align-items-strech">
-      <div class="card w-100">
-        <div class="card-body">
-          <div
-            class="d-sm-flex d-block align-items-center justify-content-between mb-9"
-          >
-            <div class="mb-3 mb-sm-0">
-              <h5 class="card-title fw-semibold">Service Overview</h5>
-            </div>
-            <div>
-              <select class="form-select">
-                <option value="1">March 2024</option>
-                <option value="2">April 2024</option>
-                <option value="3">May 2024</option>
-                <option value="4">June 2024</option>
-              </select>
-            </div>
-          </div>
-          <div id="chart"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="row">
-        <div class="col-lg-12">
-          <!-- Yearly Breakup -->
-          <div class="card overflow-hidden">
-            <div class="card-body p-4">
-              <h5 class="card-title mb-9 fw-semibold">Yearly Breakup</h5>
-              <div class="row align-items-center">
-                <div class="col-8">
-                  <h4 class="fw-semibold mb-3">Rs.36,358</h4>
-                  <div class="d-flex align-items-center mb-3">
-                    <span
-                      class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center"
-                    >
-                      <i class="ti ti-arrow-up-left text-success"></i>
-                    </span>
-                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                    <p class="fs-3 mb-0">last year</p>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <div class="me-4">
-                      <span
-                        class="round-8 bg-primary rounded-circle me-2 d-inline-block"
-                      ></span>
-                      <span class="fs-2">2024</span>
-                    </div>
-                    <div>
-                      <span
-                        class="round-8 bg-light-primary rounded-circle me-2 d-inline-block"
-                      ></span>
-                      <span class="fs-2">2024</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="d-flex justify-content-center">
-                    <div id="breakup"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <!-- Monthly Earnings -->
-          <div class="card">
-            <div class="card-body">
-              <div class="row alig n-items-start">
-                <div class="col-8">
-                  <h5 class="card-title mb-9 fw-semibold">Monthly Spendings</h5>
-                  <h4 class="fw-semibold mb-3">Rs.1,820</h4>
-                  <div class="d-flex align-items-center pb-1">
-                    <span
-                      class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center"
-                    >
-                      <i class="ti ti-arrow-down-right text-danger"></i>
-                    </span>
-                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                    <p class="fs-3 mb-0">last year</p>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="d-flex justify-content-end">
-                    <div
-                      class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center"
-                    >
-                      <i class="ti ti-currency-dollar fs-6"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="earning"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+```js
+import Swal from 'sweetalert2';
+
+ Swal.fire({
+            title: 'Good job!',
+            text: 'Login successful!',
+            icon: 'success',
+          });
+
+ Swal.fire({
+              title: 'Error!',
+              text: 'Incorrect password. Try again.',
+              icon: 'info',
+              confirmButtonText: 'Great 😋',
+            });
+
+Swal.fire('Hello!', 'This is a simple alert.', 'info');
+
+
 ```
+
+# 
+
+Here are a few **SweetAlert** examples for your **Angular** app using **SweetAlert2** (`ngx-sweetalert2`).  
+
+### 1️⃣ Install SweetAlert2  
+First, install the package if you haven't already:  
+```sh
+npm install sweetalert2
+```
+
+### 2️⃣ Import in Component  
+In your Angular component (e.g., `app.component.ts`), import SweetAlert2:  
+```typescript
+import Swal from 'sweetalert2';
+```
+
+---
+
+### 📌 1. Simple Alert  
+```typescript
+Swal.fire('Hello!', 'This is a simple alert.', 'info');
+```
+
+---
+
+### 📌 2. Success Alert  
+```typescript
+Swal.fire({
+  title: 'Success!',
+  text: 'Your action was successful.',
+  icon: 'success',
+  confirmButtonText: 'OK'
+});
+```
+
+---
+
+### 📌 3. Error Alert  
+```typescript
+Swal.fire({
+  title: 'Error!',
+  text: 'Something went wrong!',
+  icon: 'error',
+  confirmButtonText: 'Try Again'
+});
+```
+
+---
+
+### 📌 4. Confirmation Dialog  
+```typescript
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+  }
+});
+```
+
+---
+
+### 📌 5. Prompt (User Input)  
+```typescript
+Swal.fire({
+  title: 'Enter your name',
+  input: 'text',
+  inputPlaceholder: 'Your name...',
+  showCancelButton: true
+}).then((result) => {
+  if (result.isConfirmed && result.value) {
+    Swal.fire(`Hello, ${result.value}!`);
+  }
+});
+```
+
+---
+
+### 📌 6. Auto Close Alert  
+```typescript
+Swal.fire({
+  title: 'Auto close alert!',
+  text: 'This will close in 3 seconds.',
+  icon: 'info',
+  timer: 3000,
+  showConfirmButton: false
+});
+```
+
+---
+
+### 📌 7. Toast Notification  
+```typescript
+Swal.fire({
+  toast: true,
+  position: 'top-end',
+  icon: 'success',
+  title: 'Signed in successfully',
+  showConfirmButton: false,
+  timer: 3000
+});
+```
+
+---
+
+### 📌 8. Custom HTML Alert  
+```typescript
+Swal.fire({
+  title: '<strong>HTML <u>example</u></strong>',
+  icon: 'info',
+  html: 'You can use <b>bold</b> text, <a href="#">links</a>, and more!',
+  showCloseButton: true,
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+  cancelButtonText: '<i class="fa fa-thumbs-down"></i> Not good'
+});
+```
+
+Would you like any other variations or customization? 😊🚀
+

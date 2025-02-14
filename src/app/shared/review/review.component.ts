@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';  // Import HttpClient to make HTTP requests
+import { HttpClient } from '@angular/common/http'; // Import HttpClient to make HTTP requests
 import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-review',
@@ -25,13 +26,13 @@ export class ReviewComponent {
   // Method to set the rating
   setRating(value: number) {
     this.rating = value;
-    this.formGroup.get('rating')?.setValue(value);  // Set the rating control value when it changes
+    this.formGroup.get('rating')?.setValue(value); // Set the rating control value when it changes
   }
 
   // onSubmit method to send the review data to the backend
   onSubmit(): void {
     if (this.formGroup.valid) {
-      const reviewData = this.formGroup.value;  // Get the form data
+      const reviewData = this.formGroup.value; // Get the form data
 
       // Send a POST request to the backend
       console.log(reviewData);
@@ -41,14 +42,25 @@ export class ReviewComponent {
         .subscribe({
           next: (response) => {
             console.log('Success!', response);
-            alert('Feedbacked successfully!');
+            // alert('Feedbacked successfully!');
+            Swal.fire({
+              title: 'Success!',
+              text: 'Feedbacked submitted successfully!',
+              icon: 'success',
+              confirmButtonText: 'OK',
+            });
           },
           error: (error) => {
             console.error('Error!', error);
-            alert('Something went wrong!');
+            // alert('Something went wrong!');
+            Swal.fire({
+              title: 'Error!',
+              text: 'Server did not respond!',
+              icon: 'error',
+              confirmButtonText: 'OK',
+            });
           },
         });
-
     }
   }
 }

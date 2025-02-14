@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { PurchaseService } from './purchase.service';
+import Swal from 'sweetalert2';
 
 export interface CartItem {
   serviceName: string;
@@ -88,10 +89,22 @@ export class CartService {
   /** Checkout logic */
   checkout(): void {
     if (this.cartItems.length === 0) {
-      alert('Your cart is empty!');
+      // alert('Your cart is empty!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Your cart is empty!',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       return;
     }
-    alert(`Proceeding to checkout with ${this.cartItems.length} items`);
+    // alert(`Proceeding to checkout with ${this.cartItems.length} items`);
+    Swal.fire({
+      title: 'Success',
+      text: `Proceeding to checkout with ${this.cartItems.length} items`,
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
     // ✅ Navigate to the checkout page
     this.router.navigate(['/checkout']);
     this.getCartItems();

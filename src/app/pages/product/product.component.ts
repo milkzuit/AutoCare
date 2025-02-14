@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product',
@@ -59,11 +60,23 @@ export class ProductComponent {
       .subscribe({
         next: (response) => {
           console.log('Success!', response);
-          alert('BOOKED successfully!');
+          // alert('BOOKED successfully!');
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your action was successful.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
         },
         error: (error) => {
           console.error('Error!', error);
-          alert('Something went wrong!');
+          // alert('Something went wrong!');
+          Swal.fire({
+            title: 'Error!',
+            text: 'Server did not respond!',
+            icon: 'error',
+            confirmButtonText: 'Try Again'
+          });
         },
       });
   }

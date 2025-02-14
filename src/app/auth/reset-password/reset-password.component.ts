@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reset-password',
@@ -62,16 +63,24 @@ export class ResetPasswordComponent implements OnInit {
           next: (response: any) => {
             // Explicitly handle the response
             console.log('Success:', response);
-            alert(response.message || 'Password reset successfully!');
+            // alert(response.message || 'Password reset successfully!');
+            Swal.fire({
+              title: 'Well Done',
+              text: 'Password reset successfully.',
+              icon: 'info',
+              timer: 3000,
+              showConfirmButton: false,
+            });
             this.router.navigate(['/login']);
           },
           error: (error) => {
             console.error('Error:', error);
-            alert(
-              `Failed to reset password: ${
-                error.error?.error || 'Unknown error'
-              }`
-            );
+            Swal.fire({
+              title: 'Error!',
+              text: `Failed to reset password: ${error.error?.error || 'Unknown error'}`,
+              icon: 'error',
+              confirmButtonText: 'Cool 🥶',
+            });
           },
         });
     }
