@@ -21,8 +21,24 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   // Define allowed routes for each role
   const roleAllowedRoutes: { [key: string]: string[] } = {
-    regular: ['/dashboard'],
-    admin: ['/dashboard']
+    regular: [
+      '/main-layout/home',
+      '/main-layout/receipts',
+      '/main-layout/services',
+      '/main-layout/review',
+      '/main-layout/profile',
+    ],
+    admin: [
+      '/dashboard',
+      '/user-list/admin',
+      '/user-list/regular',
+      '/user-list/feedback',
+      '/user-list/news-letter',
+      '/user-list/getquote',
+      '/user-list/contact',
+      '/user-list/order',
+      '/main-layout/profile',
+    ],
   };
 
   // Check if the role is valid and if the current route is allowed
@@ -35,4 +51,3 @@ export const authGuard: CanActivateFn = (route, state) => {
   console.log('Navigation blocked. Redirecting to login.');
   return router.createUrlTree(['/login']);
 };
-

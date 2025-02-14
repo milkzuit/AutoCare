@@ -38,10 +38,9 @@ const routes: Routes = [
     component: LandingComponent, // Redirect to home after logout
     resolve: { logout: LogoutResolver }, // Call logout before navigating
   },
+  // # Landing Page
   { path: 'contact', component: ContactComponent },
   { path: 'blog', component: BlogComponent },
-
-  { path: 'tn', component: TopnavComponent },
   { path: 'faq', component: FAQComponent },
   { path: 'pp', component: PrivacypolicyComponent },
   { path: 'term', component: TermsofuseComponent },
@@ -50,21 +49,26 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
   },
 
   {
     path: 'main-layout',
     component: MainLayoutComponent,
     children: [
-      { path: 'review', component: ReviewComponent },
-      { path: 'services', component: ProductComponent },
+      { path: 'review', component: ReviewComponent, canActivate: [authGuard] },
+      {
+        path: 'services',
+        component: ProductComponent,
+        canActivate: [authGuard],
+      },
       { path: 'profile', component: MyProfileComponent },
       {
         path: 'receipts',
         component: ReceiptsComponent,
+        canActivate: [authGuard],
       },
-      { path: 'home', component: HomeComponent },
+      { path: 'home', component: HomeComponent, canActivate: [authGuard] },
     ],
   },
 
@@ -81,13 +85,41 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: 'stat', component: UsersTableComponent },
-      { path: 'admin', component: UsersTableComponent },
-      { path: 'regular', component: UsersTableComponent },
-      { path: 'feedback', component: UsersTableComponent },
-      { path: 'news-letter', component: UsersTableComponent },
-      { path: 'getquote', component: UsersTableComponent },
-      { path: 'contact', component: UsersTableComponent },
-      { path: 'order', component: OrderTableComponent },
+      {
+        path: 'admin',
+        component: UsersTableComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'regular',
+        component: UsersTableComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'feedback',
+        component: UsersTableComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'news-letter',
+        component: UsersTableComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'getquote',
+        component: UsersTableComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'contact',
+        component: UsersTableComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'order',
+        component: OrderTableComponent,
+        canActivate: [authGuard],
+      },
     ],
   },
 
