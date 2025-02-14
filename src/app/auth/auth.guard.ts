@@ -1,6 +1,7 @@
 import { CanActivateFn } from '@angular/router';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 export const authGuard: CanActivateFn = (route, state) => {
   // Inject Router
@@ -49,5 +50,13 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   // If not allowed, redirect to login
   console.log('Navigation blocked. Redirecting to login.');
+
+  Swal.fire({
+    title: 'Error',
+    text: 'Navigation blocked. Redirecting to login.',
+    icon: 'warning',
+    timer: 3000,
+    showConfirmButton: false
+  });
   return router.createUrlTree(['/login']);
 };
